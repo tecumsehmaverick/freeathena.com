@@ -1,0 +1,24 @@
+<!-- Register -->
+
+<p>A couple things and you're on your way</p>
+
+
+<txp:mem_self_register_form label="" login_url="/register"  thanks_form="thanks_form" thanks="You have successfully registered for an account. Your password has been mailed to you.">
+
+<div class="input-prepend hide">
+<span class="add-on"><i class="icon-user"></i></span><txp:mem_form_text name="RealName" label="" /><br /> <br />
+</div>
+
+
+<div class="input-prepend">
+<span class="add-on"><i class="icon-user"></i></span><txp:mem_form_text name="name" label="" class="account-username nospace word" />
+</div>
+
+
+<div class="input-prepend">
+<span class="add-on"><i class="icon-envelope"></i></span><txp:mem_form_email name="email" label="" class="account-email" />
+</div>
+
+<txp:mem_form_submit button="1" class="btn btn-success" label="Let's Go" />
+
+</txp:mem_self_register_form>

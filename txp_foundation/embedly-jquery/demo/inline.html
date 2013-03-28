@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.embedly.js"></script>
+
+    <title>Embedly jQuery</title>
+  </head>
+  <body >
+
+    <div id="content" class="container">
+
+
+        <div class="video-thumb">
+            <span href="http://bit.ly/cXVifg">http://instagram.com/p/TwWnNSIXRo/</span>
+        </div>
+
+     
+    </div> <!-- Container-->
+
+    <script type="text/javascript">
+      // Set up defaults.
+      $.embedly.defaults = {
+        key:'c02aeab18cc34e93b9da735253417fdf',
+        query: {
+          maxwidth:330,
+          
+        }
+      }
+      $('.video-thumb span').embedly();
+	</script>
+
+  </body>
+</html>

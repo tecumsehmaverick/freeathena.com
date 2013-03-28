@@ -1,0 +1,102 @@
+<div class="row">
+
+<!-- http://forum.textpattern.com/viewtopic.php?pid=209617#p209617 -->
+<txp:category_list>
+   <txp:smd_query
+       query='SELECT COUNT(id) AS count
+          FROM textpattern
+          WHERE category1="<txp:category/>"'>
+    
+	    <div class="two columns">
+        <txp:category /> ({count})
+        </div>
+   
+   </txp:smd_query>
+</txp:category_list>
+
+</div>
+
+
+
+
+
+
+<txp:if_category>
+
+<h1 class="responsive-headline subheader"><txp:category title="1" /></h1>
+
+
+<div class="row">
+<div class="container twelve columns">
+<!-- http://forum.textpattern.com/viewtopic.php?pid=233272#p233272 -->
+<txp:article_custom section="video" category='<txp:category />' limit="10" offset='<txp:php> echo("startindex"); </txp:php>'>
+    <div class="box">
+    <div class="article">
+	<div class="video-image">
+		<a href="<txp:permlink />" title="View now: <txp:title />">
+        <span class="play" href="<txp:custom_field name="Video Url" />"><txp:title /></span>
+        </a>
+	</div>
+	<a href="<txp:permlink />" title="View now: <txp:title />">
+	<h4 class="responsive-headline subheader"><txp:title /></h4>
+	<txp:excerpt />
+	</a>
+
+	
+	
+	<div class="thumbnail-subject"><a href="<txp:site_url />subject-index/?c=<txp:category1 />"><i class="icon-angle-right"></i> <txp:category1 title="1" /></a></div>
+	</div>	
+	</div>
+</txp:article_custom>	 
+</div>
+</div>
+
+<div class="clearing-container">&nbsp;</div>
+
+
+
+<txp:chh_if_data>
+<txp:article_custom section="video" category='<txp:category />'>
+<p class="hidden"><txp:title /></p>
+</txp:article_custom>
+<txp:else />
+<p>Looks like we have nothing on this subject yet. Is there something we should have here?</p>
+
+<!-- Variable for use in snip_footer.misc.txp where submit dialog resides -->
+<txp:variable name="selected_category" value='<txp:category />' />
+
+<p><a href="#" class="button" data-reveal-id="myModal"><i class="icon-plus"></i> Make Suggestion</a></p>
+
+</txp:chh_if_data>
+</div>
+
+<txp:else />
+
+
+
+
+
+</txp:if_category>
+
+
+
+
+<div class="row">
+<div class="twelve columns">
+
+
+<h3 class="subheader"><txp:category title="1" /></h3>
+<txp:chh_if_data>
+
+ is filed under <txp:smd_parent level="-1" title="1" />
+
+<h3 class="subheader">Siblings</h3>
+<txp:stw_category_tree start='<txp:smd_parent level="-1" title="1" />' section="*" count="()" />
+</txp:chh_if_data>
+
+
+
+
+
+</div>
+</div>

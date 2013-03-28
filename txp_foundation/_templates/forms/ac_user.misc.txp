@@ -1,0 +1,108 @@
+<!-- 
+================================================== -->
+
+<div class="row">
+
+<div class="six columns">
+<txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
+
+
+<!-- Need this var for smd_queries -->
+<txp:variable name="logged_user" value='<txp:cbe_frontauth_whois type="name" />' />
+
+
+<txp:mem_form type="smd_bio" redirect="profile" redirect_form="thanks">
+<txp:smd_bio_info show_empty="1">
+
+
+<div class="">
+<img src="http://www.gravatar.com/avatar/<txp:php>echo md5( strtolower( trim( "{smd_bio_email}" ) ) );</txp:php>?s=75?d=http%3A%2F%2Feduhou.se/img/person-no-image.jpg" class="thumbnail" />
+</div>
+
+<ul>
+<li><i class="icon-envelope"></i> {smd_bio_email}</li>
+<li><i class="icon-twitter"></i> {smd_bio_twitter}</li>
+</ul>
+
+<p class="lead">{smd_bio_bio}</p>
+
+
+</txp:smd_bio_info>
+</txp:mem_form>
+</txp:smd_bio_author>
+
+<hr />
+<h4>Achievements?</h4>
+<i class="icon-certificate"></i> You have collected 
+<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+{count}
+</txp:smd_query>
+cards!
+
+
+</div>
+
+
+<div class="six columns">
+
+<!-- Get logged user's tags-->
+
+<div class="tags">
+
+<h4>Your Tags</h4>
+
+<p>Based on you amazing organizational skills.</p>
+
+<ul class="clearfix">
+
+<txp:if_different>
+<txp:smd_query query="SELECT id
+     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+
+	<txp:article_custom id="{id}">
+	
+	<txp:tru_tags_from_article break="li" linkpath="<txp:site_url />tag/"  />
+	
+	</txp:article_custom>
+	
+</txp:smd_query>
+</txp:if_different>	
+
+</ul>
+
+</div>
+
+
+
+
+<!-- Get IDs from custom_3 of videos that have been queued so that we can then get the categories they belong to -->
+<div class="subjects">
+<h4>Subjects of Interest</h4>
+
+<ul class="clearfix">
+
+<p>Based on the contents of your card collection.</p>
+
+<txp:smd_query query="SELECT id, custom_3
+     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+
+	<txp:article_custom id="{custom_3},">
+	<txp:if_different>
+		<li><a href="<txp:site_url />subject/<txp:category1 />" class="capitalize"><i class="icon-book"></i> <txp:category1 /></a></li>
+	</txp:if_different>
+	</txp:article_custom>
+	
+</txp:smd_query>
+
+</ul>
+
+</div>
+
+
+
+
+
+</div>
+</div>
+
+

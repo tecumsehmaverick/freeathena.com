@@ -1,0 +1,46 @@
+<head>
+<link rel="stylesheet" href="<txp:site_url />txp_foundation/foundation/stylesheets/iframe.css">
+</head>
+
+<!-- cbe_frontauth required as wrapper for this page template as it allows for the cbe_frontauth_whois tag to work which is what retirieves the current logged in user's name tfor use in the new article title -->
+<txp:cbe_frontauth show_logout="0">
+
+
+<!-- Make a function for creating our random string to attach as a psuedo nonce to the discarded card title -->
+<txp:php>
+function generateRandomString($length = 20) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $randomString;
+}
+</txp:php>
+
+
+<!-- Gettin ?remote_id variable from URL: 
+This is the ID of the collected instance (article) of a card not the ID of the card itself  -->
+<txp:article_custom id='<txp:adi_gps name="remote_id" />'>
+
+
+<!--   Query that collected card article for it's details that reference the actual article it references
+============================================================================== -->
+
+<txp:smd_query query="SELECT id, title, custom_3, custom_2 FROM textpattern WHERE  id = '?remote_id'">
+
+<txp:mem_simple_form table="textpattern" id_field="id" id_insert="0" success_form="remove_success">
+
+<txp:mem_form_secret name="table_authorid" value='<txp:cbe_frontauth_whois type="name" />' />
+<txp:mem_form_secret name="table_title" value='_<txp:cbe_frontauth_whois type="name" />-{custom_3}_<txp:php>echo generateRandomString();</txp:php>' />    
+<txp:mem_form_secret name="table_section" value="discarded" />
+<txp:mem_form_secret name="table_custom_3" value='{custom_3}' />
+<txp:mem_form_secret name="table_custom_2" value='{custom_2}' />    
+<txp:mem_form_secret name="integer_id" value="{id}" />
+<input type="submit" class="memSubmit" name="mem_form_submit" value="Remove">
+don't click! {id} {custom_3}
+</txp:mem_simple_form>
+
+</txp:smd_query>
+</txp:article_custom>
+</txp:cbe_frontauth_protect>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="<txp:lang />">
+
+<head>
+<txp:output_form form="snip_head" />
+</head>
+
+<body id="<txp:if_section name=""><txp:if_search>search<txp:else />front</txp:if_search><txp:else /><txp:section /></txp:if_section>-page">
+
+
+<div class="row">
+<div class="four columns centered">
+<a href="#"><h1><img src="<txp:site_url />txp_foundation/foundation/images/brand/icon-and-wordmark-color.png" alt="Welcome to Free Athena" /></h1></a>
+</div>
+</div>
+
+<div class="row">
+
+<div class="four columns centered">
+
+<form action="/projects/freeathena.com/ac/" method="post">
+<input type="text" value="" name="p_userid" class="edit" id="name" placeholder="username">
+<input type="password" value="" name="p_password" class="edit" id="password" placeholder="password"><input type="submit" class="button" value="Login" class="publish">
+</form>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+<txp:cbe_frontauth_if_connected>
+<!-- Footer -->
+<txp:output_form form="snip_footer" />
+</txp:cbe_frontauth_if_connected>
+
+
+<!-- Dragon's Breath -->
+<txp:output_form form="snip_dragons_breath" />
+
+
+</body>
+</html>

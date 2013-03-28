@@ -1,0 +1,7 @@
+<fieldset>
+<legend>Register</legend>
+<txp:mem_form_text name="RealName" label="Full Name" />
+<txp:mem_form_text name="name" label="Username" /><br /> <br />
+<txp:mem_form_email name="email" label="E-Mail" /><br /> <br />
+<txp:mem_form_submit />
+</fieldset>

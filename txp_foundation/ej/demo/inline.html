@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.embedly.js"></script>
+    <link rel="stylesheet" href="css/demo.css" />
+    <title>Embedly jQuery</title>
+  </head>
+  <body>
+
+
+	<div class="video-image">
+		<a href="http://google.com">
+        <span class="play" href="http://www.ted.com/talks/cameron_russell_looks_aren_t_everything_believe_me_i_m_a_model.html"><txp:title /></span>
+        </a>
+	</div>
+
+
+	<div class="video-image">
+		<a href="http://google.com">
+        <span class="play" href="http://www.youtube.com/watch?v=l-gQLqv9f4o"><txp:title /></span>
+        </a>
+	</div>
+
+	<div class="video-image">
+		<a href="http://google.com">
+        <span class="play" href="http://www.ted.com/talks/israel_and_iran_a_love_story.html"><txp:title /></span>
+        </a>
+	</div>
+
+    <script>
+      $.embedly.defaults = {
+        key:'c02aeab18cc34e93b9da735253417fdf',
+        query: {
+          maxwidth:300,
+        }
+      }
+      
+      $('.video-image span').embedly({
+        query: {
+          maxwidth:300,
+          autoplay:true
+        },
+        display: function(data){
+          $(this).html('<img src="'+data.thumbnail_url+'"/><span></span>')
+            .width(data.thumbnail_width)
+            .height(data.thumbnail_height)
+            .find('span').css('top', data.thumbnail_height/2-36)
+            .css('left', data.thumbnail_width/2 - 36);
+        }
+      });
+    </script>
+  
+  
+  </body>
+</html>

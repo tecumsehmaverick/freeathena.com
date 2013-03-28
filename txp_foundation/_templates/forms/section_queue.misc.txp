@@ -1,0 +1,55 @@
+<div class="row">
+<div class="twelve columns">
+
+
+<h3 class=""><txp:cbe_frontauth_whois type="RealName" /></h3>
+<hr />
+
+
+<dl class="tabs">
+  <dd class="active"><a href="#simple1"><i class="icon-user"></i></a></dd>
+  <dd><a href="#simple2"><i class="icon-tasks"></i></a></dd>
+<!--  <dd><a href="#simple3"><i class="icon-file"></i></a></dd> -->
+  <dd><a href="#simple4"><i class="icon-tags"></i></a></dd>
+  <dd><a href="#simple5"><i class="icon-cogs"></i></a></dd>
+</dl>
+<ul class="tabs-content">
+  <li class="active" id="simple1Tab"><txp:output_form form="ac_user" /></li>
+  <li id="simple2Tab"><txp:output_form form="ac_list" /></li>
+  <li id="simple3Tab"><txp:output_form form="ac_subjects" /></li>
+  <li id="simple4Tab"><txp:output_form form="ac_tags" /></li>
+  <li id="simple5Tab"><txp:output_form form="ac_settings" /></li>
+</ul>
+
+
+
+</div>  
+
+
+<div class="six columns">
+<txp:variable name="articles-queued-by-id">
+<txp:article_custom section='queue' author='<txp:cbe_frontauth_whois type="name" />' limit="999"><txp:custom_field name='Queued ID' />,</txp:article_custom>
+</txp:variable>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

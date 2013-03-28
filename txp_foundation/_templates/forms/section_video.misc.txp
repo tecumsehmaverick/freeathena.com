@@ -1,0 +1,100 @@
+<div class="row">
+<div class="twelve columns">
+
+<txp:if_individual_article>
+
+<txp:article>
+
+
+<!-- Beautiful Flex Video Block -->
+
+<div class="row">
+<div class="twelve columns">
+<div class="flex-video">
+	<div class="video">
+	<article>
+    <a href='<txp:custom_field name="Video_Url" />'></a>
+
+    </article>
+    </div>
+
+</div>    
+</div>    
+</div>    
+    
+    
+ 
+
+
+
+
+
+
+
+
+<div class="row">
+
+<div class="six columns">
+
+<h3 class="subheader"><small>This has been: </small><txp:permlink><txp:title /></txp:permlink></h3>
+
+<h4 class="subheader"><small>Filed under:</small> <txp:article><txp:category1 title="1" /></txp:article></h4>
+
+<txp:if_custom_field name="Collections Belonging To">
+<txp:article_custom id='<txp:custom_field name="Collections Belonging To" />'> 
+<h4 class="subheader"><small>And part of the Collection:</small> <txp:permlink><txp:title /></txp:permlink></h4>
+</txp:article_custom>
+</txp:if_custom_field>
+
+
+<txp:tru_tags_if_has_tags>
+<p><i class="icon-tags"></i> <txp:tru_tags_from_article /></p>
+</txp:tru_tags_if_has_tags>
+
+<ul class="button-group even two-up baseline">
+	<li><a class="button right" data-reveal-id="addModal"><i class="icon-plus-sign-alt"></i> Add</a></li>
+	<li><a class="button right" data-reveal-id="shareModal"><i class="icon-share"></i> Share</a></li>
+</ul>
+
+
+
+</div>
+
+<div class="six columns">
+
+<txp:article>
+<h3 class="subheader"><small>More in </small> <txp:category1 title="1" /></h3>
+</txp:article>
+
+<dl class="tabs">
+  <dd class="active"><a href="#latest">Latest</a></dd>
+  <dd><a href="#popular">Most Viewed</a></dd>
+</dl>
+<ul class="tabs-content">
+	<li class="active" id="latest">
+	<txp:related_articles label="" limit="10" break="hr" />
+	</li>
+  <li id="popular">
+<p>Hard to test right now...</p>
+  </li>
+</ul>
+</div>
+
+</div>
+
+
+
+</txp:article>
+
+<txp:else />
+	
+<txp:output_form form="section_default" />
+	
+</txp:if_individual_article>
+	
+	
+
+
+
+</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="row">
+
+<div class="four columns">
+<h2>Register</h2>
+
+<txp:mem_self_register_form form="snip_registration_form" email_form="snip_registration_email" />
+</div>
+
+</div>

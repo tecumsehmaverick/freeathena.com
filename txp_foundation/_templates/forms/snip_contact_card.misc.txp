@@ -1,0 +1,18 @@
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+	<div itemprop="name">Bravo! Manufacturing Inc</div>
+	<div>Email: <span itemprop="email"><a href='mailto:info@bravotents.com'>info@bravotents.com</a></div>
+	<div>Phone: <span itemprop="telephone">+1 (360) 817-9124</div>
+	<div>Url: <span itemprop="url"><a href='http://bravotents.com'>http://bravotents.com</a></div>
+
+	<div itemprop="paymentAccepted"  style='display: none' >cash, check, credit card, invoice, paypal</div>
+	<meta itemprop="openingHours"  style='display: none'  datetime="Mo,Tu,We,Th,Fr 08:00-18:00" />
+	<div itemtype="http://schema.org/GeoCoordinates" itemscope="" itemprop="geo">
+		<meta itemprop="latitude" content="45.587063" />
+		<meta itemprop="longitude" content="-122.399536" />
+
+	</div>
+	<div itemtype="http://schema.org/PostalAddress" itemscope="" itemprop="address">
+		<div itemprop="streetAddress">26401 NE Brunner Road</div>
+		<div><span itemprop="addressLocality">Camas</span>, <span itemprop="addressRegion">WA</span> <span itemprop="postalCode">98607-7024</span></div>
+	</div>
+</div>

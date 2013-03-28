@@ -1,0 +1,213 @@
+<!-- Included JS Files (Compressed) -->
+<script src="<txp:site_url />txp_foundation/foundation/javascripts/jquery.js"></script>
+<script src="<txp:site_url />txp_foundation/foundation/javascripts/foundation.min.js"></script>
+  
+<!-- http://xoxco.com/projects/code/tagsinput/ -->
+<script src="<txp:site_url />txp_foundation/tagsinput/jquery.tagsinput.js"></script>
+<script>$('#table_keywords').tagsInput();</script>
+<script>$('#Keywords').tagsInput();</script>
+
+<!-- Initialize JS Plugins -->
+<script src="<txp:site_url />txp_foundation/foundation/javascripts/app.js"></script><!-- Initialize JS Plugins -->
+
+<!-- After above core JS  do embedly stuff -->
+<script type="text/javascript" src="<txp:site_url />txp_foundation/ej/demo/js/jquery.embedly.js"></script>
+  <script>
+      $('document').ready(function(){
+        $('div.video').embedly({
+          wmode: 'transparent',
+		  nostyle: 'true',
+          method: 'after',
+          key:':c02aeab18cc34e93b9da735253417fdf'
+        });
+      });
+    </script>
+    
+     <script>
+      $.embedly.defaults = {
+        key:'c02aeab18cc34e93b9da735253417fdf',
+      }
+      
+      $('.video-image span').embedly({
+        query: {
+          maxwidth:300,
+          autoplay:true
+        },
+        display: function(data){
+          $(this).html('<img src="'+data.thumbnail_url+'"/><span></span>')
+            .width(data.thumbnail_width)
+            .height(data.thumbnail_height)
+            .find('span').css('top', data.thumbnail_height/2-36)
+            .css('left', data.thumbnail_width/2 - 36);
+        }
+      });
+    </script>
+
+
+<!-- Masonry & Fluid -->
+<!-- Thanks to: http://www.maurizioconventi.com/2012/06/05/a-fluid-layout-with-jquery-masonry/ -->
+<!-- More fiddling to do to integrate with Foundation well… -->
+<!--
+<script src="<txp:site_url />txp_foundation/masonry/jquery.masonry.min.js"></script>
+<script src="<txp:site_url />txp_foundation/masonry/fluid/js/base.js"></script>
+-->
+
+<!-- Initialize Masonry. This will trigger Masonry after all the media on the page has loaded
+	http://masonry.desandro.com/docs/help.html -->
+<!--
+<script>
+$(window).load(function(){
+  $('.container').masonry({
+    // options...
+  });
+});
+</script>
+-->
+
+
+<!-- http://farhadi.ir/projects/html5sortable/ -->
+<!--
+<script src="<txp:site_url />txp_foundation/sortable/jquery.sortable.js"></script>
+
+
+<script>
+    $('.sortable').sortable();
+</script>
+-->
+
+
+
+
+<script type="text/javascript" src="http://joshuavaage.com/projects/freeathena.com/txp_foundation/queue/jquery.livequery.js"></script>
+		
+        <script type="text/javascript"> 
+           $(document).ready(function() { 
+		   
+                	$('.buttons > a').livequery("click",function(e){
+						
+						var parent  = $(this).parent();
+						var getID   =  parent.attr('id').replace('button_','');
+
+						$.post("http://joshuavaage.com/projects/freeathena.com/txp_foundation/queue/follow.php?id="+getID, {
+			
+						}, function(response){
+							
+							$('#button_'+getID).html($(response).fadeIn('slow'));
+						});
+				});	
+            });
+        </script>
+        
+        
+
+
+<!-- https://github.com/davatron5000/FitText.js -->
+<script src="<txp:site_url />txp_foundation/foundation/fittext/jquery.fittext.js"></script>
+
+<!-- http://www.jqueryrain.com/?_kYfO9mA -->
+<script src="<txp:site_url />txp_foundation/quickflip/jquery.quickflip.source.js"></script>
+
+<script>
+$(function() {
+    $('.quickflip-wrapper').quickFlip();
+});
+</script>
+
+<!-- https://github.com/paulirish/infinite-scroll -->
+<!--
+<script src="<txp:site_url />txp_foundation/infinatescroll/jquery.infinatescroll.js"></script>
+
+<script>
+	
+	
+	$('.container').infinitescroll({
+		navSelector  	: ".older:last",
+		nextSelector 	: "a.older:last",
+		itemSelector 	: ".box",
+		debug		 	: true,
+		dataType	 	: 'html',
+        maxPage         : 3,
+//		prefill			: true,
+//		path: ["http://nuvique/infinite-scroll/test/index", ".html"]
+		path: function(index) {
+			return "index" + index + ".html";
+		}
+		// behavior		: 'twitter',
+		// appendCallback	: false, // USE FOR PREPENDING
+		// pathParse     	: function( pathStr, nextPage ){ return pathStr.replace('2', nextPage ); }
+    }, function(newElements, data, url){
+    	//USE FOR PREPENDING
+    	// $(newElements).css('background-color','#ffef00');
+    	// $(this).prepend(newElements);
+    	//
+    	//END OF PREPENDING
+
+//    	window.console && console.log('context: ',this);
+//    	window.console && console.log('returned: ', newElements);
+    	
+    });
+	</script>
+-->
+
+
+<script>jQuery(".responsive-headline").fitText(1.2, { minFontSize: '20px', maxFontSize: '40px' })</script>
+
+
+<!-- 'Popup' Sorcery -->
+<script>
+  $(document).ready(function() {
+    $("#buttonForModal").click(function() {
+		$('#result').load('<txp:site_url />add');
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#buttonForModal").click(function() {
+      $("#myModal").reveal();
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#register-modal-button").click(function() {
+      $("#register-modal").reveal();
+    });
+  });
+</script>
+
+
+
+<!-- Hide duplicate links in tags list generated from tru_tags, smd_query -->
+<script>
+var seen = {};
+$('.tags a').each(function() {
+    var txt = $(this).text();
+    if (seen[txt])
+        $(this).remove();
+    else
+        seen[txt] = true;
+});
+</script>
+
+
+<!-- get a tag icon in that tag list -->
+<script>
+$('.tags a').prepend('<i class="icon-tag"></i>');
+</script>
+
+
+<!-- do AJAX on form submit -->
+ <script src="http://malsup.github.com/jquery.form.js"></script> 
+ 
+    <script> 
+        // wait for the DOM to be loaded 
+        $(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('#addForm').ajaxForm(function() { 
+                alert("Thank you for your comment!"); 
+            }); 
+        }); 
+    </script> 

@@ -1,0 +1,9 @@
+<txp:output_form form="snip_shop_navigation" />
+
+<txp:yab_shop_cart></txp:yab_shop_cart>
+
+<div class="twelve column">
+<h2>Review Your Selections</h2>
+<h4>Make any changes you need here.</h4>
+<txp:yab_shop_checkout />
+</div>

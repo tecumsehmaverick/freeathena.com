@@ -1,0 +1,11 @@
+<txp:mem_form_secret name="Title" value='<txp:cbe_frontauth_whois type="name" />-<txp:article_id />' />
+<txp:mem_form_secret name="Status" value="4" /><!-- Live Status -->
+<txp:mem_form_secret name="custom_2" value="<txp:title />" /><!-- Queue Title -->
+<txp:mem_form_secret name="custom_3" value="<txp:article_id />" /><!-- Queued ID -->
+<txp:mem_form_secret name="category_1" value="<txp:category1 />" />
+<txp:mem_form_secret name="publish_now" label="Posted" value="23 Jan 2013 12:00:00" />
+<txp:mem_form_secret name="Author" label="Author" value="<txp:cbe_frontauth_whois type="name" />" />
+<txp:mem_form_secret name="textile_body" value="1" label="textile body" />
+<txp:mem_form_secret name="textile_excerpt" value="1" label="textile excerpt" />
+<txp:mem_form_secret name="Section" value="queue" label="Section" />
+<txp:mem_form_submit label="Add to Queue" class="button" />

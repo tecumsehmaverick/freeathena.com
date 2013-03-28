@@ -1,0 +1,23 @@
+<article role="article" itemscope itemtype="http://schema.org/Article">
+
+<!-- if not an individual article then make the title h1 a link -->
+<txp:if_individual_article>
+  <h1 itemprop="name"><txp:title /></h1>
+<txp:else />
+  <h1 itemprop="name"><a href="<txp:permlink />" itemprop="url"><txp:title /></a></h1>
+</txp:if_individual_article>
+
+
+  <div itemprop="articleBody">
+    <txp:body />
+  </div>
+
+
+<!-- only display categories if they are actually set for a product, otherwise omit -->
+  <txp:if_article_category>
+    <br><strong><txp:text item="categories" /></strong> <span itemprop="keywords"><txp:category1 title="1" link="1" /><txp:if_article_category number="1"><txp:if_article_category number="2">, </txp:if_article_category></txp:if_article_category><txp:category2 title="1" link="1" /></span>
+  </txp:if_article_category>
+
+  </p>
+
+</article>

@@ -1,0 +1,7 @@
+<h5 class="subheader">Subjects based off of Queue contents</h5>
+
+<txp:article_custom id='<txp:variable name="articles-queued-by-id" />'>
+<txp:if_different>
+<a href="<txp:site_url />library?subject=<txp:category1 />" class="radius panel"><txp:category1 /></a>
+</txp:if_different>
+</txp:article_custom>

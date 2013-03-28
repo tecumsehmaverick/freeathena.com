@@ -1,0 +1,48 @@
+<!-- Do check to insure the queue article belongs to logged user 
+...
+-->
+
+
+<div class="row">
+<div class="twelve columns">
+
+
+<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
+
+<h3 class="subheader">Editing: {title}</h3>
+
+<!-- Make var  -->
+<txp:variable name="video_in_question" value="{custom_3}" />
+
+<txp:variable name="video_in_question" />
+
+<txp:article_custom id='<txp:variable name="video_in_question" />'>
+<txp:title />
+<txp:custom_field name="Creator" />
+<txp:custom_field name="Video_URL" />
+<txp:custom_field name="Content_Type" />
+<txp:custom_field name="Duration" />
+<txp:custom_field name="Curation" />
+</txp:article_custom>
+
+
+<txp:mem_simple_form table="textpattern" id_field="id" id_insert="0" success_form="edit_article_success">
+
+<txp:mem_form_secret name="table_title" value="{title}" />
+
+<!-- http://xoxco.com/projects/code/tagsinput/ -->
+<txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
+
+
+<txp:mem_form_secret name="table_section" value="{section}" />
+<txp:mem_form_secret name="table_id" value="{ID}" />
+
+<txp:mem_form_submit />
+
+</txp:mem_simple_form>
+
+</txp:smd_query>
+
+
+</div>
+</div>

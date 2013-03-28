@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="twelve columns">
+<txp:if_category>
+<h2>Subject: "<txp:category title="1" />" </h2>
+<hr />
+
+</txp:if_category>
+
+    <div class="row">
+      
+      <div class="four columns">
+      
+		<!-- This variable will make it so articles are listed nested below their category -->
+		<txp:variable name="cat_menu_articles" value="0" /> 
+		<txp:output_form form="cat_menu" />
+      </div>
+      
+      <div class="eight columns">
+      	<div class="row">
+      	<txp:if_category>
+
+<!-- make current category and it's descendant categories into a variable with a comma deliminated value -->
+<txp:variable name="descendant_categories">	
+<txp:pax_grep from="'\t|\r|\n'" to="">
+<txp:category_list parent='<txp:category />' break=",">
+<txp:category />
+</txp:category_list>
+</txp:pax_grep>
+</txp:variable>
+
+<!-- <strong>All children of <txp:category />:</strong> <txp:variable name="descendant_categories" /> -->
+
+
+	<txp:chh_if_data>
+        <txp:rss_uc_article_list section="video" category='<txp:category />,<txp:variable name="descendant_categories" />' form="fa_video_card" limit="60" />
+        <txp:else />
+        Nothing to see here… <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&Section=video">Yet</a>!
+        
+        <hr />
+        
+
+	</txp:chh_if_data>
+
+        <txp:else />
+        choose cat from left
+        <txp:rss_uc_list section="video" linktosection="subject" />
+      	</txp:if_category>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+

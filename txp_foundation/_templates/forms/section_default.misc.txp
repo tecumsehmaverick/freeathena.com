@@ -1,0 +1,265 @@
+<txp:if_search>
+<div class="row">
+<div class="twelve columns">
+		<h1><txp:text item="search_results" /></h1>
+	    <txp:output_form form="search_results"/>
+</div>
+</div>
+</txp:if_search>
+
+
+
+
+<txp:if_search>
+
+<txp:else />
+
+<txp:cbe_frontauth show_logout="0">
+<!-- user logged in-->
+<txp:else />
+	<div class="six columns"><txp:mem_self_register_form form="snip_registration_form" /></div>
+	<div class="six columns"><txp:cbe_frontauth_box login_invite="" logout_invite="" /></div>
+</txp:cbe_frontauth>
+
+</txp:if_search>
+
+
+
+
+
+<!-- Collection off the menu for now... -->
+
+<!-- 
+<div class="row">
+
+<div class="twelve columns">
+<h3 class="responsive-headline subheader">Collections</h3>
+<h5></h5>
+<hr />
+</div>
+
+</div>
+ 
+
+<div class="row">
+
+
+<txp:article_custom section="collection">
+
+<a href="<txp:permlink />">
+<div class="four columns">
+<div class="panel">
+<h4 class="subheader"><txp:title /></h4>
+</div>
+</div>
+</a>
+
+</txp:article_custom>
+
+
+
+</div>
+<hr />
+-->
+
+<!-- Search Bar -->
+<img src="<txp:site_url />img/logo-mark-horizontal-medium.png" />
+        <div class="row">
+
+          <div class="twelve columns">
+            <div class="">
+
+            <form>
+              <div class="row collapse">
+
+                <div class="ten mobile-three columns">
+                	<input id="search-textbox" type="text" name="q"<txp:if_search> value="<txp:search_term />"</txp:if_search> placeholder="Type to Search" >
+                </div>
+
+
+                <div class="two mobile-one columns">
+	<input class="button postfix" type="submit" value="Search">
+
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+          </div>
+
+        </div>
+
+      <!-- End Search Bar -->
+
+<!-- -->
+<div class="row vertical-breathing-room">
+
+
+
+
+<div class="six columns">
+<h3 class="responsive-headline hide-for-small">Learn any Subject For Free.</h3>
+<h5 class="subheader">Watch Videos of University Courses, Documentary Films, Ted Talks, and More, Curated and Organized by Subject</h5>
+</div>
+
+
+<div class="four columns panel">
+<span class="logo hide-for-small">
+</span>
+</div>
+
+
+<div class="two columns">
+</div>
+
+
+
+</div>
+<!-- -->
+
+
+
+
+<!-- Little bit of class / little bit of fun -->
+<div class="sub-nav featured-navigation inner-shadow">
+
+<div class="row">
+<div class="twelve columns">
+<div id="carousel">
+<txp:category_list section="library" children="0" break="li" wraptag="ul" />
+</div>
+</div>
+</div>
+
+</div>
+<!-- -->
+
+
+
+
+
+
+
+
+
+<!-- 
+Technology
+-->
+
+
+
+<div class="woo">
+
+<!-- -->
+<div class="row">
+<div class="twelve columns">
+
+<h3 class="responsive-heading subheader"><a href="<txp:site_url />library?subject=technology">Technology</a></h3>
+
+</div>
+</div>
+
+<div class="row">
+
+<txp:article_custom section="video" form="fa_video_card" category="Technology" limit="4" />
+
+</div>
+<!-- -->
+
+
+</div>
+
+
+<!-- 
+hlkjhlaskjdhlasjkdhlasjkdhlaskjdhlaskjhdlakjshdlkjashldkhasd
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+<div class="woo">
+
+
+<!-- -->
+<div class="row">
+<div class="twelve columns">
+
+<h3 class="responsive-heading subheader"><a href="#">Lectures</a></h3>
+
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="container twelve columns">
+
+<txp:article_custom section="video" form="fa_video_card" Content_Type="Lectures" limit="4" />
+
+</div>
+</div>
+<!-- -->
+
+</div>
+
+
+
+
+
+
+<div class="woo">
+
+<!-- -->
+<div class="row">
+<div class="twelve columns">
+
+<h3 class="responsive-heading subheader"><a href="<txp:site_url />library?subject=languages">Languages</a></h3>
+
+</div>
+</div>
+
+
+
+<div class="row">
+<div class="container twelve columns">
+
+<txp:article_custom section="video" form="fa_video_card" category="Languages" limit="4" />
+ 
+</div>
+</div>
+<!-- -->
+
+</div>
+
+
+
+
+
+
+<!-- -->
+<div class="row">
+<div class="six columns">
+
+<h3 class="responsive-heading subheader"><a href="<txp:site_url />library/?Creator=Ted+Talks">Ted Talks</a></h3>
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="container twelve columns">
+
+<txp:article_custom section="video" form="fa_video_card" Creator="Ted Talks" limit="4" />
+
+</div>
+</div>
+<!-- -->

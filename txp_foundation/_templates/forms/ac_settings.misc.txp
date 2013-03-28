@@ -1,0 +1,69 @@
+<!-- To Edit Profile Information
+================================================== -->
+<txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
+<txp:mem_form type="smd_bio" redirect="profile" redirect_form="thanks">
+<txp:smd_bio_info show_empty="1">
+
+
+
+
+<!-- RealName / Display Name -->
+<div class="row collapse">
+
+<div class="one mobile-one columns">
+<span class="prefix"><i class="icon-user"></i></span>
+</div>
+
+<div class="eleven mobile-three columns">
+<input type="text" value="{smd_bio_RealName}" name="smd_bio_RealName" class="smd_bio_RealName" id="smd_bio_RealName" placeholder="Display Name">
+</div>
+
+</div>
+
+
+<!-- Email -->
+<div class="row collapse">
+
+<div class="one mobile-one columns">
+<span class="prefix"><i class="icon-envelope"></i></span>
+</div>
+
+<div class="eleven mobile-three columns">
+<input type="text" value="{smd_bio_email}" name="smd_bio_email" class="smd_bio_email" id="smd_bio_email" placeholder="Email address">
+</div>
+
+</div>            
+
+
+<!-- Twitter -->
+<div class="row collapse">
+
+<div class="one mobile-one columns">
+<span class="prefix"><i class="icon-twitter"></i></span>
+</div>
+
+<div class="eleven mobile-three columns">
+<input type="text" value="{smd_bio_twitter}" name="smd_bio_twitter" class="smd_bio_twitter" id="smd_bio_twitter" placeholder="Twitter handle">
+</div>
+
+</div>            
+
+
+
+<!-- <txp:smd_bio_data field="twitter" item="widget" />
+-->
+
+<textarea name="smd_bio_bio" class="smd_bio_bio" id="smd_bio_bio">{smd_bio_bio}</textarea>
+<!-- <txp:smd_bio_data field="bio" item="widget" />
+ -->
+
+
+<h5 class="subheader">Profile Settings</h5>
+
+<txp:mem_submit class="button primary" />	
+
+
+
+</txp:smd_bio_info>
+</txp:mem_form>
+</txp:smd_bio_author>

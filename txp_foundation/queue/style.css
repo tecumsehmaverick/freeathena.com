@@ -1,0 +1,52 @@
+#content{ width:600px; margin-left:80px;}
+
+.pin-panel{ border-bottom:1px solid #CCDCEF; min-height:100px; width:450px; margin-bottom:10px;}
+
+.pin-panel .bio{ 
+	width:320px; margin-left:50px;clear:left;
+	color:#666666;
+	letter-spacing:-0.03em;
+	overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:1.16667em;
+	font-size:11px;
+	padding-bottom:5px;
+	}
+
+.pin-panel .img-username{ float:left; width:340px; vertical-align:top}
+
+.pin-panel .img-username img.userImage{ float:left;-webkit-border-radius: 5px;}
+
+.pin-panel .buttons a{ margin-top:10px;}
+
+.pin-panel .buttons .btn-follow{ display:block; background:url(follow.png) top center no-repeat; height:38px; width:67px; float:right;}
+
+.pin-panel .buttons .btn-following{ display:block; background:url(following.png) top center no-repeat; height:38px; width:103px; float:right;}
+
+/*.pin-panel .buttons a:hover{ border:solid #333333 1px;}*/
+
+.pin-panel .user-title{
+	font-weight:bold;
+	margin-bottom:3px;
+	padding-left:10px;
+	float:left;
+}
+.pin-panel .user-title a.fullname{
+	color:#373529;
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	font-size:1.0em;
+	text-decoration:none;
+}
+.pin-panel .user-title a.username{
+	color:#105CB6;
+	font-family:Arial, Helvetica, sans-serif;
+	display:block;
+	text-decoration:none;
+	font-size:0.7em;
+}
+.pin-panel .user-title a:hover{
+	text-decoration:underline;
+}
+
+

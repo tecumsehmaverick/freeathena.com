@@ -1,0 +1,45 @@
+#products,.product,.wrapper,.image,.description {
+	float:left;
+}
+#products,.product {
+	width:100%;
+}
+.product {
+	padding:13px 0;
+	border-bottom:solid 1px #aaa;
+}
+.image {
+
+}
+.description {
+
+}
+.grid .product {
+	padding:10px;
+	text-align:center;
+	border:none;
+	margin-bottom:10px;
+}
+/*.grid .product,.grid .wrapper,.grid .image,.grid .description {
+	width:180px;
+}*/
+.grid .image {
+}
+.grid .wrapper {
+	padding:10px;
+	border:solid 1px #aaa;
+}
+.grid .description p {
+	display:none;
+}
+
+
+
+
+
+
+
+
+
+
+

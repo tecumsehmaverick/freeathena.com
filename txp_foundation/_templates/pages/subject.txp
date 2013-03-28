@@ -1,0 +1,24 @@
+<!-- <txp:rss_uc_list linktosection="subject" /> -->
+
+<txp:if_category>
+<h2>Subject: "<txp:category title="1" />" </h2>
+</txp:if_category>
+
+
+<txp:if_category>
+
+<div class="hfeed">
+
+<txp:rss_uc_article_list section="video">
+
+<p class="tags">Tags:
+<txp:rss_uc_filedunder section="video"
+linktosection="category" />
+</p>
+</txp:rss_uc_article_list>
+</div>
+
+</txp:if_category>
+
+
+

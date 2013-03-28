@@ -1,0 +1,114 @@
+  <div class="row">
+    <div class="twelve columns">
+
+
+
+      <!-- Header Content -->
+
+        <div class="row">
+
+          <div class="six columns">
+
+            <img src="<txp:site_url />img/logo-mark-500-500.png"><br>
+
+          </div>
+
+
+          <div class="six columns">
+
+            <h3 class="show-for-small">Welcome to Free Athena</h3>
+
+            <div class="">
+              <h2 class="hide-for-small">Welcome to Free Athena</h2>
+            <h4 class="subheader">Fusce ullamcorper mauris in eros dignissim molestie posuere felis blandit. Aliquam erat volutpat. Mauris ultricies posuere vehicula. Sed sit amet posuere erat. Quisque in ipsum non augue euismod dapibus non et eros. Pellentesque consectetur tempus mi iaculis bibendum. Ut vel dolor sed eros tincidunt volutpat ac eget leo.</h4>
+            </div>
+
+          <div class="row">
+              <div class="six mobile-two columns">
+                <a href="<txp:site_url />register" class="button even one-up">Register</a>
+              </div>
+
+              <div class="six mobile-two columns">
+                <a href="<txp:site_url />sign-in" class="button even one-up">Sign in</a>
+              </div>
+          </div>
+
+          </div>
+
+        </div>
+
+      <!-- End Header Content -->
+
+
+      <!-- Search Bar -->
+
+        <div class="row">
+
+          <div class="twelve columns">
+            <div class="radius panel">
+
+            <form>
+              <div class="row collapse">
+
+                <div class="ten mobile-three columns">
+                  <input type="text" placeholder="What are you studying?" />
+                </div>
+
+                <div class="two mobile-one columns">
+                  <a href="#" class="postfix button expand">Search</a>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+          </div>
+
+        </div>
+
+      <!-- End Search Bar -->
+
+
+      <!-- Thumbnails -->
+
+        <div class="row">
+
+        <div class="twelve columns">
+        <h4>New &amp; Notable</h4>
+        </div>
+        
+        
+        
+        
+        
+         <div class="twelve show-for-small columns">
+          <h3>Header</h3><hr>
+        </div>
+ 
+
+
+<txp:article_custom section="video">
+    <div class="three mobile-two columns">
+    <div class="panel">
+
+	<div class="video-image">
+		<a href="<txp:permlink />">
+        <span class="play" href="<txp:custom_field name="Video Url" />"><txp:title /></span>
+        </a>
+	</div>
+	<h4 class="responsive-heading"><txp:title /></h4>
+	    <span class="label"><txp:category1 title="1" /></span>
+	</div>	
+	</div>
+</txp:article_custom>	 
+
+
+  
+</div>
+
+      <!-- End Thumbnails -->
+
+
+    
+    </div>
+  </div>

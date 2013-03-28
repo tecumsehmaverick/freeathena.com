@@ -1,0 +1,180 @@
+      <footer class="row">
+        <div class="twelve columns"><hr />
+          <div class="row">
+ 
+            <div class="six columns">
+            
+
+              <p><a href="<txp:site_url />"><txp:site_name /></a> &copy; 2013 </p>
+              
+              
+              
+            </div>
+ 
+            <div class="six columns">
+<!-- <a href="#" class="" data-reveal-id="registerModal"><i class="icon-plus"></i> Register</a> -->
+
+ <!-- Search Bar -->
+
+
+
+            <form>
+              <div class="row collapse">
+
+                <div class="ten mobile-three columns">
+					<input id="search-textbox" type="text" name="q"<txp:if_search> value="<txp:search_term />"</txp:if_search> placeholder="What are you studying?" >
+
+                </div>
+
+                <div class="two mobile-one columns">
+                	<input class="button postfix" type="submit" value="Search">
+                </div>
+
+              </div>
+            </form>
+
+      <!-- End Search Bar -->
+
+
+            <nav role="navigation">
+<txp:section_list default_title='<txp:text item="home" />' include_default="1" exclude="submit, video, athenians" wraptag="ul" class="link-list right" break="">
+<li<txp:if_section name='<txp:section />'><txp:if_search><txp:else /><txp:if_category><txp:else /><txp:if_author><txp:else /> class="active"</txp:if_author></txp:if_category></txp:if_search></txp:if_section>>
+<txp:section title="1" link="1" />
+</li>
+</txp:section_list>
+</nav>
+
+            
+            </div>
+ 
+          </div>
+        </div>
+      </footer>
+ 
+    <!-- End Footer -->
+    
+    
+    
+    
+<div id="myModal" class="reveal-modal medium">
+
+<txp:mem_public_article success_form="successful_submission">
+
+<!-- Video URL -->
+<txp:mem_form_text name="custom_1" label="Video URL" break="" />
+
+
+<txp:mem_form_text name="Title" label="Title of Video" break="" />
+
+<txp:mem_form_select name="Category1" label="Category" items='<txp:category_list break=","><txp:category title="1"  /></txp:category_list>' values='<txp:category_list break=","><txp:category  /></txp:category_list>' selected='<txp:variable name="selected_category" />' /> 
+
+
+<!-- http://xoxco.com/projects/code/tagsinput/ -->
+<txp:mem_form_text name="Keywords" label="" break="" required="0" />
+
+
+<hr />
+
+<txp:mem_form_textarea name="Body" label="Description" break="" />
+
+<!-- Pending Status -->
+<txp:mem_form_secret name="Status" label="Status" value="3" />
+
+<txp:mem_form_secret name="publish_now" label="Posted" value="23 Jan 2013 12:00:00" />
+
+<txp:mem_form_secret name="Author" label="Author" value="<txp:cbe_frontauth_whois type="name" />" />
+<txp:mem_form_secret name="textile_body" value="1" label="textile body" />
+<txp:mem_form_secret name="textile_excerpt" value="1" label="textile excerpt" />
+<txp:mem_form_secret name="Section" value="video" label="Section" />
+<txp:mem_form_submit label="Add" class="button" />
+
+</txp:mem_public_article>
+
+<div id="result"></div>
+<a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+
+
+
+
+<div id="registerModal" class="reveal-modal [expand, xlarge, large, medium, small]">
+
+<img src="<txp:site_url />img/logo-mark-horizontal-medium.png" />
+
+<hr />
+
+<txp:output_form form="snip_registration_form" />
+
+
+<div id="result"></div>
+<a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Reveal "Add to Queue / Library" stuff-->
+<div id="addModal" class="reveal-modal [expand, xlarge, large, medium, small]">
+
+<txp:article>
+
+<h3 class="subheader"><txp:title /></h3>
+
+<!-- Queue Check: for smd_query to use to see if the title of the video to be queued has been taken -->
+<txp:variable name="queue_check" value='<txp:cbe_frontauth_whois type="name" />-<txp:article_id />' />
+
+<txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
+<txp:variable name="test" value="{title}" />
+
+<!-- Already in Queue-->
+<ul class="button-group even two-up baseline">
+<li><a class="disabled button"><i class="icon-plus-sign-alt"></i> Already in Queue</a></li>
+<li><a class="button"><i class="icon-plus-sign-alt"></i> Add to Library</a></li>
+</ul>
+
+<txp:else />
+
+<!-- Not yet in Queue-->
+<ul class="button-group even two-up baseline">
+<li>
+<txp:mem_public_article form="fa_add_card_form" success_form="add_to_queue_redirect" />
+</li>
+<li><a class="button"><i class="icon-plus-sign-alt"></i> Add to Library</a></li>
+</ul>
+
+</txp:smd_query>
+
+</txp:article>
+
+<div id="result"></div>
+<a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- -->
+
+
+
+
+
+
+
+
+
+<div id="shareModal" class="reveal-modal [expand, xlarge, large, medium, small]">
+<txp:article>
+<h3 class="subheader"><txp:title /></h3>
+<textarea>I laughed, I cried, I...</textarea>
+	<ul class="button-group even two-up baseline">
+	<li><a class="button right"><i class="icon-facebook"></i>Share on Facebook</a></li>
+	<li><a class="button right"><i class="icon-twitter"></i>Share on Twitter</a></li>
+	</ul>
+</txp:article>
+<div id="result"></div>
+<a class="close-reveal-modal">&#215;</a>
+</div>

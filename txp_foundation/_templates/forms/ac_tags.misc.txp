@@ -1,0 +1,28 @@
+<!-- Need this var for smd_queries -->
+<txp:variable name="logged_user" value='<txp:cbe_frontauth_whois type="name" />' />
+
+
+<div class="tags">
+
+<h4>Your Tags</h4>
+
+<p>Based on you amazing organizational skills.</p>
+
+<ul class="clearfix">
+
+<txp:if_different>
+<txp:smd_query query="SELECT id
+     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+
+	<txp:article_custom id="{id}">
+	
+	<txp:tru_tags_from_article break="li" linkpath="<txp:site_url />library?tag="  />
+	
+	</txp:article_custom>
+	
+</txp:smd_query>
+</txp:if_different>	
+
+</ul>
+
+</div>
