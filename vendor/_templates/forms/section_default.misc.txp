@@ -156,14 +156,14 @@ Technology
 <div class="row">
 <div class="twelve columns">
 
-<h3 class="responsive-heading subheader"><a href="<txp:site_url />library?subject=technology">Technology</a></h3>
+<h3 class="responsive-heading subheader"><a href="<txp:site_url />library?subject=history">History</a></h3>
 
 </div>
 </div>
 
 <div class="row">
-
-<txp:article_custom section="video" form="fa_video_card" category="Technology" limit="4" />
+<!-- column sizes declared in article form fa_video_card -->
+<txp:article_custom section="video" form="fa_video_card" category="History" limit="4" />
 
 </div>
 <!-- -->
