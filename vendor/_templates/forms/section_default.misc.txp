@@ -64,7 +64,8 @@
 
 <!-- Search Bar -->
         <div class="row">
-<img src="<txp:site_url />img/logo-mark-horizontal-medium.png" />
+
+		<img src="<txp:site_url />img/logo-mark-horizontal-medium.png" />
 
           <div class="twelve columns">
             <div class="">
