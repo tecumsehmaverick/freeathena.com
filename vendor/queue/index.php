@@ -5,7 +5,7 @@
 		
         <link rel="stylesheet" href="style.css" type="text/css" media="screen"/> 
         <script type="text/javascript" src="jquery-1.2.6.min.js"></script> 
-        <script type="text/javascript" src="http://joshuavaage.com/projects/freeathena.com/txp_foundation/queue/jquery.livequery.js"></script>
+        <script type="text/javascript" src="http://joshuavaage.com/projects/freeathena.com/vendor/queue/jquery.livequery.js"></script>
 		
         <script type="text/javascript"> 
            $(document).ready(function() { 
@@ -15,7 +15,7 @@
 						var parent  = $(this).parent();
 						var getID   =  parent.attr('id').replace('button_','');
 
-						$.post("http://joshuavaage.com/projects/freeathena.com/txp_foundation/queue/follow.php?id="+getID, {
+						$.post("http://joshuavaage.com/projects/freeathena.com/vendor/queue/follow.php?id="+getID, {
 			
 						}, function(response){
 							

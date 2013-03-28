@@ -1,17 +1,17 @@
 <!-- Included JS Files (Compressed) -->
-<script src="<txp:site_url />txp_foundation/foundation/javascripts/jquery.js"></script>
-<script src="<txp:site_url />txp_foundation/foundation/javascripts/foundation.min.js"></script>
+<script src="<txp:site_url />vendor/foundation/javascripts/jquery.js"></script>
+<script src="<txp:site_url />vendor/foundation/javascripts/foundation.min.js"></script>
   
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
-<script src="<txp:site_url />txp_foundation/tagsinput/jquery.tagsinput.js"></script>
+<script src="<txp:site_url />vendor/tagsinput/jquery.tagsinput.js"></script>
 <script>$('#table_keywords').tagsInput();</script>
 <script>$('#Keywords').tagsInput();</script>
 
 <!-- Initialize JS Plugins -->
-<script src="<txp:site_url />txp_foundation/foundation/javascripts/app.js"></script><!-- Initialize JS Plugins -->
+<script src="<txp:site_url />vendor/foundation/javascripts/app.js"></script><!-- Initialize JS Plugins -->
 
 <!-- After above core JS  do embedly stuff -->
-<script type="text/javascript" src="<txp:site_url />txp_foundation/ej/demo/js/jquery.embedly.js"></script>
+<script type="text/javascript" src="<txp:site_url />vendor/ej/demo/js/jquery.embedly.js"></script>
   <script>
       $('document').ready(function(){
         $('div.video').embedly({
@@ -48,8 +48,8 @@
 <!-- Thanks to: http://www.maurizioconventi.com/2012/06/05/a-fluid-layout-with-jquery-masonry/ -->
 <!-- More fiddling to do to integrate with Foundation well… -->
 <!--
-<script src="<txp:site_url />txp_foundation/masonry/jquery.masonry.min.js"></script>
-<script src="<txp:site_url />txp_foundation/masonry/fluid/js/base.js"></script>
+<script src="<txp:site_url />vendor/masonry/jquery.masonry.min.js"></script>
+<script src="<txp:site_url />vendor/masonry/fluid/js/base.js"></script>
 -->
 
 <!-- Initialize Masonry. This will trigger Masonry after all the media on the page has loaded
@@ -67,7 +67,7 @@ $(window).load(function(){
 
 <!-- http://farhadi.ir/projects/html5sortable/ -->
 <!--
-<script src="<txp:site_url />txp_foundation/sortable/jquery.sortable.js"></script>
+<script src="<txp:site_url />vendor/sortable/jquery.sortable.js"></script>
 
 
 <script>
@@ -78,7 +78,7 @@ $(window).load(function(){
 
 
 
-<script type="text/javascript" src="http://joshuavaage.com/projects/freeathena.com/txp_foundation/queue/jquery.livequery.js"></script>
+<script type="text/javascript" src="http://joshuavaage.com/projects/freeathena.com/vendor/queue/jquery.livequery.js"></script>
 		
         <script type="text/javascript"> 
            $(document).ready(function() { 
@@ -88,7 +88,7 @@ $(window).load(function(){
 						var parent  = $(this).parent();
 						var getID   =  parent.attr('id').replace('button_','');
 
-						$.post("http://joshuavaage.com/projects/freeathena.com/txp_foundation/queue/follow.php?id="+getID, {
+						$.post("http://joshuavaage.com/projects/freeathena.com/vendor/queue/follow.php?id="+getID, {
 			
 						}, function(response){
 							
@@ -102,10 +102,10 @@ $(window).load(function(){
 
 
 <!-- https://github.com/davatron5000/FitText.js -->
-<script src="<txp:site_url />txp_foundation/foundation/fittext/jquery.fittext.js"></script>
+<script src="<txp:site_url />vendor/foundation/fittext/jquery.fittext.js"></script>
 
 <!-- http://www.jqueryrain.com/?_kYfO9mA -->
-<script src="<txp:site_url />txp_foundation/quickflip/jquery.quickflip.source.js"></script>
+<script src="<txp:site_url />vendor/quickflip/jquery.quickflip.source.js"></script>
 
 <script>
 $(function() {
@@ -115,7 +115,7 @@ $(function() {
 
 <!-- https://github.com/paulirish/infinite-scroll -->
 <!--
-<script src="<txp:site_url />txp_foundation/infinatescroll/jquery.infinatescroll.js"></script>
+<script src="<txp:site_url />vendor/infinatescroll/jquery.infinatescroll.js"></script>
 
 <script>
 	

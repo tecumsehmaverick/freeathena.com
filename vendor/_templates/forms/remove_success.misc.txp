@@ -1,5 +1,5 @@
 <head>
-<link rel="stylesheet" href="<txp:site_url />txp_foundation/foundation/stylesheets/iframe.css">
+<link rel="stylesheet" href="<txp:site_url />vendor/foundation/stylesheets/iframe.css">
 </head>
 
 <!-- cbe_frontauth required as wrapper for this page template as it allows for the cbe_frontauth_whois tag to work which is what retirieves the current logged in user's name tfor use in the new article title -->

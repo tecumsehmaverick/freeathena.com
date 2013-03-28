@@ -1,5 +1,5 @@
 <head>
-<link rel="stylesheet" href="<txp:site_url />txp_foundation/foundation/stylesheets/iframe.css">
+<link rel="stylesheet" href="<txp:site_url />vendor/foundation/stylesheets/iframe.css">
 </head>
 
 <!-- cbe_frontauth required as wrapper for this page template as it allows for the cbe_frontauth_whois tag to work which is what retirieves the current logged in user's name tfor use in the new article title -->
@@ -38,7 +38,7 @@ This is the ID of the collected instance (article) of a card not the ID of the c
 <txp:mem_form_secret name="table_custom_2" value='{custom_2}' />    
 <txp:mem_form_secret name="integer_id" value="{id}" />
 <input type="submit" class="memSubmit" name="mem_form_submit" value="Remove">
-
+don't click! {id} {custom_3}
 </txp:mem_simple_form>
 
 </txp:smd_query>

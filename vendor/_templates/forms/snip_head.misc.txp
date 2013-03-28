@@ -10,18 +10,18 @@
 <link href='http://fonts.googleapis.com/css?family=Copse' rel='stylesheet' type='text/css'>
 
 <!-- Core styles-->
-<link rel="stylesheet" href="<txp:site_url />txp_foundation/foundation/stylesheets/foundation.css">
+<link rel="stylesheet" href="<txp:site_url />vendor/foundation/stylesheets/foundation.css">
 
-<link rel="stylesheet" href="<txp:site_url />txp_foundation/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="<txp:site_url />vendor/font-awesome/css/font-awesome.min.css">
 
 <!-- Custom styles and overrides -->
-<link rel="stylesheet" href="<txp:site_url />txp_foundation/foundation/stylesheets/app.css">
+<link rel="stylesheet" href="<txp:site_url />vendor/foundation/stylesheets/app.css">
 
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
-<link rel="stylesheet" href="<txp:site_url />txp_foundation/tagsinput/jquery.tagsinput.css">
+<link rel="stylesheet" href="<txp:site_url />vendor/tagsinput/jquery.tagsinput.css">
 
 <!-- Modern -->
-<script src="<txp:site_url />txp_foundation/foundation/javascripts/modernizr.foundation.js"></script>
+<script src="<txp:site_url />vendor/foundation/javascripts/modernizr.foundation.js"></script>
 
 <!-- HTML5/Media Queries support for IE < 9 (you can remove this section and the corresponding 'js' directory files if you don't intend to support IE < 9) -->
   <!--[if lt IE 9]>

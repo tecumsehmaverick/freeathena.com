@@ -1,6 +1,6 @@
 <?php
 
-	include("/nfs/c08/h02/mnt/119066/domains/joshuavaage.com/html/projects/freeathena.com/txp_foundation/queue/dbcon.php");
+	include("/nfs/c08/h02/mnt/119066/domains/joshuavaage.com/html/projects/freeathena.com/vendor/queue/dbcon.php");
 	$user_ip = $_SERVER['REMOTE_ADDR'];
 	
 	$user_id = 100;
