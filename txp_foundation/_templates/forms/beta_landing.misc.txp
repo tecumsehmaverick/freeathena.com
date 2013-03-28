@@ -18,7 +18,7 @@
 
 <div class="four columns centered">
 
-<form action="/projects/freeathena.com/ac/" method="post">
+<form action="<txp:site_url />" method="post">
 <input type="text" value="" name="p_userid" class="edit" id="name" placeholder="username">
 <input type="password" value="" name="p_password" class="edit" id="password" placeholder="password"><input type="submit" class="button" value="Login" class="publish">
 </form>
