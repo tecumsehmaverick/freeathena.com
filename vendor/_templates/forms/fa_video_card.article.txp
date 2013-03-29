@@ -74,27 +74,28 @@ How the Queue Check works:
 	
 
 <a href="<txp:permlink />" title="View now: <txp:title />">
-<h6 class="responsive-heading subheader capitalize"><txp:title /></h6>
+<h4 class="responsive-heading subheader capitalize"><txp:title /></h4>
 </a>
 	
-
+<hr />
 
 <!-- Subjects -->
-<h4 class="responsive-heading">
-<i class="icon-book"></i>
+<h5><i class="icon-book"></i> Subjects</h5>
+<p class="responsive-heading">
+
 <txp:rss_uc_filedunder linktosection="subject" />
-</h4>
+</p>
 	
 <hr />
 	
 
 <!-- Tags -->
-<p>
-<i class="icon-tags"></i>
+<h5><i class="icon-tags"></i> Tags</h5><p>
+
 <txp:tru_tags_from_article class="tag" />
 </p>
 
-	
+<hr />
 
 <!-- FA Card footer content -->
 <ul class="unstyled">
