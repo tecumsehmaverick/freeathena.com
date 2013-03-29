@@ -38,7 +38,12 @@
 
 <h3 class="subheader"><small>This has been: </small><txp:permlink><txp:title /></txp:permlink></h3>
 
-<h4 class="subheader"><small>Filed under:</small> <txp:article><txp:category1 title="1" /></txp:article></h4>
+
+<h4>
+<i class="icon-book"></i>
+<txp:rss_uc_filedunder linktosection="subject" class="responsive-heading" />
+</h4>
+
 
 <txp:if_custom_field name="Collections Belonging To">
 <txp:article_custom id='<txp:custom_field name="Collections Belonging To" />'> 

@@ -50,7 +50,9 @@ padding: 10px;
 border-radius: 3px;
 background-color: #eee; color: #666; font-size: 24px;}
 
-unstyled
+.unstyled {
+list-style: none;
+}
 
 
 .clearfix:before,
@@ -78,7 +80,7 @@ font-weight: 100;
 
 
 
-.woo {
+.athenian-stripes {
 margin-top: 20px;
 margin-bottom: 20px;
   -moz-box-shadow:    inset 0 0 8px #eee;
