@@ -28,7 +28,7 @@ How the Queue Check works:
 
 
 
-
+<!-- # of Columns? -->
 <txp:if_section name="default,tag">
 <div class='three columns'>
 <txp:else />
@@ -91,27 +91,25 @@ How the Queue Check works:
 </p>
 
 	
-	<!-- 
-	<a href="<txp:site_url />library/?subject=<txp:category1 />">
-	<div class="thumbnail-subject two-up "><i class="icon-tag"></i> <txp:category1 title="1" /></div>
-	</a>
-	-->
-
-	<!-- FA Card footer content -->
-	<ul class="unstyled">
-	<txp:chh_if_data><li>Creator: <txp:custom_field name="Creator" /></li></txp:chh_if_data>
-	<txp:chh_if_data><li>Content Type: <txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
-	<txp:chh_if_data><li>Duration: <txp:custom_field name="Duration" /></li></txp:chh_if_data>
-	</ul>
-
-	<hr />
 	
-	<p>
-	<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i>Edit</a>
-	</p>
-	</div>	
+<a href="<txp:site_url />library/?subject=<txp:category1 />">
+<div class="thumbnail-subject two-up "><i class="icon-tag"></i> <txp:category1 title="1" /></div>
+</a>
+	
+
+<!-- FA Card footer content -->
+<ul class="unstyled">
+<txp:chh_if_data><li>Creator: <txp:custom_field name="Creator" /></li></txp:chh_if_data>
+<txp:chh_if_data><li>Content Type: <txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
+<txp:chh_if_data><li>Duration: <txp:custom_field name="Duration" /></li></txp:chh_if_data>
+</ul>
+
+<hr />
+	
+<p>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="button"><i class="icon-pencil"></i>Edit</a>
+</p>
 
 
-
-
-<div><!-- /.article -->
+</div><!-- /.article -->
+</div><!-- column class -->
