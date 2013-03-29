@@ -1,3 +1,14 @@
+<div class="flex-video">
+	<div class="video">
+	<article>
+    <a href='<txp:custom_field name="Video_Url" />'></a>
+
+    </article>
+    </div>
+
+</div>    
+
+
 <div class="row">
 <div class="twelve columns">
 
@@ -10,15 +21,9 @@
 
 <div class="row">
 <div class="twelve columns">
-<div class="flex-video">
-	<div class="video">
-	<article>
-    <a href='<txp:custom_field name="Video_Url" />'></a>
 
-    </article>
-    </div>
+<!-- .flex-video div di live here previously. now it is up top for full screen flex test ala hulu -->
 
-</div>    
 </div>    
 </div>    
     
