@@ -128,7 +128,11 @@
 <div class="row">
 <div class="twelve columns">
 <div id="carousel">
-<txp:category_list section="library" children="0" break="li" wraptag="ul" />
+<ul>
+<txp:linklist category="home-page-curated-subjects">
+<li><a href="<txp:site_url />subject/<txp:link_url />"><txp:link_name /></a></li>
+</txp:linklist>
+</ul>
 </div>
 </div>
 </div>
