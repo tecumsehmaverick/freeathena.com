@@ -20,10 +20,13 @@
 </div>
 
 <ul>
+<!-- run enkoder on emal address show only to logged in users… -->
 <li><i class="icon-envelope"></i> {smd_bio_email}</li>
+<!-- pipe in latest tweet? -->
 <li><i class="icon-twitter"></i> {smd_bio_twitter}</li>
 </ul>
 
+<h4>The Skinny</h4>
 <p class="lead">{smd_bio_bio}</p>
 
 
@@ -34,11 +37,12 @@
 <hr />
 <h4>Achievements?</h4>
 <i class="icon-certificate"></i> You have collected 
+<a href="#simple2">
 <txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
 {count}
 </txp:smd_query>
 cards!
-
+</a>
 
 </div>
 
