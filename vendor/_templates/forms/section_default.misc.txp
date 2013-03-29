@@ -150,7 +150,7 @@ Technology
 
 
 
-<div class="woo">
+<div class="athenian-stripes">
 
 <!-- -->
 <div class="row">
@@ -161,6 +161,8 @@ Technology
 </div>
 </div>
 
+
+
 <div class="row">
 <!-- column sizes declared in article form fa_video_card -->
 <txp:article_custom section="video" form="fa_video_card" category="History" limit="4" />
@@ -169,14 +171,7 @@ Technology
 <!-- -->
 
 
-</div>
-
-
-<!-- 
-hlkjhlaskjdhlasjkdhlasjkdhlaskjdhlaskjhdlakjshdlkjashldkhasd
-
-
--->
+</div><!-- .athenian-stripes -->
 
 
 
@@ -187,8 +182,9 @@ hlkjhlaskjdhlasjkdhlasjkdhlaskjdhlaskjhdlakjshdlkjashldkhasd
 
 
 
-<div class="woo">
 
+
+<div class="athenian-stripes">
 
 <!-- -->
 <div class="row">
