@@ -78,7 +78,7 @@ $(window).load(function(){
 
 
 
-<script type="text/javascript" src="http://joshuavaage.com/projects/freeathena.com/vendor/queue/jquery.livequery.js"></script>
+<script type="text/javascript" src="<txp:site_url />vendor/queue/jquery.livequery.js"></script>
 		
         <script type="text/javascript"> 
            $(document).ready(function() { 
