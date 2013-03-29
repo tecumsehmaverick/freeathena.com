@@ -3,7 +3,9 @@
 <txp:tru_tags_current_archive_tag />
 
 <h2>Tag: {current tag name go here}</h2>
-<txp:tru_tags_current_archive_tag />
+<i class="icon-share"></i> 
+<i class="icon-facebook"></i> <i class="icon-twitter"></i>
+
 <hr />
 </div>
 </div>
