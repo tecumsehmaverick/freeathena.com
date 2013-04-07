@@ -1,0 +1,21 @@
+<txp:adi_gps name="name" quiet="1" />
+
+<div class="row">
+<div class="twelve columns">
+
+<h1><txp:variable name="name" /></h1>
+<hr />
+</div>
+</div>
+
+
+<div class="row">
+<div class="twelve columns">
+<div class="row">
+
+
+<txp:article_custom Creator='<txp:variable name="name" />' form="fa_video_card" />
+
+</div>
+</div>
+</div>
