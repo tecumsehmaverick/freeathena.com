@@ -23,6 +23,23 @@ background-color: #d6e3a1;
 
 /* .lid-controls {display: none;} */
 
+/* a {color: green;} */
+
+.collect {text-align: right;}
+
+/* When there is a failure in returning the video thumbnail from embed.ly, our script displays the video title and url as a link in it's place. These two rules first hide the link and second force a block height and display a bg image   */
+.video-image a {display: none;}
+.video-image {
+background-color: #fff;
+box-shadow: inset 1px 1px 10px 2px #ddd;
+display: block;
+height: 130px;
+background-image: url(../../../img/spinner.gif);
+background-repeat: no-repeat;
+background-position: center;
+}
+
+
 
 .circle {
   display: block;
