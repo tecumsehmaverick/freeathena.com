@@ -28,6 +28,9 @@
 
       
 
+	<txp:if_section name="creator">
+  	<txp:output_form form="section_creator" />
+	</txp:if_section>
 
 	<txp:if_section name="subject">
   	<txp:output_form form="section_subject" />
