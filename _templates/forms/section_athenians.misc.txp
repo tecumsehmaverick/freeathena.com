@@ -1,4 +1,11 @@
+<txp:adi_gps name="profile" quiet="1" />
 
+<h5>Last 20 From </h5>
+<ul>
+<txp:article_custom author='<txp:variable name="profile" />' limit="20" section="video">
+<li><txp:title /></li>
+</txp:article_custom>
+</ul>
 
 <div class="row">
 <div class="twelve columns">
