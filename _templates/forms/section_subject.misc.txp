@@ -1,15 +1,42 @@
 <div class="row">
   <div class="twelve columns">
+
+
 <txp:if_category>
-<h2>Subject: "<txp:category title="1" />" </h2>
+<h1><txp:category title="1" /> </h1>
 <hr />
+<txp:else />
+<h1>Browse Free Athena by Subject</h1>
+
+<hr />
+
+<h5>User Subjects</h5>
+<div class="subjects">
+
+<ul class="clearfix">
+
+<txp:smd_query query="SELECT id, custom_3
+     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+
+	<txp:article_custom id="{custom_3},">
+	<txp:if_different>
+		<li><a href="<txp:site_url />subject/<txp:category1 />" class="capitalize"><i class="icon-book"></i> <txp:category1 /></a></li>
+	</txp:if_different>
+	</txp:article_custom>
+	
+</txp:smd_query>
+
+</ul>
+
+</div>
 
 </txp:if_category>
 
     <div class="row">
       
       <div class="four columns">
-      
+		<h5>Subjects Sitewide Hierarchically </h5>
+		<h6><txp:if_category>Current subject (and children) highlighted in the tree</txp:if_category></h6>
 		<!-- This variable will make it so articles are listed nested below their category -->
 		<txp:variable name="cat_menu_articles" value="0" /> 
 		<txp:output_form form="cat_menu" />
@@ -34,7 +61,7 @@
 	<txp:chh_if_data>
         <txp:rss_uc_article_list section="video" category='<txp:category />,<txp:variable name="descendant_categories" />' form="fa_video_card" limit="60" />
         <txp:else />
-        Nothing to see here… <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&Section=video">Yet</a>!
+        Nothing to see here… <a href="<txp:site_url />textpattern/index.php?event=article&Section=video">Yet</a>!
         
         <hr />
         
@@ -42,9 +69,15 @@
 	</txp:chh_if_data>
 
         <txp:else />
-        choose cat from left
+		
+		<!-- else, because not cat / No category selected so show this list-->
+		<h5>Subjects Sitewide Alphabetically w/ Count</h5>
+        <div class="subjects">
         <txp:rss_uc_list section="video" linktosection="subject" />
+        </div>
+        
       	</txp:if_category>
+        
         </div>
       </div>
 
