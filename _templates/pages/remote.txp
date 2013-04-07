@@ -18,7 +18,7 @@
 <txp:mem_form_secret name="table_custom_3" value='<txp:article_id />' />
 <txp:mem_form_secret name="table_custom_2" value='<txp:title />' />
 
-<input type="submit" class="memSubmit" name="mem_form_submit" value="Add">
+<input type="submit" class="memSubmit" name="mem_form_submit" value="Collect">
 
 </txp:mem_simple_form>
 <i class="icon-plus-sign-alt"></i>
