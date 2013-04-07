@@ -29,7 +29,7 @@ How the Queue Check works:
 
 
 <!-- # of Columns? -->
-<txp:if_section name="default,tag">
+<txp:if_section name="default,tag, creator">
 <div class='three columns'>
 <txp:else />
 <div class='four columns'>
@@ -80,36 +80,30 @@ How the Queue Check works:
 <hr />
 
 <!-- Subjects -->
-<h5><i class="icon-book"></i> Subjects</h5>
 <p class="responsive-heading">
-
-<txp:rss_uc_filedunder linktosection="subject" />
-</p>
+<i class="icon-book"></i> <txp:rss_uc_filedunder linktosection="subject" /></p>
 	
 <hr />
 	
 
 <!-- Tags -->
-<h5><i class="icon-tags"></i> Tags</h5><p>
-
-<txp:tru_tags_from_article class="tag" />
-</p>
+<p><i class="icon-tags"></i> <txp:tru_tags_from_article class="tag" /></p>
 
 <hr />
 
 <!-- FA Card footer content -->
 <ul class="unstyled">
-<txp:chh_if_data><li>Creator: <txp:custom_field name="Creator" /></li></txp:chh_if_data>
+<txp:chh_if_data><li>Creator: <a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></li></txp:chh_if_data>
 <txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data>
 
-<txp:chh_if_data><li>Content Type: <txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
-<txp:chh_if_data><li>Duration: <txp:custom_field name="Duration" /></li></txp:chh_if_data>
+<txp:chh_if_data><li>A <txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
+<txp:chh_if_data><li><i class="icon-time"></i> <txp:custom_field name="Duration" /></li></txp:chh_if_data>
 </ul>
 
 <hr />
 
 <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
-
+<i class="icon-user"></i> <a href="<txp:site_url />athenians?profile=jeremy"><txp:author /></a>
 
 </div><!-- /.article -->
 </div><!-- column class -->
