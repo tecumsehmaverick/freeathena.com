@@ -4,6 +4,7 @@
 <div class="twelve columns">
 
 <h1><txp:variable name="name" /></h1>
+<txp:output_form form="share_this" />
 <hr />
 </div>
 </div>
