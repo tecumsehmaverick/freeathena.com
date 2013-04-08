@@ -1,11 +1,52 @@
 <txp:adi_gps name="profile" quiet="1" />
 
-<h5>Last 20 From </h5>
+
+<txp:smd_bio_author author='<txp:variable name="profile" />'>
+<txp:smd_bio_info show_empty="1">
+
+
+<div class="row">
+<div class="twelve columns">
+
+
+<h5>Last 20 From {smd_bio_RealName}</h5>
 <ul>
 <txp:article_custom author='<txp:variable name="profile" />' limit="20" section="video">
 <li><txp:title /></li>
 </txp:article_custom>
 </ul>
+
+
+<ul>
+<li><i class="icon-envelope"></i> {smd_bio_email}</li>
+<li><i class="icon-twitter"></i> {smd_bio_twitter}</li>
+</ul>
+
+<p class="lead">{smd_bio_bio}</p>
+
+
+
+</txp:smd_bio_info>
+</txp:smd_bio_author>
+
+
+
+<h3><txp:variable name="profile" /> queue</h3>
+<txp:article_custom author="<txp:variable name="profile" />" section="queue">
+<a href="<txp:permlink />"><txp:title /></a>
+<hr />
+</txp:article_custom>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
 
 <div class="row">
 <div class="twelve columns">
