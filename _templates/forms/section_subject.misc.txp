@@ -4,13 +4,14 @@
 
 <txp:if_category>
 <h1><txp:category title="1" /> </h1>
+<txp:output_form form="share_this" />
 <hr />
 <txp:else />
 <h1>Browse Free Athena by Subject</h1>
 
 <hr />
 
-<h5>User Subjects</h5>
+<h4>Your Subjects <small>based on your card collection</small></h4>
 <div class="subjects">
 
 <ul class="clearfix">
@@ -32,11 +33,20 @@
 
 </txp:if_category>
 
+
+
+<txp:variable name="current_subject" />
+
+<txp:rss_uc_list parent='<txp:variable name="current_subject" />' />
+
+<hr />
+
     <div class="row">
       
       <div class="four columns">
 		<h5>Subjects Sitewide Hierarchically </h5>
 		<h6><txp:if_category>Current subject (and children) highlighted in the tree</txp:if_category></h6>
+
 		<!-- This variable will make it so articles are listed nested below their category -->
 		<txp:variable name="cat_menu_articles" value="0" /> 
 		<txp:output_form form="cat_menu" />
