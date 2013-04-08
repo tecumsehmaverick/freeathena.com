@@ -28,6 +28,7 @@ background-color: #d6e3a1;
 .collect {text-align: right;}
 
 /* When there is a failure in returning the video thumbnail from embed.ly, our script displays the video title and url as a link in it's place. These two rules first hide the link and second force a block height and display a bg image   */
+/*
 .video-image a {display: none;}
 .video-image {
 background-color: #fff;
@@ -38,6 +39,7 @@ background-image: url(../../../img/spinner.gif);
 background-repeat: no-repeat;
 background-position: center;
 }
+*/
 
 
 
@@ -109,6 +111,17 @@ background-color: #fff;
 
 
 
+.share-button {
+cursor: pointer;
+border: 1px solid #eee;
+padding: 5px;
+border-radius: 3px;
+}
+
+.share-button:hover {
+box-shadow: -1px 1px 2px 1px #eee;
+}
+
 
 
 /* User Tags & Subjects */
@@ -132,8 +145,7 @@ line-height: 45px;
 
 .subjects a {
 color: #666;
-background-color: #f2f2f2;
-border: solid 1px #e6e6e6;
+background-color: #d5e795;
 border-radius: 3px;
 padding: 10px;
 margin-right: 5px;
