@@ -5,10 +5,15 @@
 <head>
 <txp:output_form form="snip_head" />
 
-<!-- Need this var for smd_queries -->
+<!-- logged_user variable -->
 <txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
 <txp:variable name="logged_user" value='<txp:cbe_frontauth_whois type="name" />' />
 </txp:smd_bio_author>
+
+<!-- current_subject variable -->
+<txp:variable name="current_subject">
+<txp:category />
+</txp:variable>
 
 </head>
 
@@ -17,7 +22,7 @@
 
 <div class="for-now">
 <div class="row">
-<div class="eight columns"><a href="<txp:site_url />">Free Athena {logo}</a> | <a href="<txp:site_url />subject">subject</a> | <a href="<txp:site_url />tag">tag</a></div>
+<div class="eight columns"><a href="<txp:site_url />">Free Athena<!-- <img src="<txp:site_url />img/logo-mark-horizontal-small.png" alt="Free Athena, Education for Everyone" /> --></a> | Browse <a href="<txp:site_url />subject">subject</a> | <a href="<txp:site_url />tag">tag</a></div>
 <div class="four columns">
 <a href="<txp:site_url />ac" class="tote"><txp:glx_gravatar email='<txp:cbe_frontauth_whois type="email" />' size="30" /> 
 <txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query></a>
