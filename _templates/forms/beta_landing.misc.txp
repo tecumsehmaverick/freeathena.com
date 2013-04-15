@@ -10,7 +10,7 @@
 
 <div class="row">
 <div class="four columns centered">
-<a href="#"><h1><img src="<txp:site_url />txp_foundation/foundation/images/brand/icon-and-wordmark-color.png" alt="Welcome to Free Athena" /></h1></a>
+<a href="#"><h1><img src="<txp:site_url />vendor/foundation/images/brand/icon-and-wordmark-color.png" alt="Welcome to Free Athena" /></h1></a>
 </div>
 </div>
 
@@ -18,10 +18,13 @@
 
 <div class="four columns centered">
 
-<form action="<txp:site_url />" method="post">
-<input type="text" value="" name="p_userid" class="edit" id="name" placeholder="username">
-<input type="password" value="" name="p_password" class="edit" id="password" placeholder="password"><input type="submit" class="button" value="Login" class="publish">
-</form>
+<txp:cbe_frontauth_if_logged>
+   // Private content
+<txp:else />
+<h3>Sign In To Free Athena</h3>
+   <txp:cbe_frontauth_box login_invite="" /> or <a href="<txp:site_url />register">Register</a>
+   // Benefits of registering listed here
+</txp:cbe_frontauth_if_logged>
 
 
 

@@ -124,7 +124,10 @@
 	</txp:if_section>	
 
 	<txp:if_section name="sign-in">
+
+	test
 	<txp:output_form form="section_sign_in" />
+
 	</txp:if_section>	
 
 	<txp:if_section name="register">
