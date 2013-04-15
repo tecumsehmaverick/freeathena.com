@@ -1,3 +1,7 @@
+<hr />
+
+<txp:mem_form_error />
+
 <fieldset>
 <legend>Register</legend>
 <txp:mem_form_text name="RealName" label="Full Name" />

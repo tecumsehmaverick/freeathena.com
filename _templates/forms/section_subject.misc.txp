@@ -45,7 +45,7 @@
       
       <div class="four columns">
 		<h5>Subjects Sitewide Hierarchically </h5>
-		<h6><txp:if_category>Current subject (and children) highlighted in the tree</txp:if_category></h6>
+		<h6><txp:if_category>Current subject (and children if any) highlighted in the tree</txp:if_category></h6>
 
 		<!-- This variable will make it so articles are listed nested below their category -->
 		<txp:variable name="cat_menu_articles" value="0" /> 

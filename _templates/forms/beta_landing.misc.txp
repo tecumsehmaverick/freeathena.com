@@ -18,11 +18,16 @@
 
 <div class="four columns centered">
 
+<txp:if_section name="register">
+	<txp:output_form form="snip_registration_form" />
+</txp:if_section>	
+
+
 <txp:cbe_frontauth_if_logged>
    // Private content
 <txp:else />
 <h3>Sign In To Free Athena</h3>
-   <txp:cbe_frontauth_box login_invite="" /> or <a href="<txp:site_url />register">Register</a>
+   <txp:cbe_frontauth_box login_invite="" /><hr /> or <a href="<txp:site_url />register">Register</a>
    // Benefits of registering listed here
 </txp:cbe_frontauth_if_logged>
 
