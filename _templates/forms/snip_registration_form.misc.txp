@@ -1,6 +1,9 @@
 <!-- Register -->
 
 <h3>Register</h3>
+
+<txp:mem_form_error />
+
 <txp:mem_self_register_form label="" login_url="/register"  thanks_form="snip_registered_form" email_form="welcome_email">
 
 <div class="hide">
@@ -18,4 +21,4 @@
 
 <hr />
 
-<a href="<txp:site_url />sign-in">Sign-in</a> | <a href="#">Lost Password?</a>
+<a href="<txp:site_url />sign-in" >Sign-in</a> | <a href="#">Lost Password?</a>

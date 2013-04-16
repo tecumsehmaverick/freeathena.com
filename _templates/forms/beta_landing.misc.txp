@@ -1,3 +1,10 @@
+<txp:cbe_frontauth show_login="0" login_redir="ac" logout_redir="sign-in" >
+
+<txp:else />
+
+
+
+
 <!doctype html>
 <html lang="<txp:lang />">
 
@@ -26,7 +33,7 @@
 <txp:if_section name="sign-in">
 <h3>Sign In To Free Athena</h3>
 <txp:cbe_frontauth_box login_invite="" />
-<hr /> or <a href="<txp:site_url />register">Register</a>
+<hr /><a href="<txp:site_url />register">Register</a>
    // Benefits of registering listed here
 </txp:if_section>
 
@@ -50,3 +57,4 @@
 
 </body>
 </html>
+</txp:cbe_frontauth>

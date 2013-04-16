@@ -1,4 +1,8 @@
 <txp:cbe_frontauth_if_connected>
+
+<txp:cbe_frontauth_redirect
+    for="login"
+    value="ac" />
 <!doctype html>
 <html lang="<txp:lang />">
 

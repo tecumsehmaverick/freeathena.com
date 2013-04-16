@@ -19,14 +19,6 @@
 <img src="http://www.gravatar.com/avatar/<txp:php>echo md5( strtolower( trim( "{smd_bio_email}" ) ) );</txp:php>?s=75?d=http%3A%2F%2Feduhou.se/img/person-no-image.jpg" class="thumbnail" />
 </div>
 
-<ul>
-<!-- run enkoder on emal address show only to logged in users… -->
-<li><i class="icon-envelope"></i> {smd_bio_email}</li>
-<!-- pipe in latest tweet? -->
-<li><i class="icon-twitter"></i> {smd_bio_twitter}</li>
-</ul>
-
-<h4>The Skinny</h4>
 <p class="lead">{smd_bio_bio}</p>
 
 
@@ -44,6 +36,32 @@
 cards!
 </a>
 
+<hr />
+
+<div class="panel">
+<txp:article_custom section="queue" author='<txp:cbe_frontauth_whois type="name" />' limit="999" sort="posted desc">
+
+
+
+
+
+<txp:variable name="queued_id" value='<txp:custom_field name="Queued_ID" />' />
+
+
+<!--
+<txp:smd_query query="SELECT title
+     FROM textpattern WHERE custom_3 = '?queued_id'">
+{title}
+</txp:smd_query>
+-->
+
+
+<a href='<txp:site_url /><txp:custom_field name="Queued_ID" />'><txp:custom_field name="Queue_Title" /></a><txp:category /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class="label radius">
+<i class="icon-pencil"></i></a>
+<hr />
+</txp:article_custom>
+</div>
+
 </div>
 
 
@@ -53,11 +71,12 @@ cards!
 
 <div class="tags">
 
+<txp:chh_if_data>
+<ul class="clearfix">
+
 <h4>Your Tags</h4>
 
 <p>Based on you amazing organizational skills.</p>
-
-<ul class="clearfix">
 
 <txp:if_different>
 <txp:smd_query query="SELECT id
@@ -70,10 +89,12 @@ cards!
 	</txp:article_custom>
 	
 </txp:smd_query>
-</txp:if_different>	
+</txp:if_different>
+<txp:else />
+collect some cards before tagging	
 
 </ul>
-
+</txp:chh_if_data>
 </div>
 
 

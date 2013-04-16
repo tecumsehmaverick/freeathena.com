@@ -1,14 +1,7 @@
-email!!!!!!!!!!
+Hello <txp:mem_username />,
 
-<txp:mem_name />
-<txp:mem_username />
-<txp:mem_email />
-<txp:mem_password />
-<txp:mem_sitename />
-<txp:mem_siteurl />
-<txp:mem_loginurl />
-<txp:mem_admin_name />
-<txp:mem_admin_email />
+Your registration at Free Athena was successful. 
 
+Your password is: <txp:mem_password />
 
-the boss footnote
+Login at http://freeathena.com/sign-in

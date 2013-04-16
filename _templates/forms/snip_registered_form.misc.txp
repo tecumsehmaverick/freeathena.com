@@ -1,13 +1,9 @@
 <hr />
 
-<p>"You have successfully created an account on Free Athena!  We sent a temporary password to the email you entered on the form.  Please collect this password from your email and <a href="<txp:site_url />sign-in">Sign-In</a> on Free Athena.   <em>(You can personalize your password in "profile")."</em></p>
+<h4><txp:mem_username />,</h4>
 
+<p class="lead">You have successfully created an account on Free Athena!</p>
 
-<p>
-<h4>Captured form data that can be used in the copy above to personalize the message…</h4>
+<p>We sent a temporary password to <strong><txp:mem_email /></strong>.  Please collect this password from your email and <a href="<txp:site_url />sign-in">Sign-In</a>.</p>
 
-username: <txp:mem_username /><br />
-email: <txp:mem_email /><br />
-
-
-</p>
+<p><em>You can personalize your password once your in.</em></p>

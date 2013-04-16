@@ -14,9 +14,21 @@
 <span class="prefix"><i class="icon-user"></i></span>
 </div>
 
+<txp:variable name="user_has_display_name" value="{smd_bio_RealName}" />
+
+<txp:if_variable name="user_has_display_name" value="no_display_name">
+<div class="eleven mobile-three columns">
+<!-- no display name-->
+<input type="text" value="" name="smd_bio_RealName" class="smd_bio_RealName" id="smd_bio_RealName" placeholder="Pick a Display Name">
+</div>
+<txp:else />
+<!-- yes has display name-->
 <div class="eleven mobile-three columns">
 <input type="text" value="{smd_bio_RealName}" name="smd_bio_RealName" class="smd_bio_RealName" id="smd_bio_RealName" placeholder="Display Name">
 </div>
+</txp:if_variable>
+
+
 
 </div>
 
@@ -58,10 +70,7 @@ Twitter
 <!-- <txp:smd_bio_data field="bio" item="widget" />
  -->
 
-
-<h5 class="subheader">Profile Settings</h5>
-
-<txp:mem_submit class="button primary" />	
+<txp:mem_submit class="button success" />	
 
 
 
@@ -76,9 +85,10 @@ Twitter
 
 
 
-<!-- Rest password option: -->
+<!-- Rest password option: 
 
 test reset (lost )password form. better for a public page for user not logged in:
 
 <txp:mem_self_password_reset_form form_mail="reset_password_form"> <txp:mem_form_text name="name" label="Username:" /> <br /> <txp:mem_form_text name="email" label="Email Address:" /> <br /> <txp:mem_form_submit name="submit" label="Submit" />
 </txp:mem_self_password_reset_form>
+-->
