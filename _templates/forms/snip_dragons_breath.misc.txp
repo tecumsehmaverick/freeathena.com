@@ -200,7 +200,7 @@ $('.tags a').prepend('<i class="icon-tag"></i>');
 
 
 <!-- do AJAX on form submit -->
- <script src="http://malsup.github.com/jquery.form.js"></script> 
+<script src="http://malsup.github.com/jquery.form.js"></script> 
  
     <script> 
         // wait for the DOM to be loaded 
@@ -210,9 +210,7 @@ $('.tags a').prepend('<i class="icon-tag"></i>');
                 alert("Thank you for your comment!"); 
             }); 
         }); 
-    </script> 
-    
-    
+    </script>
     
     <!-- Adding placeholder attributes and values to 
 	input fields _generated_ by mem_self_register, mem_simple_form, mem_form, etc…
@@ -221,6 +219,8 @@ $('.tags a').prepend('<i class="icon-tag"></i>');
 	<script>
 	$('input.account-username').attr('placeholder', 'Desired Username');
 	$('input.account-email').attr('placeholder', 'Your Email Address');
+	$('textarea.smd_bio_bio').attr('placeholder', 'Write a little something about yourself');	
+
 	</script>
 	<!-- -->
 	

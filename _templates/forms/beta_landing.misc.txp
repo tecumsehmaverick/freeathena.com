@@ -25,6 +25,7 @@
 
 <txp:if_section name="sign-in">
 <h3>Sign In To Free Athena</h3>
+<txp:cbe_frontauth_box login_invite="" />
 <hr /> or <a href="<txp:site_url />register">Register</a>
    // Benefits of registering listed here
 </txp:if_section>

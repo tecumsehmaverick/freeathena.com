@@ -2,7 +2,7 @@
 <div class="twelve columns">
 
 
-<h3 class=""><txp:cbe_frontauth_whois type="RealName" /></h3>
+<h3 class=""><txp:cbe_frontauth_whois type="name" /></h3>
 <hr />
 
 
