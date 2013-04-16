@@ -4,12 +4,14 @@
 
 
 <div class="row">
-<div class="twelve columns">
+<div class="six columns">
 
 
 <txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
 
 <h3 class="subheader">Editing: {title}</h3>
+
+
 
 <!-- Make var  -->
 <txp:variable name="video_in_question" value="{custom_3}" />
@@ -43,6 +45,11 @@
 
 </txp:smd_query>
 
-
 </div>
+
+<div class="six columns">
+<txp:article_custom id="1659" form="fa_video_card" />
+</div>
+
+
 </div>
