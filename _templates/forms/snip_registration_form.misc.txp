@@ -1,11 +1,32 @@
 <hr />
 
-<txp:mem_form_error />
+<txp:mem_self_register_form from="admin@freeathena.com" subject="Free Athena Account Info" thanks_form="snip_registered_form"> 
 
 <fieldset>
 <legend>Register</legend>
+
 <txp:mem_form_text name="RealName" label="Full Name" />
-<txp:mem_form_text name="name" label="Username" /><br /> <br />
-<txp:mem_form_email name="email" label="E-Mail" /><br /> <br />
+
+<txp:mem_form_text name="name" label="Username" />
+
+<txp:mem_form_email name="email" label="E-Mail" />
+
 <txp:mem_form_submit />
+
 </fieldset>
+
+</txp:mem_self_register_form>
+
+<hr />
+
+
+<h2>Register</h2>
+<txp:mem_self_register_form label="" login_url="<txp:site_url />sign-in" thanks="You have successfully created an account on Free Athena!  We sent a temporary password to the email you entered on the form.  Please collect this password from your email and Sign-In on Free Athena.">
+  <div class="input">Real Name<br>
+  <txp:mem_form_text name="RealName" label="" break="" required="0" /></div>
+  <div class="input">Username<br>
+  <txp:mem_form_text name="name" label="" break="" required="1" /></div>
+  <div class="input">Email<br>
+  <txp:mem_form_email name="email" label="" break="" required="1" /></div>
+  <txp:mem_form_submit label="Register" button="1">Register</txp:mem_form_submit>
+</txp:mem_self_register_form>
