@@ -211,3 +211,34 @@ $('.tags a').prepend('<i class="icon-tag"></i>');
             }); 
         }); 
     </script> 
+    
+    
+    
+    <!-- Adding placeholder attributes and values to 
+	input fields _generated_ by mem_self_register, mem_simple_form, mem_form, etc…
+	Pretty junky solution - wrap this up another way…
+	-->	
+	<script>
+	$('input.account-username').attr('placeholder', 'Desired Username');
+	$('input.account-email').attr('placeholder', 'Your Email Address');
+	</script>
+	<!-- -->
+	
+	
+	<!-- Adapting the text input for the username field on the registration form 
+	so that spaces and non-alphanumeric characters are restricted. Still unable to update
+	the contents of pasted text i.e. "Donkey Kong".
+	-->
+	<script src="<txp:site_url />js/jquery.alphanumeric.js"></script>
+	<script>$('input#name').alphanumeric();</script>
+	<script>$('input.nospace').keydown(function(e) {
+ 
+ 		// KeyCode Reference: http://www.foreui.com/articles/Key_Code_Table.htm
+        // alert (e.keyCode); 
+ 
+	if (e.keyCode == 32) {
+        return false;
+	}
+	});
+	</script>
+

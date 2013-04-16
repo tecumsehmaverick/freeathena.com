@@ -1,32 +1,21 @@
-<hr />
+<!-- Register -->
 
-<txp:mem_self_register_form from="admin@freeathena.com" subject="Free Athena Account Info" thanks_form="snip_registered_form"> 
+<h3>Register</h3>
+<txp:mem_self_register_form label="" login_url="/register"  thanks_form="snip_registered_form" email_form="welcome_email">
 
-<fieldset>
-<legend>Register</legend>
+<div class="hide">
+<txp:mem_form_text name="RealName" label="" default="no_display_name" /><br /> <br />
+</div>
 
-<txp:mem_form_text name="RealName" label="Full Name" />
+<txp:mem_form_text break="" name="name" label="" class="account-username nospace word" />
 
-<txp:mem_form_text name="name" label="Username" />
+<txp:mem_form_email name="email" label="" class="account-email" />
 
-<txp:mem_form_email name="email" label="E-Mail" />
-
-<txp:mem_form_submit />
-
-</fieldset>
+<txp:mem_form_submit button="1" class="btn btn-success" label="Let's Go" />
 
 </txp:mem_self_register_form>
 
+
 <hr />
 
-
-<h2>Register</h2>
-<txp:mem_self_register_form label="" login_url="<txp:site_url />sign-in" thanks="You have successfully created an account on Free Athena!  We sent a temporary password to the email you entered on the form.  Please collect this password from your email and Sign-In on Free Athena.">
-  <div class="input">Real Name<br>
-  <txp:mem_form_text name="RealName" label="" break="" required="0" /></div>
-  <div class="input">Username<br>
-  <txp:mem_form_text name="name" label="" break="" required="1" /></div>
-  <div class="input">Email<br>
-  <txp:mem_form_email name="email" label="" break="" required="1" /></div>
-  <txp:mem_form_submit label="Register" button="1">Register</txp:mem_form_submit>
-</txp:mem_self_register_form>
+<a href="<txp:site_url />sign-in">Sign-in</a> | <a href="#">Lost Password?</a>
