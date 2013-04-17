@@ -1,0 +1,29 @@
+<div class="row">
+
+<div class="twelve columns">
+
+<h1><txp:adi_gps name="subject_name"  /></h1>
+
+
+<!-- build a list of ids that queued cards reference -->
+<txp:variable name="queued_cards">
+<txp:article_custom section="queue" author="joshua" limit="999">
+<txp:custom_field name="Queued_ID" />,
+</txp:article_custom>
+</txp:variable>
+
+
+
+<txp:article_custom id='<txp:variable name="queued_cards" />'>
+<txp:rss_uc_filedunder />
+</txp:article_custom>
+
+
+<txp:rss_uc_article_list section="video" category="technology" form="by_user_subject" filterfield=""/>
+
+
+<txp:variable name="queued_cards" />
+
+</div>
+
+</div>

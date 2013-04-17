@@ -36,6 +36,10 @@
 </div>
 
 
+	<txp:if_section name="user-subjects">
+  	<txp:output_form form="section_user_subjects" />
+	</txp:if_section>      
+
 
 	<txp:if_section name="user-tags">
   	<txp:output_form form="section_user_tags" />

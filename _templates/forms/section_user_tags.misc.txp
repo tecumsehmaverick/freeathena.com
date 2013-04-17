@@ -2,6 +2,8 @@
 <div class="twelve columns">
 <txp:tru_tags_current_archive_tag />
 
+
+
 <!--
 <h2>Tag: {current tag name go here}</h2>
 <i class="icon-share"></i> 
@@ -15,9 +17,7 @@
 <div class="row">
 <div class="twelve columns">
 <div class="row">
-<txp:tru_tags_handler section="queue">
-<txp:title />
-</txp:tru_tags_handler>
+<txp:tru_tags_handler section="queue" form="user_tag_results" />
 </div>
 </div>
 </div>
@@ -28,9 +28,6 @@
 <div class="twelve columns">
 
 <hr class="vertical-breathing-room" />
-
-
-
 
 
 <dl class="tabs">

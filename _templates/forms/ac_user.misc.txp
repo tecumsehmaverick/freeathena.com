@@ -129,7 +129,7 @@ collect some cards before tagging
 
 	<txp:article_custom id="{custom_3},">
 	<txp:if_different>
-		<li><a href="<txp:site_url />subject/<txp:category1 />" class="capitalize"><i class="icon-book"></i> <txp:category1 /></a></li>
+		<li><a href="<txp:site_url />user-subjects?subject_name=<txp:category1 />" class="capitalize"><i class="icon-book"></i> <txp:category1 /></a></li>
 	</txp:if_different>
 	</txp:article_custom>
 	
