@@ -28,7 +28,7 @@
 <txp:chh_if_data>
 <p class=""><txp:variable name="bio_text" /></p>
 <txp:else />
-<p class="">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+<p class="">{smd_bio_RealName} has not written a bio yet.</p>
 </txp:chh_if_data>
 <hr />
 
