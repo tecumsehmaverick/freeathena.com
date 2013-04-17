@@ -15,18 +15,20 @@
 <txp:smd_bio_info show_empty="1">
 
 
-<div class="">
+<!--
+<div class="wrap-grav">
 <img src="http://www.gravatar.com/avatar/<txp:php>echo md5( strtolower( trim( "{smd_bio_email}" ) ) );</txp:php>?s=75?d=http%3A%2F%2Feduhou.se/img/person-no-image.jpg" class="thumbnail" />
 </div>
 
-<p class="lead">{smd_bio_bio}</p>
+<p class="">{smd_bio_bio}</p>
+-->
 
 
 </txp:smd_bio_info>
 </txp:mem_form>
 </txp:smd_bio_author>
 
-<hr />
+
 <h4>Your Card Collection</h4>
 <i class="icon-certificate"></i> You have collected 
 <a href="#simple2">
@@ -35,10 +37,6 @@
 </txp:smd_query>
 cards!
 </a>
-
-<hr />
-
-
 
 
 <div class="">
@@ -56,6 +54,13 @@ cards!
 </txp:smd_query>
 -->
 
+<div class="two columns">
+<txp:article_custom id='<txp:custom_field name="Queued_ID" />'>
+<div class="video-image">
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>    
+</div>
+</txp:article_custom>
+</div>
 
 <txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class="">
 </a>
@@ -124,16 +129,22 @@ collect some cards before tagging
 
 <p>Based on the contents of your card collection.</p>
 
-<txp:smd_query query="SELECT id, custom_3
-     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
 
-	<txp:article_custom id="{custom_3},">
-	<txp:if_different>
-		<li><a href="<txp:site_url />user-subjects?subject_name=<txp:category1 />" class="capitalize"><i class="icon-book"></i> <txp:category1 /></a></li>
-	</txp:if_different>
-	</txp:article_custom>
-	
-</txp:smd_query>
+<!-- make variable: a list of ids that queued cards reference -->
+<txp:variable name="queued_cards">
+<txp:article_custom section="queue" author='<txp:variable name="logged_user" />' limit="999">
+<txp:custom_field name="Queued_ID" />,
+</txp:article_custom>
+</txp:variable>
+
+<div class="subjects_list">
+<txp:article_custom id='<txp:variable name="queued_cards" />'>
+<txp:if_different>
+<txp:rss_uc_filedunder linktosection="user-subjects" delim="?subject_name=" break="li" />
+</txp:if_different>
+</txp:article_custom>
+</div>
+
 
 </ul>
 

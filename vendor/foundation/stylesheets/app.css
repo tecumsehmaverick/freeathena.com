@@ -25,6 +25,8 @@ background-color: #d6e3a1;
 
 /* a {color: green;} */
 
+.user-subjects {white-space:inherit;}
+
 .wrap-grav {float: left; padding-right: 10px; padding-bottom: 10px;}
 
 .collect {text-align: right;}

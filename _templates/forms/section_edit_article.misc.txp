@@ -3,27 +3,28 @@
 ...
 -->
 
-
-<div class="row">
-<div class="six columns">
-
-
-
-<h3 class="subheader">Editing: {title}</h3>
-
-
-
 <!-- The value of this variable is the ID of the video on the card  -->
 <txp:variable name="video_in_question" value="{custom_3}" />
 
 
+
+<div class="row">
+
+
+
+<div class="two columns">
+<txp:article_custom id='<txp:variable name="video_in_question" />' form="ac_edit_video_card" />
+</div>
+
+
+
+<div class="ten columns">
+
+
+
 <txp:article_custom id='<txp:variable name="video_in_question" />'>
-<txp:title />
-<txp:custom_field name="Creator" />
-<txp:custom_field name="Video_URL" />
-<txp:custom_field name="Content_Type" />
-<txp:custom_field name="Duration" />
-<txp:custom_field name="Curation" />
+<h3 class="subheader"><txp:title /></h3>
+<txp:body />
 </txp:article_custom>
 
 
@@ -31,8 +32,13 @@
 
 <txp:mem_form_secret name="table_title" value="{title}" />
 
+
+<h5>Your Tags</h5>
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
+
+
+<txp:mem_form_text name="table_body" label="" break="" required="0" />
 
 
 <txp:mem_form_secret name="table_section" value="{section}" />
@@ -41,16 +47,9 @@
 <txp:mem_form_submit />
 
 </txp:mem_simple_form>
-
-
-
-</div>
-
-<div class="six columns">
-<txp:article_custom id='<txp:variable name="video_in_question" />' form="ac__edit_video_card" />
 </div>
 
 
-</div>
+</div><!-- .row -->
 
 </txp:smd_query>
