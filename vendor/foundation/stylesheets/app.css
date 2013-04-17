@@ -43,6 +43,23 @@ background-position: center;
 
 
 
+ul.sortable {list-style: none; margin-left: 0; background-color: #fff;}
+/*
+ul.sortable li {
+	border: 2px solid #ddd;
+	margin-bottom: 5px;
+}
+ul.sortable li:hover {border: 2px solid #eee;}
+ul.sortable li:focus {border: 1px dotted #d5e795;}
+*/
+
+li.collected-card-list {
+padding: 5px;
+margin-bottom: 5px;
+border-radius: 3px;
+	background-color: #eee;
+}
+
 .circle {
   display: block;
   width: 100px;

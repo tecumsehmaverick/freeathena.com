@@ -1,3 +1,4 @@
+<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
 <!-- Do check to insure the queue article belongs to logged user 
 ...
 -->
@@ -7,16 +8,14 @@
 <div class="six columns">
 
 
-<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
 
 <h3 class="subheader">Editing: {title}</h3>
 
 
 
-<!-- Make var  -->
+<!-- The value of this variable is the ID of the video on the card  -->
 <txp:variable name="video_in_question" value="{custom_3}" />
 
-<txp:variable name="video_in_question" />
 
 <txp:article_custom id='<txp:variable name="video_in_question" />'>
 <txp:title />
@@ -43,13 +42,15 @@
 
 </txp:mem_simple_form>
 
-</txp:smd_query>
+
 
 </div>
 
 <div class="six columns">
-<txp:article_custom id="1659" form="fa_video_card" />
+<txp:article_custom id='<txp:variable name="video_in_question" />' form="ac__edit_video_card" />
 </div>
 
 
 </div>
+
+</txp:smd_query>

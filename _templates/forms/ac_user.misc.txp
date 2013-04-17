@@ -27,7 +27,7 @@
 </txp:smd_bio_author>
 
 <hr />
-<h4>Achievements?</h4>
+<h4>Your Card Collection</h4>
 <i class="icon-certificate"></i> You have collected 
 <a href="#simple2">
 <txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
@@ -38,13 +38,14 @@ cards!
 
 <hr />
 
-<div class="panel">
-<txp:article_custom section="queue" author='<txp:cbe_frontauth_whois type="name" />' limit="999" sort="posted desc">
 
 
 
-
-
+<div class="">
+<ul class="sortable">
+<!-- http://stackoverflow.com/questions/7342727/jquery-ui-saving-sortable-list -->
+<txp:article_custom section="queue" author='<txp:cbe_frontauth_whois type="name" />' limit="999" sort="posted asc">
+<li class="collected-card-list">
 <txp:variable name="queued_id" value='<txp:custom_field name="Queued_ID" />' />
 
 
@@ -56,11 +57,26 @@ cards!
 -->
 
 
-<a href='<txp:site_url /><txp:custom_field name="Queued_ID" />'><txp:custom_field name="Queue_Title" /></a><txp:category /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class="label radius">
-<i class="icon-pencil"></i></a>
-<hr />
+<txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class="">
+</a>
+
+<ul class="button-group radius">
+  <li><a href="<txp:site_url /><txp:custom_field name="Queued_ID" />" class="small button radius"><i class="icon-play"></i></a></li>
+  <li><a href="<txp:site_url />edit?article_id=<txp:article_id />" class="small button radius"><i class="icon-pencil"></i></a></li>
+</ul>
+
+<txp:chh_if_data>
+<i class="icon-tags"></i> 
+<txp:tru_tags_from_article linkpath="<txp:site_url />user-tags/" />
+<txp:else />
+<a href="<txp:site_url />edit?article_id=<txp:article_id />">you haven't tagged me yet</a>
+</txp:chh_if_data>
+</li>
 </txp:article_custom>
+</ul>
 </div>
+
+
 
 </div>
 

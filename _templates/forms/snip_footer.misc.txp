@@ -22,7 +22,7 @@
               <div class="row collapse">
 
                 <div class="ten mobile-three columns">
-					<input id="search-textbox" type="text" name="q"<txp:if_search> value="<txp:search_term />"</txp:if_search> placeholder="What are you studying?" >
+					<input id="search-textbox" type="text" name="q"<txp:if_search> value="<txp:search_term />"</txp:if_search> placeholder="Is there something you are looking for?" >
 
                 </div>
 
@@ -37,7 +37,7 @@
 
 
             <nav role="navigation">
-<txp:section_list default_title='<txp:text item="home" />' include_default="1" exclude="submit, video, athenians" wraptag="ul" class="link-list right" break="">
+<txp:section_list default_title='<txp:text item="home" />' include_default="1" exclude="edit, discarded, trash, add, creator, profile, subject-index, knowledge-table, remote, collection, queue, documentation, library, submit, video, athenians" wraptag="ul" class="link-list right" break="">
 <li<txp:if_section name='<txp:section />'><txp:if_search><txp:else /><txp:if_category><txp:else /><txp:if_author><txp:else /> class="active"</txp:if_author></txp:if_category></txp:if_search></txp:if_section>>
 <txp:section title="1" link="1" />
 </li>

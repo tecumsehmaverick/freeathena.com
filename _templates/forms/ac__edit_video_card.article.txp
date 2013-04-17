@@ -1,0 +1,88 @@
+<!-- QUEUE CHECK: MOVE TO A FORM LATER-->
+
+
+<!-- Queue Check Variable: 
+for smd_query to use later when it wants to see if the title of the video to be queued has been taken 
+
+This uses the txp_users name and the current article's ID to create a value per each variable. The variable name's use the current article ID prefixed by 'queue_check_for_'.
+-->
+
+<txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
+
+<!-- 
+How the Queue Check works: 
+
+1. We have an artcile in the video section, say, with the ID of 24
+2. We have a user whose name from txp_users is joshuavaage
+3. When he adds that video to his queue a new article is created in the queue section for this. The title for that article is generated from the name-id combination joshuavaage-24. 
+4. Now we can check any video by it's ID against any user in the database to see if a title of a queue section article matches.
+
+-->
+
+<!-- End Queue Check Variabe-->	
+
+
+
+
+
+
+
+
+<!-- See if in Queue using the queue_check variable declared above based on the logged in user's name -->
+<txp:smd_query query="SELECT title, id FROM textpattern WHERE title = '?queue_check'">
+
+
+<!-- If in Queue: Start Card container -->
+<div class="article in-queue">
+
+<div class="lid-controls">
+<iframe src="<txp:site_url />trash/?remote_id={id}" scrolling="no" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 30px;"></iframe>
+</div>
+
+<txp:else />
+
+
+<!-- If not in Queue: Start Card container -->
+<div class='article'>
+
+<div class="lid-controls">
+<iframe src="<txp:site_url />remote/?remote_id=<txp:article_id />" scrolling="no" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 30px;"></iframe>
+</div>
+
+
+</txp:smd_query>
+   
+    
+<div class="video-image">
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
+</a>
+</div>
+	
+
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<h4 class="responsive-heading subheader capitalize"><txp:title /></h4>
+</a>
+	
+<hr />
+
+<!-- Subjects -->
+<p class="responsive-heading">
+<i class="icon-book"></i> <txp:rss_uc_filedunder linktosection="subject" /></p>
+	
+<hr />
+	
+
+<!-- Tags -->
+<p><i class="icon-tags"></i> <txp:tru_tags_from_article class="tag" /></p>
+
+<hr />
+
+<!-- FA Card footer content -->
+<ul class="unstyled">
+<txp:chh_if_data><li>Creator: <a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></li></txp:chh_if_data>
+<txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data>
+
+<txp:chh_if_data><li>A <txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
+<txp:chh_if_data><li><i class="icon-time"></i> <txp:custom_field name="Duration" /></li></txp:chh_if_data>
+</ul>

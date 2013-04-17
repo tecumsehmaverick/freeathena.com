@@ -30,12 +30,16 @@
 <div class="four columns">
 <a href="<txp:site_url />ac" class="tote"><txp:glx_gravatar email='<txp:cbe_frontauth_whois type="email" />' size="30" /> 
 <txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query></a>
+        
 </div>
 </div>
 </div>
 
 
-      
+
+	<txp:if_section name="user-tags">
+  	<txp:output_form form="section_user_tags" />
+	</txp:if_section>      
 
 	<txp:if_section name="creator">
   	<txp:output_form form="section_creator" />
