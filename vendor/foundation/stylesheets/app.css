@@ -25,6 +25,8 @@ background-color: #d6e3a1;
 
 /* a {color: green;} */
 
+.wrap-grav {float: left; padding-right: 10px; padding-bottom: 10px;}
+
 .collect {text-align: right;}
 
 /* When there is a failure in returning the video thumbnail from embed.ly, our script displays the video title and url as a link in it's place. These two rules first hide the link and second force a block height and display a bg image   */

@@ -1,7 +1,39 @@
+
+<!-- Contact Profile Information
+================================================== -->
+
 <div class="row">
-    <div class="twelve columns">
- 
-      <h1><txp:section title="1" /></h1>
-      
-    </div>
+
+<div class="twelve columns">
+<h1><txp:section title="1" /></h1>
+</div>
+
+<txp:smd_bio_author author='jeremy, joshua, micah, kevin'>
+<txp:smd_bio_info show_empty="1">
+
+<div class="three columns">
+
+<h4 class="subheader">{smd_bio_RealName}</h4>
+
+<h6>{smd_bio_user_title}</h6>
+
+<a href="mailto:{smd_bio_email}" class=""><i class="icon-envelope"></i> {smd_bio_email}</a>
+<hr />
+<div class="wrap-grav">
+<img src="http://www.gravatar.com/avatar/<txp:php>echo md5( strtolower( trim( "{smd_bio_email}" ) ) );</txp:php>?s=75?d=http%3A%2F%2Feduhou.se/img/person-no-image.jpg" class="thumbnail" />
+</div>
+
+<txp:variable name="bio_text" value='{smd_bio_bio}' />
+
+<txp:chh_if_data>
+<p class=""><txp:variable name="bio_text" /></p>
+<txp:else />
+<p class="">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+</txp:chh_if_data>
+<hr />
+
+</div>
+
+</txp:smd_bio_info>
+</txp:smd_bio_author>
 </div>

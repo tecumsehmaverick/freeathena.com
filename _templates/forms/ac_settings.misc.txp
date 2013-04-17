@@ -60,6 +60,7 @@ Twitter
 
 </div>            
 -->
+<input type="text" value="{smd_bio_user_title}" name="smd_bio_user_title" class="smd_bio_user_title" id="smd_bio_user_title" placeholder="Title, position, or role">
 
 
 
