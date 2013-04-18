@@ -29,7 +29,7 @@ How the Queue Check works:
 
 
 <!-- # of Columns? -->
-<txp:if_section name="default,tag, creator">
+<txp:if_section name="default,tag,creator">
 <div class='three columns'>
 <txp:else />
 <div class='four columns'>
@@ -37,35 +37,29 @@ How the Queue Check works:
 
 
 
-
-
+<div class="article fa_card">
 
 
 <!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
 <txp:smd_query query="SELECT title, id FROM textpattern WHERE title = '?queue_check'">
 
-
-<!-- If in Queue: Start Card container -->
-<div class="article in-queue">
-
+<!-- If in Queue -->
 <div class="lid-controls">
 <iframe src="<txp:site_url />trash/?remote_id={id}" scrolling="no" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 30px;"></iframe>
 </div>
 
 <txp:else />
 
-
-<!-- If not in Queue: Start Card container -->
-<div class='article'>
-
+<!-- If not in Queue -->
 <div class="lid-controls">
 <iframe src="<txp:site_url />remote/?remote_id=<txp:article_id />" scrolling="no" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 30px;"></iframe>
 </div>
 
-
 </txp:smd_query>
    
     
+    
+<!-- Video Thumb -->
 <div class="video-image">
 <a href="<txp:permlink />" title="View now: <txp:title />">
 <span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
@@ -96,11 +90,30 @@ How the Queue Check works:
 <!-- FA Card footer content -->
 <ul class="unstyled">
 <txp:chh_if_data><li>Creator: <a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></li></txp:chh_if_data>
-<txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data>
+<!-- <txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data> -->
 
-<txp:chh_if_data><li>A <txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
+<txp:chh_if_data><li><txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
 <txp:chh_if_data><li><i class="icon-time"></i> <txp:custom_field name="Duration" /></li></txp:chh_if_data>
 </ul>
+
+
+<txp:variable name="video_duration">
+<txp:custom_field name="Duration" />
+</txp:variable>
+
+
+<i class="icon-time"></i> 
+<txp:php>
+$sTime   = '01:20:03';
+$oTime   = new DateTime($sTime);
+$aOutput = array();
+if ($oTime->format('G') > 0) {
+	$aOutput[] = $oTime->format('G') . ' hour';
+}
+$aOutput[] = $oTime->format('i') . ' minutes';
+
+echo implode(', ', $aOutput);
+</txp:php>
 
 <hr />
 

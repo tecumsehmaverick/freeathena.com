@@ -1,4 +1,4 @@
-<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
+<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, body, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
 <!-- Do check to insure the queue article belongs to logged user 
 ...
 -->
@@ -29,18 +29,28 @@
 </txp:article_custom>
 
 <h5>Your Tags</h5>
-<p>Tip: Giving several of your cards the same tag is a good way of grouping them together. It's the main mechanism we have for organization.</p>
 <txp:mem_simple_form table="textpattern" id_field="id" id_insert="0" success_form="edit_article_success">
 
 <txp:mem_form_secret name="table_title" value="{title}" />
-
 
 
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
 
 <h5>Your Review</h5>
-<txp:mem_form_textarea name="table_body" label="" break="" required="0" />
+
+<!--
+<fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+</fieldset>
+-->
+  
+
+<txp:mem_form_textarea name="table_body" label="" break="" default='{body}' required="0" />
 
 
 <txp:mem_form_secret name="table_section" value="{section}" />

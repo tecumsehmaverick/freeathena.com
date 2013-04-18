@@ -16,7 +16,8 @@
 <txp:variable name="tagged_in_list">
 <txp:article_custom section="queue" keywords='<txp:adi_gps name="tag_name"  />'><txp:custom_field name="Queued_ID" />,</txp:article_custom>
 </txp:variable>
-<txp:variable name="tagged_in_list" />
+
+
 <txp:article_custom id='<txp:variable name="tagged_in_list" />' form="fa_video_card" />
 
 </div>
