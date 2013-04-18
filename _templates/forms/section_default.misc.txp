@@ -43,6 +43,17 @@
 
 
 
+<ul>
+<txp:article_custom section="collection" limit="4">
+<li>
+<txp:title />: 
+<txp:custom_field name="Collection_IDs" />
+</li>
+</txp:article_custom>
+</ul>
+
+
+
 
 
 
