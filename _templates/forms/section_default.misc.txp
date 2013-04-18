@@ -46,7 +46,7 @@
 
 
 
-<div class="athenian-stripes">
+<ul class="athenian-stripes">
 
 <!-- Collection Heading -->
 <div class="row">
@@ -61,11 +61,7 @@
 <!-- -->
 </div>
 
-</div><!-- .athenian-stripes -->
 
-
-
-<div class="athenian-stripes">
 
 <!-- Collection Heading -->
 <div class="row">
@@ -80,7 +76,7 @@
 <!-- -->
 </div>
 
-</div><!-- .athenian-stripes -->
+</ul><!-- .athenian-stripes -->
 
 
 
