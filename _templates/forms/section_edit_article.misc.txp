@@ -37,7 +37,7 @@
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
 
-<h5>Your Review</h5>
+<!-- <h5>Your Review</h5> -->
 
 <!--
 <fieldset class="rating">
@@ -50,7 +50,7 @@
 -->
   
 
-<txp:mem_form_textarea name="table_body" label="" break="" default='{body}' required="0" />
+<!-- <txp:mem_form_textarea name="table_body" label="" break="" default='{body}' required="0" /> -->
 
 
 <txp:mem_form_secret name="table_section" value="{section}" />
