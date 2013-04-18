@@ -68,7 +68,7 @@ How the Queue Check works:
 	
 
 <a href="<txp:permlink />" title="View now: <txp:title />">
-<h4 class="responsive-heading subheader capitalize"><txp:title /></h4>
+<h5 class="responsive-heading capitalize"><txp:title /></h5>
 </a>
 	
 <hr />
@@ -89,7 +89,7 @@ How the Queue Check works:
 
 <!-- FA Card footer content -->
 <ul class="unstyled">
-<txp:chh_if_data><li>Creator: <a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></li></txp:chh_if_data>
+<txp:chh_if_data><li><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></li></txp:chh_if_data>
 <!-- <txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data> -->
 
 <txp:chh_if_data><li><txp:custom_field name="Content_Type" /></li></txp:chh_if_data>

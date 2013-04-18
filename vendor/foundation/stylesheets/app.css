@@ -28,6 +28,9 @@ background-color: #d6e3a1;
     float:left;
 }
 
+
+.play img {width: 100%; height: 40%;}
+
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
    follow these rules. Every browser that supports :checked also supports :not(), so
    it doesn’t make the test unnecessarily selective */
@@ -178,7 +181,7 @@ font-weight: 100;
 
 /* pre {display: none;} */
 
-
+ul.athenian-stripes li {padding-bottom: 24px;}
 ul.athenian-stripes li.stripe:nth-child(odd) {
     background-color: #eee;
 }
