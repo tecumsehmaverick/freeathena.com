@@ -48,6 +48,8 @@
 
 <ul class="athenian-stripes">
 
+
+<li class="stripe">
 <!-- Collection Heading -->
 <div class="row">
 <div class="twelve columns">
@@ -60,9 +62,10 @@
 <txp:article_custom section="video" form="fa_video_card" category="History" limit="4" />
 <!-- -->
 </div>
+</li>
 
 
-
+<li class="stripe">
 <!-- Collection Heading -->
 <div class="row">
 <div class="twelve columns">
@@ -75,6 +78,8 @@
 <txp:article_custom section="video" form="fa_video_card" Content_Type="Documentary" limit="4" />
 <!-- -->
 </div>
+</li>
+
 
 </ul><!-- .athenian-stripes -->
 
