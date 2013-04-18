@@ -11,25 +11,35 @@
 
 <hr />
 
-<h4>Your Subjects <small>based on your card collection</small></h4>
+<!-- Get IDs from custom_3 of videos that have been queued so that we can then get the categories they belong to -->
 <div class="subjects">
+<h4>Subjects of Interest</h4>
 
 <ul class="clearfix">
 
-<txp:smd_query query="SELECT id, custom_3
-     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+<p>Based on the contents of your card collection.</p>
 
-	<txp:article_custom id="{custom_3},">
-	<txp:if_different>
-		<li><a href="<txp:site_url />subject/<txp:category1 />" class="capitalize"><i class="icon-book"></i> <txp:category1 /></a></li>
-	</txp:if_different>
-	</txp:article_custom>
-	
-</txp:smd_query>
+
+<!-- make variable: a list of ids that queued cards reference -->
+<txp:variable name="queued_cards">
+<txp:article_custom section="queue" author='<txp:variable name="logged_user" />' limit="999">
+<txp:custom_field name="Queued_ID" />,
+</txp:article_custom>
+</txp:variable>
+
+<div class="subjects_list">
+<txp:article_custom id='<txp:variable name="queued_cards" />'>
+<txp:if_different>
+<txp:rss_uc_filedunder linktosection="subject" delim="/" break="li" />
+</txp:if_different>
+</txp:article_custom>
+</div>
+
 
 </ul>
 
 </div>
+
 
 </txp:if_category>
 
@@ -69,7 +79,13 @@
 
 
 	<txp:chh_if_data>
+	test
         <txp:rss_uc_article_list section="video" category='<txp:category />,<txp:variable name="descendant_categories" />' form="fa_video_card" limit="60" />
+        
+        
+
+
+
         <txp:else />
         Nothing to see here… <a href="<txp:site_url />textpattern/index.php?event=article&Section=video">Yet</a>!
         

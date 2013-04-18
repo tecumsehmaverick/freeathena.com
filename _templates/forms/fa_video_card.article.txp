@@ -88,23 +88,19 @@ How the Queue Check works:
 <!-- <hr /> -->
 
 <!-- FA Card footer content -->
-<ul class="unstyled">
-<txp:chh_if_data><li><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></li></txp:chh_if_data>
+
+<txp:chh_if_data><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></txp:chh_if_data>
 <!-- <txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data> -->
 
-<txp:chh_if_data><li><txp:custom_field name="Content_Type" /></li></txp:chh_if_data>
-<txp:chh_if_data><li><i class="icon-time"></i> <txp:custom_field name="Duration" /></li></txp:chh_if_data>
-</ul>
+<txp:chh_if_data><txp:custom_field name="Content_Type" /></txp:chh_if_data>
 
 
 <txp:variable name="video_duration">
 <txp:custom_field name="Duration" />
 </txp:variable>
 
-
-<i class="icon-time"></i> 
 <txp:php>
-$sTime   = '01:20:03';
+$sTime = custom_field(array('name' => 'Duration'));
 $oTime   = new DateTime($sTime);
 $aOutput = array();
 if ($oTime->format('G') > 0) {

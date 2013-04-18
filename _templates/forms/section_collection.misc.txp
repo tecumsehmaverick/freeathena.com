@@ -4,7 +4,8 @@
 <!-- Individual Collection Title-->
 <txp:if_individual_article>
 <txp:article>
-<h3><txp:title /></h3>
+<h3>Collection</h3>
+<h4 class="subheader"><txp:title /></h4>
 <hr />
 <txp:excerpt />
 </txp:article>
@@ -18,7 +19,6 @@
 
 
 <div class="row">
-
 
 
 <txp:if_individual_article>
@@ -55,7 +55,18 @@
 
 <!-- Displaying all but 1st in list of articles by IDs-->
 <div class="three mobile-two columns">
-<ul>
+
+
+<div href="#" class="medium button dropdown">
+  Collection Menu
+  <ul>
+<txp:article_custom id='<txp:variable name="collection_ids" />' offset="1">
+<li><txp:permlink><txp:title /></txp:permlink></li>
+</txp:article_custom>
+  </ul>
+</div>
+
+<ul class="side-nav">
 <txp:article_custom id='<txp:variable name="collection_ids" />' offset="1">
 <li><txp:permlink><txp:title /></txp:permlink></li>
 </txp:article_custom>

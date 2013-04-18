@@ -15,7 +15,18 @@
 <div class="row">
 
 
-<txp:article_custom Creator='<txp:variable name="name" />' form="fa_video_card" />
+<!-- <txp:article_custom Creator='<txp:variable name="name" />' form="fa_video_card" /> -->
+
+<txp:article_custom limit="100" Creator='<txp:variable name="name" />' form="fa_video_card" />
+
+
+        <txp:etc_query
+ data='<txp:article_custom limit="999" Creator=''<txp:variable name="name" />''>
+   <a href=''<txp:permlink />''><txp:title /></a>
+ </txp:article_custom>'
+ query='a[@href=''<txp:permlink />'']/following-sibling::a[position()=1]'
+ specials="" 
+/>
 
 </div>
 </div>
