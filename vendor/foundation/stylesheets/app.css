@@ -61,8 +61,11 @@ li.collected-card-list {
 padding: 5px;
 margin-bottom: 5px;
 border-radius: 3px;
-	background-color: #eee;
+border-top: 1px solid #eee;
+border-bottom: 1px solid #eee;
 }
+
+li.collected-card-list .video-image {border: 1px solid #eee;}
 
 .circle {
   display: block;

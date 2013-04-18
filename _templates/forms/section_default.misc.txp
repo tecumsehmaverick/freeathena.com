@@ -194,7 +194,7 @@ Technology
 <div class="row">
 <div class="twelve columns">
 
-<h3 class="responsive-heading subheader"><a href="#">Lectures</a></h3>
+<h3 class="responsive-heading subheader"><a href="#">Documentaries</a></h3>
 
 </div>
 </div>
@@ -204,7 +204,7 @@ Technology
 <div class="row">
 <div class="container twelve columns">
 
-<txp:article_custom section="video" form="fa_video_card" Content_Type="Lectures" limit="4" />
+<txp:article_custom section="video" form="fa_video_card" Content_Type="Documentary" limit="4" />
 
 </div>
 </div>

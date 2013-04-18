@@ -18,7 +18,7 @@
 
 
 
-            <form>
+            <form action="<txp:site_url />search">
               <div class="row collapse">
 
                 <div class="ten mobile-three columns">

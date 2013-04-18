@@ -29,14 +29,7 @@
 </txp:smd_bio_author>
 
 
-<h4>Your Card Collection</h4>
-<i class="icon-certificate"></i> You have collected 
-<a href="#simple2">
-<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
-{count}
-</txp:smd_query>
-cards!
-</a>
+<h4>Cards in your Collection <small>(<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query>)</small> </h4>
 
 
 <div class="">
@@ -54,28 +47,41 @@ cards!
 </txp:smd_query>
 -->
 
-<div class="two columns">
+<div class="row">
+
+<div class="three columns">
 <txp:article_custom id='<txp:custom_field name="Queued_ID" />'>
 <div class="video-image">
 <span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>    
 </div>
 </txp:article_custom>
-</div>
 
-<txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class="">
-</a>
-
-<ul class="button-group radius">
+<ul class="button-group radius even two-up">
   <li><a href="<txp:site_url /><txp:custom_field name="Queued_ID" />" class="small button radius"><i class="icon-play"></i></a></li>
   <li><a href="<txp:site_url />edit?article_id=<txp:article_id />" class="small button radius"><i class="icon-pencil"></i></a></li>
 </ul>
 
+</div><!-- .two columns -->
+
+
+<div class="nine columns">
+<txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class=""></a>
+
+<hr />
+
 <txp:chh_if_data>
 <i class="icon-tags"></i> 
-<txp:tru_tags_from_article linkpath="<txp:site_url />user-tags/" />
+<txp:tru_tags_from_article linkpath="<txp:site_url />user-tags?tag_name=" />
 <txp:else />
-<a href="<txp:site_url />edit?article_id=<txp:article_id />">you haven't tagged me yet</a>
+<a href="<txp:site_url />edit?article_id=<txp:article_id />">You haven't tagged me yet!</a>
 </txp:chh_if_data>
+
+
+
+</div><!-- .ten columns -->
+
+
+</div><!-- .row -->
 </li>
 </txp:article_custom>
 </ul>
@@ -105,7 +111,7 @@ cards!
 
 	<txp:article_custom id="{id}">
 	
-	<txp:tru_tags_from_article break="li" linkpath="<txp:site_url />tag/"  />
+	<txp:tru_tags_from_article break="li" linkpath="<txp:site_url />user-tags?tag_name="  />
 	
 	</txp:article_custom>
 	

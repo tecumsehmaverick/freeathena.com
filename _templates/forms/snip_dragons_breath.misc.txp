@@ -218,7 +218,7 @@ $('div.subjects_list a').prepend($('<i class="icon-book"></i>'));
 
 
 <!-- do AJAX on form submit -->
-<script src="http://malsup.github.com/jquery.form.js"></script> 
+<script src="<txp:site_url />vendor/jquery/jquery.form.js"></script> 
  
     <script> 
         // wait for the DOM to be loaded 

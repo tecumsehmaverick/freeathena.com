@@ -6,7 +6,7 @@
 <h4><txp:adi_gps name="subject_name"  /></h4>
 
 
-<!-- build a list of ids that queued cards reference -->
+<!-- make variable: a list of ids that queued cards reference -->
 <txp:variable name="queued_cards">
 <txp:article_custom section="queue" author='<txp:variable name="logged_user" />' limit="999">
 <txp:custom_field name="Queued_ID" />,

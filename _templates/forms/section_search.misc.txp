@@ -1,23 +1,30 @@
 <txp:if_search>
 
-<!-- count how many results return -->
-  <txp:article limit="10" pgonly="1" />
 
-  <txp:if_search_results>
+	<txp:article limit="10" pgonly="1" />
 
-<!-- if search result count greater than 200 then display excessive results message, otherwise show search result count -->
+
+	<div class="row">
+	<div class="12 columns">
+	<txp:if_search_results>
+
+
+	<!-- if search result count greater than 200 then display excessive results message, otherwise show search result count -->
     <txp:if_search_results max="200">
       <h3><txp:text item="matching_search_request" /> &#8216;<txp:search_term />&#8217;&#8230;</h3>
     <txp:else />
       <h3><txp:text item="too_common_search_term" /> &#8216;<txp:search_term />&#8217;</h3>
     </txp:if_search_results>
 
-<!-- if no search results, then display no search results message -->
-  <txp:else />
+
+
+	<!-- if no search results, then display no search results message -->
+  	<txp:else />
     <h3><txp:text item="no_search_matches" /></h3>
 
-  </txp:if_search_results>
-  
+	</txp:if_search_results>
+	</div>
+	</div>   
   
   
   
@@ -26,8 +33,8 @@
 <!-- display resulting articles (10 per page) -->
 <txp:article limit="10">
 
-<div class="box">
-    <div class="article">
+<div class="row">
+    <div class="">
 	<div class="video-image">
 		<a href="<txp:permlink />" title="View now: <txp:title />">
         <span class="play" href="<txp:custom_field name="Video Url" />"><txp:title /></span>

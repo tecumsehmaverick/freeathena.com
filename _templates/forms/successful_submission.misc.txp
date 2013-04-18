@@ -23,7 +23,7 @@ function generateRandomString($length = 20) {
 This is the ID of the collected instance (article) of a card not the ID of the card itself  -->
 <txp:article_custom id='<txp:adi_gps name="remote_id" />'>
 
-<txp:adi_gps name="remote_id" />
+
 
 <txp:mem_simple_ps name="integer_id" />
 
@@ -41,7 +41,7 @@ This is the ID of the collected instance (article) of a card not the ID of the c
 <txp:mem_form_secret name="table_custom_2" value='{custom_2}' />    
 <txp:mem_form_secret name="integer_id" value="{id}" />
 <input type="submit" class="memSubmit" name="mem_form_submit" value="Remove">
-don't click! {id} {custom_3}
+
 </txp:mem_simple_form>
 
 </txp:smd_query>

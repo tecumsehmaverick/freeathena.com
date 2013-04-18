@@ -80,16 +80,18 @@ How the Queue Check works:
 <hr />
 
 <!-- Subjects -->
+<!--
 <p class="responsive-heading">
 <i class="icon-book"></i> <txp:rss_uc_filedunder linktosection="subject" /></p>
+-->
 	
-<hr />
+<!-- <hr /> -->
 	
 
 <!-- Tags -->
-<p><i class="icon-tags"></i> <txp:tru_tags_from_article class="tag" /></p>
+<!-- <p><i class="icon-tags"></i> <txp:tru_tags_from_article class="tag" /></p> -->
 
-<hr />
+<!-- <hr /> -->
 
 <!-- FA Card footer content -->
 <ul class="unstyled">
@@ -102,8 +104,10 @@ How the Queue Check works:
 
 <hr />
 
+<!--
 <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
 <i class="icon-user"></i> <a href="<txp:site_url />athenians?profile=jeremy"><txp:author /></a>
+-->
 
 </div><!-- /.article -->
 </div><!-- column class -->

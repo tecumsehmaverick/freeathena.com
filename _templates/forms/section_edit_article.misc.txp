@@ -23,22 +23,24 @@
 
 
 <txp:article_custom id='<txp:variable name="video_in_question" />'>
+<h4>In Your Collection</h4>
 <h3 class="subheader"><txp:title /></h3>
 <txp:body />
 </txp:article_custom>
 
-
+<h5>Your Tags</h5>
+<p>Tip: Giving several of your cards the same tag is a good way of grouping them together. It's the main mechanism we have for organization.</p>
 <txp:mem_simple_form table="textpattern" id_field="id" id_insert="0" success_form="edit_article_success">
 
 <txp:mem_form_secret name="table_title" value="{title}" />
 
 
-<h5>Your Tags</h5>
+
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
 
-
-<txp:mem_form_text name="table_body" label="" break="" required="0" />
+<h5>Your Review</h5>
+<txp:mem_form_textarea name="table_body" label="" break="" required="0" />
 
 
 <txp:mem_form_secret name="table_section" value="{section}" />
