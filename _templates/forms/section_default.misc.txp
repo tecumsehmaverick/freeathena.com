@@ -43,57 +43,31 @@
 
 
 
-<ul>
-<txp:article_custom section="collection" limit="4">
-<li>
-<txp:title />: 
-<txp:custom_field name="Collection_IDs" />
+<ul class="athenian-stripes">
+<txp:article_custom section="collection" limit="8">
+
+<li class="stripe">
+
+<div class="row">
+<div class="twelve columns">
+<h3 class="responsive-heading subheader"><txp:permlink><txp:title /></txp:permlink></h3>
+</div>
+</div>
+	
+	<!-- nesting -->
+	<div class="row">
+	<!-- column sizes declared in article form fa_video_card -->
+	<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card" limit="4" />
+	<!-- -->
+	</div>
+	
+<div class="row">
+<div class="12 columns">
+<txp:excerpt /><a href="<txp:permlink />" class="button">>> See all in this collection</a>
+</div>
+</div>	
+	
 </li>
+
 </txp:article_custom>
 </ul>
-
-
-
-
-
-
-<ul class="athenian-stripes">
-
-
-<li class="stripe">
-<!-- Collection Heading -->
-<div class="row">
-<div class="twelve columns">
-<h3 class="responsive-heading subheader"><a href="<txp:site_url />library?subject=history">History</a></h3>
-</div>
-</div>
-
-<div class="row">
-<!-- column sizes declared in article form fa_video_card -->
-<txp:article_custom section="video" form="fa_video_card" category="History" limit="4" />
-<!-- -->
-</div>
-</li>
-
-
-<li class="stripe">
-<!-- Collection Heading -->
-<div class="row">
-<div class="twelve columns">
-<h3 class="responsive-heading subheader"><a href="#">Documentaries</a></h3>
-</div>
-</div>
-
-<div class="row">
-<!-- column sizes declared in article form fa_video_card -->
-<txp:article_custom section="video" form="fa_video_card" Content_Type="Documentary" limit="4" />
-<!-- -->
-</div>
-</li>
-
-
-</ul><!-- .athenian-stripes -->
-
-
-
-

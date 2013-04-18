@@ -4,8 +4,9 @@
 <!-- Individual Collection Title-->
 <txp:if_individual_article>
 <txp:article>
-<h1 class="subheader"><txp:title /></h1>
-<txp:body />
+<h3><txp:title /></h3>
+<hr />
+<txp:excerpt />
 </txp:article>
 </txp:if_individual_article>
 
