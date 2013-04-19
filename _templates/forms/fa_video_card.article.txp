@@ -89,6 +89,7 @@ How the Queue Check works:
 
 <!-- FA Card footer content -->
 
+<p class="justify">
 <txp:chh_if_data><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></txp:chh_if_data>
 <!-- <txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data> -->
 
@@ -104,12 +105,13 @@ $sTime = custom_field(array('name' => 'Duration'));
 $oTime   = new DateTime($sTime);
 $aOutput = array();
 if ($oTime->format('G') > 0) {
-	$aOutput[] = $oTime->format('G') . ' hour';
+	$aOutput[] = $oTime->format('G') . ' h';
 }
-$aOutput[] = $oTime->format('i') . ' minutes';
+$aOutput[] = $oTime->format('i') . ' m';
 
 echo implode(', ', $aOutput);
 </txp:php>
+</p><!-- .justify -->
 
 <hr />
 

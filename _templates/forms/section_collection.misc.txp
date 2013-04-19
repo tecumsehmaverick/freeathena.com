@@ -1,4 +1,14 @@
 <div class="row">
+<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card" />
+</div>
+
+
+
+
+
+
+
+<div class="row">
 <div class="twelve columns">
 
 <!-- Individual Collection Title-->
@@ -58,16 +68,16 @@
 
 
 <div href="#" class="medium button dropdown">
-  Collection Menu
+  Collection dropdown
   <ul>
-<txp:article_custom id='<txp:variable name="collection_ids" />' offset="1">
+<txp:article_custom id='<txp:variable name="collection_ids" />' offset="1" limit="999">
 <li><txp:permlink><txp:title /></txp:permlink></li>
 </txp:article_custom>
   </ul>
 </div>
 
 <ul class="side-nav">
-<txp:article_custom id='<txp:variable name="collection_ids" />' offset="1">
+<txp:article_custom id='<txp:variable name="collection_ids" />' offset="1" limit="999">
 <li><txp:permlink><txp:title /></txp:permlink></li>
 </txp:article_custom>
 </ul>

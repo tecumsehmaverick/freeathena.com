@@ -261,3 +261,13 @@ $('div.subjects_list a').prepend($('<i class="icon-book"></i>'));
 	}
 	});
 	</script>
+	
+	
+
+<script>
+$('iframe').attr('src', $('iframe').attr('src'));
+</script>
+
+
+
+

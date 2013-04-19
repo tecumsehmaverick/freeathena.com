@@ -4,7 +4,7 @@
 
 <txp:if_category>
 <h1><txp:category title="1" /> </h1>
-<txp:output_form form="share_this" />
+<!-- <txp:output_form form="share_this" /> -->
 <hr />
 <txp:else />
 <h1>Browse Free Athena by Subject</h1>
@@ -45,21 +45,40 @@
 
 
 
-<txp:variable name="current_subject" />
 
-<txp:rss_uc_list parent='<txp:variable name="current_subject" />' />
 
-<hr />
+
 
     <div class="row">
       
       <div class="four columns">
-		<h5>Subjects Sitewide Hierarchically </h5>
-		<h6><txp:if_category>Current subject (and children if any) highlighted in the tree</txp:if_category></h6>
+
+<h4><txp:category /></h4>
+
+
+<!-- <txp:rss_unlimited_categories_list parent="<txp:category />" linktosection="subject" /> -->
+
+<txp:azp_menugen start="<txp:category />" showcount="yes" exclude="apple" />
+
+
+
+<txp:category_list wraptag="ul" break="" parent="<txp:category />">
+<li<txp:if_category name='<txp:category />'> class="active"</txp:if_category>>
+<txp:category title="1" link="1" />
+</li>
+</txp:category_list>
+<hr />
+<hr />
+
+
+<hr />
+<hr />
 
 		<!-- This variable will make it so articles are listed nested below their category -->
-		<txp:variable name="cat_menu_articles" value="0" /> 
+	<!--
+	<txp:variable name="cat_menu_articles" value="0" /> 
 		<txp:output_form form="cat_menu" />
+-->
       </div>
       
       <div class="eight columns">
@@ -79,7 +98,7 @@
 
 
 	<txp:chh_if_data>
-	test
+
         <txp:rss_uc_article_list section="video" category='<txp:category />,<txp:variable name="descendant_categories" />' form="fa_video_card" limit="60" />
         
         
