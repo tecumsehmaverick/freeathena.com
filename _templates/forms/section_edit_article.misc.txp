@@ -1,4 +1,4 @@
-<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, body, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
+<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, body_html, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
 <!-- Do check to insure the queue article belongs to logged user 
 ...
 -->
@@ -23,9 +23,10 @@
 
 
 <txp:article_custom id='<txp:variable name="video_in_question" />'>
-<h4>In Your Collection</h4>
-<h3 class="subheader"><txp:title /></h3>
-<txp:body />
+
+<h3><txp:title /></h3>
+<hr />
+
 </txp:article_custom>
 
 <h5>Your Tags</h5>
@@ -37,9 +38,7 @@
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
 
-<!-- <h5>Your Review</h5> -->
 
-<!--
 <fieldset class="rating">
     <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
     <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
@@ -47,10 +46,10 @@
     <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
     <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
 </fieldset>
--->
+<hr />
   
-
-<!-- <txp:mem_form_textarea name="table_body" label="" break="" default='{body}' required="0" /> -->
+<h5>Your Thoughts</h5>
+<txp:mem_form_textarea name="table_body_html" label="" break="" default='{body_html}' required="0" />
 
 
 <txp:mem_form_secret name="table_section" value="{section}" />

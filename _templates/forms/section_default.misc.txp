@@ -9,9 +9,9 @@
 </div><!-- .six columns-->
 
 
-<div class="six columns panel">
+<div class="six columns">
 <span class="logo hide-for-small">
-{Jeremy's video placeholder}
+<img src="<txp:site_url />img/logo-mark-horizontal-small.png" />
 </span>
 </div><!-- .six columns-->
 
@@ -50,7 +50,7 @@
 
 <div class="row">
 <div class="twelve columns">
-<h3 class="responsive-heading"><txp:permlink><txp:title /></txp:permlink></h3>
+<h3 class="responsive-heading"><txp:title /></h3>
 </div>
 </div>
 	

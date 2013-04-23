@@ -1,2 +1,11 @@
 body {margin: 0; padding: 0; text-align: right;}
-input {color: green;}
+
+input {
+	color: green;
+	background-color: #fff;
+	border: none;
+	border-radius: 3px;
+	background-image: url(/Volumes/Macintosh HD/Users/joshuavaage/Dropbox/httpdocs/freeathena.com/img/fa-card-bg.png);
+	box-shadow: inset 1px 1px 3px 1px #ddd;
+	padding: 5px;	
+}

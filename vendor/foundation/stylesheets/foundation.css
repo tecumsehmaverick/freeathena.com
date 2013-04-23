@@ -9,9 +9,9 @@ body { background: white; font-family: "Helvetica Neue", "Helvetica", Helvetica,
 /* Links ---------------------- */
 a img { border: none; }
 
-a { color: #666666; text-decoration: none; line-height: inherit; }
+a { color: #638421; text-decoration: none; line-height: inherit; }
 
-a:hover { color: #2795b6; }
+a:hover { color: #a5d24a; }
 
 a:focus { color: #2795b6; }
 
@@ -373,7 +373,7 @@ that IE7/8 do not support :nth-child.
 
 /* Normal Buttons ---------------------- */
 .button { width: auto; background: #ddd; border: 0px solid #C0D360; -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; color: white; cursor: pointer; display: inline-block; font-family: inherit; font-size: 14px; font-weight: bold; line-height: 1; margin: 0; padding: 10px 20px 11px; position: relative; text-align: center; text-decoration: none; -webkit-transition: background-color 0.15s ease-in-out; -moz-transition: background-color 0.15s ease-in-out; -o-transition: background-color 0.15s ease-in-out; transition: background-color 0.15s ease-in-out; /* Hovers */ /* Sizes */ /* Colors */ /* Radii */ /* Layout */ /* Disabled ---------- */ }
-.button:hover, .button:focus { color: white; background-color: #8BAEA1; }
+.button:hover, .button:focus { color: white; background-color: #d5e795; }
 .button:active { -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset; -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset; }
 .button.large { font-size: 17px; padding: 15px 30px 16px; }
 .button.medium { font-size: 14px; }

@@ -3,7 +3,7 @@
 
 <div class="row">
 
-<div class="six columns">
+<div class="eight columns">
 <txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
 
 
@@ -30,6 +30,8 @@
 
 
 <h4>Cards in your Collection <small>(<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query>)</small> </h4>
+
+
 
 
 <div class="">
@@ -65,16 +67,30 @@
 
 
 <div class="nine columns">
-<txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class=""></a>
-<txp:body />
+<h4 class="responsive-heading"><txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class=""></a></h4>
 <hr />
 
+<ul class="unstyled">
+
+<li>
 <txp:chh_if_data>
-<i class="icon-tags"></i> 
-<txp:tru_tags_from_article linkpath="<txp:site_url />user-tags?tag_name=" />
+<a href="<txp:site_url />edit?article_id=<txp:article_id />"><i class="icon-pencil"></i></a> : <txp:body />
 <txp:else />
-<a href="<txp:site_url />edit?article_id=<txp:article_id />">You haven't tagged me yet!</a>
+<a href="<txp:site_url />edit?article_id=<txp:article_id />" class="small button radius"><i class="icon-pencil"></i></a>
 </txp:chh_if_data>
+</li>
+
+<li>
+<txp:chh_if_data>
+<a href="<txp:site_url />edit?article_id=<txp:article_id />"><i class="icon-tags"></i></a> : 
+<txp:tru_tags_from_article linkpath="<txp:site_url />user-tags?tag_name=" /> 
+<txp:else />
+<a href="<txp:site_url />edit?article_id=<txp:article_id />"><i class="icon-tag"></i></a> tag me
+</txp:chh_if_data>
+</li>
+
+</ul>
+
 
 
 
@@ -92,18 +108,17 @@
 </div>
 
 
-<div class="six columns">
+<div class="four columns">
 
 <!-- Get logged user's tags-->
 
 <div class="tags">
 
-<txp:chh_if_data>
 <ul class="clearfix">
 
 <h4>Your Tags</h4>
 
-<p>Based on your amazing organizational skills.</p>
+<p>Browse your card collection by your tags.</p>
 
 <txp:if_different>
 <txp:smd_query query="SELECT id
@@ -117,11 +132,9 @@
 	
 </txp:smd_query>
 </txp:if_different>
-<txp:else />
-collect some cards before tagging	
 
 </ul>
-</txp:chh_if_data>
+
 </div>
 
 

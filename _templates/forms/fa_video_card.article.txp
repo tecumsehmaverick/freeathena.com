@@ -29,7 +29,7 @@ How the Queue Check works:
 
 
 <!-- # of Columns? -->
-<txp:if_section name="default,tag,creator">
+<txp:if_section name="default,tag, user-tags, creator, collection">
 <div class='three columns'>
 <txp:else />
 <div class='four columns'>
@@ -68,7 +68,7 @@ How the Queue Check works:
 	
 
 <a href="<txp:permlink />" title="View now: <txp:title />">
-<h5 class="responsive-heading capitalize"><txp:title /></h5>
+<h5 class="responsive-heading card-heading capitalize"><txp:title /></h5>
 </a>
 	
 <hr />
@@ -96,13 +96,21 @@ How the Queue Check works:
 <txp:chh_if_data><txp:custom_field name="Content_Type" /></txp:chh_if_data>
 
 
+<!--
 <txp:variable name="video_duration">
 <txp:custom_field name="Duration" />
 </txp:variable>
+-->
+
+<!-- wha_stime: 
+http://forum.textpattern.com/viewtopic.php?pid=272318#p272318 -->
+
+<txp:variable name="wha_stime"><txp:custom_field name="Duration" /></txp:variable>
 
 <txp:php>
-$sTime = custom_field(array('name' => 'Duration'));
-$oTime   = new DateTime($sTime);
+global $variable;
+$oTime = new DateTime($variable['wha_stime']);
+
 $aOutput = array();
 if ($oTime->format('G') > 0) {
 	$aOutput[] = $oTime->format('G') . ' h';
@@ -111,6 +119,8 @@ $aOutput[] = $oTime->format('i') . ' m';
 
 echo implode(', ', $aOutput);
 </txp:php>
+<!-- /wha_stime -->
+
 </p><!-- .justify -->
 
 <hr />

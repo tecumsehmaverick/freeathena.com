@@ -4,7 +4,7 @@
  
             <div class="six columns">
             
-
+				<img src="<txp:site_url />img/logo-mark-horizontal-small.png" />
               <p><a href="<txp:site_url />"><txp:site_name /></a> &copy; 2013 </p>
               
               

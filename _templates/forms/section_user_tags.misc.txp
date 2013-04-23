@@ -4,6 +4,8 @@
 
 <h4 class="capitalize"><txp:adi_gps name="tag_name"  /></h4>
 
+<p>Here are all your cards tagged with <strong><txp:adi_gps name="tag_name"  /></strong>.</p>
+
 <hr />
 </div>
 </div>

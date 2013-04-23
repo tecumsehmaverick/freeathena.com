@@ -13,8 +13,8 @@
 <!-- no display name-->
 <h3 class=""><txp:cbe_frontauth_whois type="name" /></h3>
 <txp:else />
-<!-- yes has display name-->
-<h3 class=""><txp:cbe_frontauth_whois type="RealName" /></h3>
+<!-- yes has display name: change to RealName later -->
+<h3 class=""><txp:cbe_frontauth_whois type="name" /></h3>
 </txp:if_variable>
 
 
@@ -27,7 +27,6 @@
 </txp:smd_bio_info>
 
 
-<hr />
 
 
 <dl class="tabs">

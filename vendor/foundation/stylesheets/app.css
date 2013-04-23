@@ -23,6 +23,10 @@ background-color: #d6e3a1;
 
 /* .lid-controls {display: none;} */
 
+
+
+.card-collect-add {}
+
 /* a {color: green;} */
 .rating {
     float:left;
@@ -46,6 +50,11 @@ li.active_cat > li { display: none!important; }
     clip:rect(0,0,0,0);
 }
 
+fieldset.rating {
+border: none;
+padding: 0;
+}
+
 .rating:not(:checked) > label {
     float:right;
     width:1em;
@@ -53,10 +62,9 @@ li.active_cat > li { display: none!important; }
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:200%;
+    font-size:150%;
     line-height:1.2;
     color:#ddd;
-    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
 }
 
 .rating:not(:checked) > label:before {
@@ -64,14 +72,12 @@ li.active_cat > li { display: none!important; }
 }
 
 .rating > input:checked ~ label {
-    color: #f70;
-    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+    color: #cde69c;
 }
 
 .rating:not(:checked) > label:hover,
 .rating:not(:checked) > label:hover ~ label {
-    color: gold;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    color: #638421;
 }
 
 .rating > input:checked + label:hover,
@@ -79,8 +85,7 @@ li.active_cat > li { display: none!important; }
 .rating > input:checked ~ label:hover,
 .rating > input:checked ~ label:hover ~ label,
 .rating > label:hover ~ input:checked ~ label {
-    color: #ea0;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+    color: #638421;
 }
 
 .rating > label:active {
@@ -89,7 +94,7 @@ li.active_cat > li { display: none!important; }
     left:2px;
 }
 
-
+#table_keywords_tagsinput {border: none;}
 
 .user-subjects {white-space:inherit;}
 
@@ -98,18 +103,28 @@ li.active_cat > li { display: none!important; }
 .collect {text-align: right;}
 
 /* When there is a failure in returning the video thumbnail from embed.ly, our script displays the video title and url as a link in it's place. These two rules first hide the link and second force a block height and display a bg image   */
-/*
-.video-image a {display: none;}
+.video-image span {display: none;}
 .video-image {
 background-color: #fff;
 box-shadow: inset 1px 1px 10px 2px #ddd;
 display: block;
-height: 130px;
+
+height: 115px;
 background-image: url(../../../img/spinner.gif);
 background-repeat: no-repeat;
 background-position: center;
 }
-*/
+
+
+form input[type=submit] {
+	background : url("submit.png") no-repeat center center!important;
+	width : 115px;
+	height :52px;
+	border : none;
+	color : transparent;
+}
+
+.card-heading {height: 38px; overflow-y: hidden;}
 
 
 
@@ -131,7 +146,7 @@ border-top: 1px solid #eee;
 border-bottom: 1px solid #eee;
 }
 
-li.collected-card-list .video-image {border: 1px solid #eee;}
+/* li.collected-card-list .video-image {border: 1px solid #eee;} */
 
 .circle {
   display: block;
@@ -187,12 +202,29 @@ font-weight: 100;
 
 /* pre {display: none;} */
 
+
+/* Using gradients to achieve "stripes". 50% of the height of the container is what we got */
 ul.athenian-stripes li {padding-bottom: 24px;}
 ul.athenian-stripes li.stripe:nth-child(odd) {
-    background-color: #eee;
+background: #eee; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 50%, #eee 50%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#eee)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 50%,#eee 50%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 50%,#eee 50%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 50%,#eee 50%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 50%,#eee 50%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eee',GradientType=0 ); /* IE6-9 */
+
 }
 ul.athenian-stripes li.stripe:nth-child(even) {
-    background-color: #edf4d8;
+background: #edf4d8; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 50%, #edf4d8 50%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#edf4d8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 50%,#edf4d8 50%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 50%,#edf4d8 50%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 50%,#edf4d8 50%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 50%,#edf4d8 50%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#edf4d8',GradientType=0 ); /* IE6-9 */
 }
 
 
