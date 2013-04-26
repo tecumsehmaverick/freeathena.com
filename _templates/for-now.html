@@ -1,0 +1,25 @@
+<div class="for-now">
+<div class="row">
+
+<div class="ten columns"><a href="<txp:site_url />">Free Athena<!-- <img src="<txp:site_url />img/logo-mark-horizontal-small.png" alt="Free Athena, Education for Everyone" /> --></a> | Browse <a href="<txp:site_url />subject">subject</a> | <a href="<txp:site_url />tag">tag</a></div>
+<div class="two columns">
+<a href="<txp:site_url />ac" class="tote"><txp:glx_gravatar email='<txp:cbe_frontauth_whois type="email" />' size="30" /> 
+<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query></a>
+        
+        
+<!--
+<div href="#" class="button split dropdown">
+<a href="<txp:site_url />ac" class=""><txp:glx_gravatar email='<txp:cbe_frontauth_whois type="email" />' size="30" /> 
+<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query></a>    <span></span>
+  <ul>
+    <li><a href="#">Settings</a></li>
+    <li class="divider"></li>
+    <li><a href="#"><i class="icon-off"></i> Log Out</a></li>
+  </ul>
+</div>
+-->
+
+
+</div>
+</div>
+</div>

@@ -24,6 +24,16 @@ background-color: #d6e3a1;
 /* .lid-controls {display: none;} */
 
 
+.float-right {text-align: right;}
+.user-bar-right {border-right: 1px solid #333;}
+
+
+@font-face
+{
+font-family: Knockout-Juniorlitewe;
+src: url('../../knockout/Knockout-HTF29-JuniorLitewe.ttf');
+}
+
 
 .card-collect-add {}
 
@@ -103,6 +113,7 @@ padding: 0;
 .collect {text-align: right;}
 
 /* When there is a failure in returning the video thumbnail from embed.ly, our script displays the video title and url as a link in it's place. These two rules first hide the link and second force a block height and display a bg image   */
+/*
 .video-image span {display: none;}
 .video-image {
 background-color: #fff;
@@ -114,6 +125,7 @@ background-image: url(../../../img/spinner.gif);
 background-repeat: no-repeat;
 background-position: center;
 }
+*/
 
 
 form input[type=submit] {
@@ -124,8 +136,20 @@ form input[type=submit] {
 	color : transparent;
 }
 
-.card-heading {height: 38px; overflow-y: hidden;}
+h5.card-heading {
+border-bottom: 1px solid #999;
+padding-bottom: 5px;
+font-family: Times;
+font-weight: 300;
+font-size: 12px;
+color: #000017;
+text-transform: uppercase;
+height: 32px; 
+overflow-y: hidden;
+}
 
+
+h5.card-heading:hover {color: #5B1400;}
 
 
 ul.sortable {list-style: none; margin-left: 0; background-color: #fff;}
@@ -164,9 +188,9 @@ border-bottom: 1px solid #eee;
 }
 
 .for-now {
-background-image: url(http://joshuavaage.com/projects/freeathena.com/img/fa-card-queued-bg.png);
+
 padding: 10px;
-border-bottom: 1px solid #eee;
+
 }
 
 li.active_cat {
@@ -207,13 +231,13 @@ font-weight: 100;
 ul.athenian-stripes li {padding-bottom: 24px;}
 ul.athenian-stripes li.stripe:nth-child(odd) {
 background: #eee; /* Old browsers */
-background: -moz-linear-gradient(top, #ffffff 50%, #eee 50%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#eee)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #ffffff 50%,#eee 50%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #ffffff 50%,#eee 50%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #ffffff 50%,#eee 50%); /* IE10+ */
-background: linear-gradient(to bottom, #ffffff 50%,#eee 50%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eee',GradientType=0 ); /* IE6-9 */
+background: -moz-linear-gradient(top, #ffffff 50%, #959EA3 50%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#959EA3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 50%,#959EA3 50%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 50%,#959EA3 50%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 50%,#959EA3 50%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 50%,#959EA3 50%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#959EA3',GradientType=0 ); /* IE6-9 */
 
 }
 ul.athenian-stripes li.stripe:nth-child(even) {
@@ -300,8 +324,10 @@ padding-bottom: 30px;
 }
 
 #carousel ul {
+
+	text-align: justify;
 	padding-top: 20px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
     width: 100%;
     white-space: nowrap;
     overflow-x: scroll;
@@ -335,12 +361,23 @@ padding-top: 20px;
 }
 
 .featured-navigation {
-border-top: 1px solid #eee;
-border-bottom: 1px solid #eee;
+font-family: 'Knockout-Juniorlitewe';
+font-size: 22px;
+text-align: justify;
 background-color: #fff;
 }
 
 
+.featured-navigation a {
+font-size: 24px;
+color: #333;
+text-transform: uppercase;
+}
+
+
+.featured-navigation a:hover {
+color: #5B1400;
+}
 
 .box {
   width: 170px;
@@ -353,7 +390,10 @@ background-color: #fff;
   border-radius: 3px;
 }
 
-.fa_card {height: 340px; overflow-y: hidden;}
+.fa_card {
+height: 320px;
+overflow-y: hidden;
+}
 
 .in-queue {
 	border: solid 1px #e6e6e6;
@@ -368,26 +408,48 @@ border-bottom: 1px solid #999;
 color: #999;
 }
 
+
+
 .article {
 /* 	background-image: url(http://joshuavaage.com/projects/freeathena.com/img/fa-card-bg.png); */
-background-color: #efebe7;
-  padding: 10px;
-  line-height: 1;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  margin-bottom: 10px;
-  position: relative;
-	-webkit-box-shadow: 0px 3px 13px rgba(50, 50, 50, 0.62);
-	-moz-box-shadow:    0px 3px 13px rgba(50, 50, 50, 0.62);
-	box-shadow:         0px 3px 13px rgba(50, 50, 50, 0.62);
-	
-  
+	border: 1px solid #ddd;
+	background-color: #efebe7;
+	padding: 15px;
+	line-height: 1;
+	border-radius: 6px;
+	margin-bottom: 10px;
+	position: relative;
 }
 
+
+
+.article:hover {
+	box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.075);
+}
+
+
+p.card-exceprt {
+font-family: 'Copse', serif;
+font-size: 12px;
+font-weight: 100;
+
+letter-spacing: ;
+color: #333;
+}
+
+.card-footer {
+font-family: 'Copse', serif;
+font-size: 8px!important;
+font-weight: 100;
+}
+
+.collection-title {
+font-size: 20px;
+font-weight: 100;
+color: #666;
+}
+
+.article:hover h5.card-heading {color: #5B1400;}
 /*
 .article:before {
    content:"";
@@ -399,13 +461,6 @@ background-color: #efebe7;
    border-color:#eee #fff;
 }
 */
-
-.article:hover {
--webkit-box-shadow: 0px 3px 13px rgba(50, 50, 50, 0.62);
--moz-box-shadow:    0px 3px 13px rgba(50, 50, 50, 0.62);
-box-shadow:         0px 3px 13px rgba(50, 50, 50, 0.62);
-}
-
 
 .in-queue {
 	border: solid 1px #e6e6e6;
@@ -456,6 +511,8 @@ body {
 background-image: url(../../../img/plaster-wall.png);
 }
 
+body {padding-top: 24px;}
+
 .button {color: #333!important}
 .gravatar {vertical-align: middle;}
 .gravatar img { border: 1px solid #999; border-radius: 5px; margin: 5px }
@@ -500,8 +557,8 @@ http://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
 
 
 
-
-
+a {color: #333;}
+a:hover {color: #5B1400; }
 
 
 

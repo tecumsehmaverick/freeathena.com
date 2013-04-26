@@ -40,23 +40,6 @@ How the Queue Check works:
 <div class="article fa_card">
 
 
-<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
-<txp:smd_query query="SELECT title, id FROM textpattern WHERE title = '?queue_check'">
-
-<!-- If in Queue -->
-<div class="lid-controls">
-<iframe src="<txp:site_url />trash/?remote_id={id}" scrolling="no" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 30px;"></iframe>
-</div>
-
-<txp:else />
-
-<!-- If not in Queue -->
-<div class="lid-controls">
-<iframe src="<txp:site_url />remote/?remote_id=<txp:article_id />" scrolling="no" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 30px;"></iframe>
-</div>
-
-</txp:smd_query>
-   
     
     
 <!-- Video Thumb -->
@@ -68,11 +51,11 @@ How the Queue Check works:
 	
 
 <a href="<txp:permlink />" title="View now: <txp:title />">
-<h5 class="responsive-heading card-heading capitalize"><txp:title /></h5>
+<h5 class="responsive-heading card-heading"><txp:title /></h5>
 </a>
-	
-<hr />
 
+
+<p class="card-exceprt"><txp:excerpt /></p>
 <!-- Subjects -->
 <!--
 <p class="responsive-heading">
@@ -89,12 +72,20 @@ How the Queue Check works:
 
 <!-- FA Card footer content -->
 
-<p class="justify">
-<txp:chh_if_data><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></txp:chh_if_data>
-<!-- <txp:chh_if_data><li>Speaker: <txp:custom_field name="Speaker" /></li></txp:chh_if_data> -->
+<div class="row card-footer">
+<div class="twelve columns">
 
+<div class="row">
+
+<div class="four columns"><txp:chh_if_data><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></txp:chh_if_data>
+</div><!-- /.four columns -->
+
+
+<div class="four columns">
 <txp:chh_if_data><txp:custom_field name="Content_Type" /></txp:chh_if_data>
+</div><!-- /.four columns -->
 
+<div class="four columns">
 
 <!--
 <txp:variable name="video_duration">
@@ -106,6 +97,14 @@ How the Queue Check works:
 http://forum.textpattern.com/viewtopic.php?pid=272318#p272318 -->
 
 <txp:variable name="wha_stime"><txp:custom_field name="Duration" /></txp:variable>
+
+<!-- http://forum.textpattern.com/viewtopic.php?pid=272337#p272337 
+	-->
+<txp:php>
+    $date = parse('<txp:custom_field name="Duration" />');
+</txp:php>
+<!-- 
+	-->
 
 <txp:php>
 global $variable;
@@ -121,14 +120,18 @@ echo implode(', ', $aOutput);
 </txp:php>
 <!-- /wha_stime -->
 
-</p><!-- .justify -->
+</div><!-- /.four columns -->
 
-<hr />
+</div>
 
-<!--
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
-<i class="icon-user"></i> <a href="<txp:site_url />athenians?profile=jeremy"><txp:author /></a>
--->
+</div>
+</div>
+
+
+
+
+
+
 
 </div><!-- /.article -->
 </div><!-- column class -->
