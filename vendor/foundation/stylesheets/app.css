@@ -138,13 +138,12 @@ form input[type=submit] {
 
 h5.card-heading {
 border-bottom: 1px solid #999;
-padding-bottom: 5px;
 font-family: Times;
 font-weight: 900;
-font-size: 12px;
+font-size: 13px;
 color: #000017;
 text-transform: uppercase;
-height: 32px; 
+height: 40px; 
 overflow-y: hidden;
 }
 
@@ -231,24 +230,24 @@ font-weight: 100;
 ul.athenian-stripes li {padding-bottom: 24px;}
 ul.athenian-stripes li.stripe:nth-child(odd) {
 background: #eee; /* Old browsers */
-background: -moz-linear-gradient(top, #ffffff 50%, #959EA3 50%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#959EA3)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #ffffff 50%,#959EA3 50%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #ffffff 50%,#959EA3 50%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #ffffff 50%,#959EA3 50%); /* IE10+ */
-background: linear-gradient(to bottom, #ffffff 50%,#959EA3 50%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#959EA3',GradientType=0 ); /* IE6-9 */
+background: -moz-linear-gradient(top, #ffffff 50%, #ced1d2 50%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#ced1d2)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 50%,#ced1d2 50%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 50%,#ced1d2 50%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 50%,#ced1d2 50%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 50%,#ced1d2 50%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ced1d2',GradientType=0 ); /* IE6-9 */
 
 }
 ul.athenian-stripes li.stripe:nth-child(even) {
-background: #edf4d8; /* Old browsers */
-background: -moz-linear-gradient(top, #ffffff 50%, #edf4d8 50%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#edf4d8)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #ffffff 50%,#edf4d8 50%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #ffffff 50%,#edf4d8 50%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #ffffff 50%,#edf4d8 50%); /* IE10+ */
-background: linear-gradient(to bottom, #ffffff 50%,#edf4d8 50%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#edf4d8',GradientType=0 ); /* IE6-9 */
+background: #dce9b6; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 50%, #dce9b6 50%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(50%,#dce9b6)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 50%,#dce9b6 50%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 50%,#dce9b6 50%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 50%,#dce9b6 50%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 50%,#dce9b6 50%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dce9b6',GradientType=0 ); /* IE6-9 */
 }
 
 
@@ -319,8 +318,18 @@ padding-bottom: 30px;
 
 .top-bar {}
 
-#carousel {
 
+/* 
+Justify horizontal navigation:
+http://stackoverflow.com/questions/49536/how-do-i-really-justify-a-horizontal-menu-in-htmlcss 
+*/
+
+#carousel {
+text-align: justify;
+}
+
+#carousel * {
+  display: inline;
 }
 
 #carousel ul {
@@ -330,7 +339,6 @@ padding-bottom: 30px;
 	padding-bottom: 0px;
     width: 100%;
     white-space: nowrap;
-    overflow-x: scroll;
     line-height: 2em;
 }
 
@@ -345,7 +353,12 @@ padding-bottom: 30px;
 padding: 5px;
 }
 
-
+#carousel span {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 0;
+}
 
 .thumbnail-subject {
 padding: 10px;
@@ -391,7 +404,7 @@ color: #5B1400;
 }
 
 .fa_card {
-height: 320px;
+height: 315px;
 overflow-y: hidden;
 }
 
@@ -412,7 +425,7 @@ color: #999;
 
 .article {
 /* 	background-image: url(http://joshuavaage.com/projects/freeathena.com/img/fa-card-bg.png); */
-	border: 1px solid #ddd;
+	border: 1px solid #9e9e9e;
 	background-color: #efebe7;
 	padding: 15px;
 	line-height: 1;
@@ -424,23 +437,27 @@ color: #999;
 
 
 .article:hover {
-	box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.075);
+	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 p.card-exceprt {
+height: 80px;
+overflow-y: hidden;
 font-family: 'Copse', serif;
-font-size: 12px!important;
-font-weight: 100!important;
-
+font-size: 13px!important;
+font-weight: 200!important;
 letter-spacing: ;
 color: #333;
 }
 
-.card-footer {
+div.do-footer {
+margin-bottom: 0;
 font-family: 'Copse', serif;
-font-size: 8px!important;
+font-size: 11px;
 font-weight: 100;
 }
+
+.footer-time {text-align: right;}
 
 .collection-title {
 font-size: 20px;
