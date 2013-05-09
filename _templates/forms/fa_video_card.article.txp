@@ -39,8 +39,9 @@ How the Queue Check works:
 
 <div class="article fa_card">
 
+<small><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />' class="subheader"><txp:custom_field name="Creator" /></small></a>
+<!--  | <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">edit</a> -->
 
-    
     
 <!-- Video Thumb -->
 <div class="video-image">
@@ -51,11 +52,33 @@ How the Queue Check works:
 	
 
 <a href="<txp:permlink />" title="View now: <txp:title />">
-<h5 class="responsive-heading card-heading"><txp:title /></h5>
+<h5 class="responsive-heading card-heading"><txp:rvm_substr length="38"><txp:title /></txp:rvm_substr></h5>
 </a>
 
 
-<p class="card-exceprt"><txp:excerpt /></p>
+<txp:pax_grep from="|<p>|,|</p>|" to=",">
+<p class="card-exceprt">
+<!-- if exceprt exists show - if doesn't show first 80 from body-->
+
+<txp:chh_if_data>
+
+<txp:rvm_substr length="60">
+<txp:excerpt />
+</txp:rvm_substr>
+
+<txp:else />
+
+<txp:rss_auto_excerpt  length="60" linktext="…" ending="" wrapreadmore="1" excerptwraptag="span" />
+  
+  
+<!-- <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">Write body copy. Will be excerpted and trimmed down to a specified character length here. Click this text to do that.</a> -->
+
+</txp:chh_if_data>
+
+</p>
+</txp:pax_grep>
+
+
 <!-- Subjects -->
 <!--
 <p class="responsive-heading">
@@ -77,15 +100,11 @@ How the Queue Check works:
 
 <div class="row">
 
-<div class="four columns"><txp:chh_if_data><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />'><txp:custom_field name="Creator" /></a></txp:chh_if_data>
-</div><!-- /.four columns -->
-
-
 <div class="four columns">
 <txp:chh_if_data><txp:custom_field name="Content_Type" /></txp:chh_if_data>
 </div><!-- /.four columns -->
 
-<div class="four columns">
+<div class="six columns">
 
 <!--
 <txp:variable name="video_duration">
@@ -100,9 +119,11 @@ http://forum.textpattern.com/viewtopic.php?pid=272318#p272318 -->
 
 <!-- http://forum.textpattern.com/viewtopic.php?pid=272337#p272337 
 	-->
+<!--
 <txp:php>
     $date = parse('<txp:custom_field name="Duration" />');
 </txp:php>
+-->
 <!-- 
 	-->
 

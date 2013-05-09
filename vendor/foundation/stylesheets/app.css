@@ -140,7 +140,7 @@ h5.card-heading {
 border-bottom: 1px solid #999;
 padding-bottom: 5px;
 font-family: Times;
-font-weight: 300;
+font-weight: 900;
 font-size: 12px;
 color: #000017;
 text-transform: uppercase;
@@ -427,11 +427,10 @@ color: #999;
 	box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.075);
 }
 
-
 p.card-exceprt {
 font-family: 'Copse', serif;
-font-size: 12px;
-font-weight: 100;
+font-size: 12px!important;
+font-weight: 100!important;
 
 letter-spacing: ;
 color: #333;
