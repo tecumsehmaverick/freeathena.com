@@ -37,7 +37,34 @@ How the Queue Check works:
 
 
 
+
+<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
+<txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
+
+
+
+<div class="lid-controls">
+<a href="#" class="queue-button">remove</a>
+</div>
+
+<div class="article in-queue fa_card">
+
+<txp:else />
+
+
+
+<div class="lid-controls">
+<a href="#" class="queue-button">add</a></div>
+
 <div class="article fa_card">
+
+</txp:smd_query>
+
+
+
+
+
+
 
 <!-- <small><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />' class="subheader"><txp:custom_field name="Creator" /></small></a> -->
 <!--  | <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">edit</a> -->
