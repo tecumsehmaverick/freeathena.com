@@ -414,10 +414,18 @@ height: 315px;
 overflow-y: hidden;
 }
 
+h4.subheader {color: #666; font-size: 20px;}
 
+#masthead {
+position: absolute;
+}
+
+.vert-align {vertical-align: baseline;}
+.smaller div {font-size: 11px!important;}
 a.queue-button {
 font-family: 'Copse', serif;
 }
+
 
 
 .in-queue {
@@ -460,6 +468,13 @@ font-weight: 200!important;
 letter-spacing: ;
 color: #333;
 }
+
+
+.footer-bg {
+margin-top: 48px;
+padding-top: 48px;
+padding-bottom: 48px;
+background-color: #ced1d2;}
 
 div.do-footer {
 margin-bottom: 0;

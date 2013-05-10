@@ -6,8 +6,8 @@
 <div class="row vertical-breathing-room">
 
 <div class="six columns">
-<h4 class="">Learn any Subject For Free.</h4>
-<h5 class="subheader">Watch Videos of University Courses, Documentary Films, Ted Talks, and More, Curated and Organized by Subject</h5>
+<h3 class="">Learn any Subject For Free.</h3>
+<h4 class="subheader">Watch Videos of University Courses, Documentary Films, Ted Talks, and More, Curated and Organized by Subject</h4>
 </div><!-- .six columns-->
 
 
@@ -46,7 +46,7 @@
 
 
 <ul class="athenian-stripes">
-<txp:article_custom section="collection" limit="8">
+<txp:article_custom section="collection" limit="10">
 
 <li class="stripe">
 

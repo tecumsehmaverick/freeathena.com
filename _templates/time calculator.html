@@ -1,0 +1,12 @@
+<txp:php>
+global $variable;
+$oTime = new DateTime($variable['wha_stime']);
+
+$aOutput = array();
+if ($oTime->format('G') > 0) {
+	$aOutput[] = $oTime->format('G') . ':';
+}
+$aOutput[] = $oTime->format('i') . '';
+
+echo implode('', $aOutput);
+</txp:php>

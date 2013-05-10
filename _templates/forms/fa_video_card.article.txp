@@ -47,7 +47,7 @@ How the Queue Check works:
 <a href="#" class="queue-button">remove</a>
 </div>
 
-<div class="article in-queue fa_card">
+<div class="article fa_card">
 
 <txp:else />
 
@@ -158,18 +158,7 @@ http://forum.textpattern.com/viewtopic.php?pid=272318#p272318 -->
 <!-- 
 	-->
 
-<txp:php>
-global $variable;
-$oTime = new DateTime($variable['wha_stime']);
 
-$aOutput = array();
-if ($oTime->format('G') > 0) {
-	$aOutput[] = $oTime->format('G') . ':';
-}
-$aOutput[] = $oTime->format('i') . '';
-
-echo implode('', $aOutput);
-</txp:php>
 <!-- /wha_stime -->
 
 </div><!-- /.four columns -->
