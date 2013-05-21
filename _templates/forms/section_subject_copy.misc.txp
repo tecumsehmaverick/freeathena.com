@@ -1,0 +1,214 @@
+<div class="row">
+  <div class="twelve columns">
+<hr />
+
+<!-- Subject Navigation -->
+<div class="featured-navigation">
+
+<div class="row">
+<div class="twelve columns">
+<div id="carousel">
+<ul>
+<txp:linklist category="home-page-curated-subjects">
+
+<li <txp:if_category name='<txp:link_url />'>class="selected-category-from-nav"</txp:if_category>><a href="<txp:site_url />subject/<txp:link_url />"><txp:link_name /></a></li>
+</txp:linklist>
+</ul>
+<span></span>
+</div><!-- #carousel -->
+</div><!-- .twelve columns -->
+</div><!-- .row -->
+
+</div><!-- .subnav -->
+<!-- -->
+
+<hr />
+
+</div>
+</div>
+
+
+
+<div class="row">
+  <div class="twelve columns">
+
+
+<!--
+<ul class="breadcrumbs">
+  <li><a href="#">Subject:</a></li>
+  <li><a href="#"><txp:category /></a></li>
+  <li class="unavailable"><a href="#">{}</a></li>
+  <li class="current"><a href="#">{}</a></li>
+</ul>
+-->
+
+
+</div>
+</div>
+
+
+<div class="row">
+  <div class="twelve columns">
+
+
+<txp:if_category>
+<!-- <h1><txp:category title="1" /> </h1> -->
+<!-- <txp:output_form form="share_this" /> -->
+
+<txp:else />
+<h1>Browse Free Athena by Subject</h1>
+
+<hr />
+
+<!-- Get IDs from custom_3 of videos that have been queued so that we can then get the categories they belong to -->
+<div class="subjects">
+<h4>Subjects of Interest</h4>
+
+<ul class="clearfix">
+
+<p>Based on the contents of your card collection.</p>
+
+
+<!-- make variable: a list of ids that queued cards reference -->
+<txp:variable name="queued_cards">
+<txp:article_custom section="queue" author='<txp:variable name="logged_user" />' limit="999">
+<txp:custom_field name="Queued_ID" />,
+</txp:article_custom>
+</txp:variable>
+
+<div class="subjects_list">
+<txp:article_custom id='<txp:variable name="queued_cards" />'>
+<txp:if_different>
+<txp:rss_uc_filedunder linktosection="subject" delim="/" break="li" />
+</txp:if_different>
+</txp:article_custom>
+</div>
+
+
+</ul>
+
+</div>
+
+
+</txp:if_category>
+
+
+
+
+
+
+
+    <div class="row">
+      
+      <div class="four columns">
+
+<!-- Filters need coding:
+<ul class="unstyled">
+<li><a href="#">Documentary Films</a></li>
+<li><a href="#">University Courses</a></li>
+<li><a href="#">Ted Talks</a></li>
+<li><a href="#">Convention Video</a></li>
+<li><a href="#">Interviews</a></li>
+</ul>
+-->
+
+
+<h4><txp:category title="1" /></h4>
+
+<!--
+<txp:variable name="now-cat">
+<txp:category />
+</txp:variable>
+-->
+
+
+
+<txp:category_list parent='<txp:category />' section="subject" children="0" form="snip_category" exclude="<txp:category />" />
+
+<!-- <txp:rss_unlimited_categories_list parent='<txp:variable name="now-cat" />' linktosection="subject" /> -->
+
+<!-- <txp:azp_menugen start="<txp:category />" /> -->
+
+
+<!--
+
+<txp:category_list wraptag="ul" break="" parent="<txp:category />">
+<li<txp:if_category name='<txp:category />'> class="active"</txp:if_category>>
+<txp:category title="1" link="1" />
+</li>
+</txp:category_list>
+-->
+
+
+		<!-- This variable will make it so articles are listed nested below their category -->
+	<!--
+	<txp:variable name="cat_menu_articles" value="0" /> 
+		<txp:output_form form="cat_menu" />
+-->
+      </div>
+      
+      
+
+
+
+
+      <div class="eight columns">
+      	<div class="row">
+		
+		
+		
+ 
+      	<txp:if_category>
+
+<!-- make current category and it's descendant categories into a variable with a comma deliminated value -->
+<txp:variable name="descendant_categories">	
+<txp:pax_grep from="'\t|\r|\n'" to="">
+<txp:category_list parent='<txp:category />' break=",">
+<txp:category />
+</txp:category_list>
+</txp:pax_grep>
+</txp:variable>
+
+<!-- <strong>All children of <txp:category />:</strong> <txp:variable name="descendant_categories" /> -->
+
+	<txp:chh_if_data>
+
+        <txp:rss_uc_article_list section="video" category='<txp:category />,<txp:variable name="descendant_categories" />' form="fa_video_card" limit="60" />
+        
+        
+
+
+
+        <txp:else />
+        Nothing to see here… <a href="<txp:site_url />textpattern/index.php?event=article&Section=video">Yet</a>!
+        
+        <hr />
+        
+
+	</txp:chh_if_data>
+
+        <txp:else />
+		
+		<!-- else, because not cat / No category selected so show this list-->
+		<h5>Subjects Sitewide Alphabetically w/ Count</h5>
+        <div class="subjects">
+        <txp:rss_uc_list section="video" linktosection="subject" />
+        </div>
+        
+      	</txp:if_category>
+		
+		
+
+        </div>
+		</div>
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+

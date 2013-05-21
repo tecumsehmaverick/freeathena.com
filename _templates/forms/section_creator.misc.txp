@@ -1,33 +1,72 @@
 <txp:adi_gps name="name" quiet="1" />
-
-<div class="row">
-<div class="twelve columns">
-
-<h1><txp:variable name="name" /></h1>
-<txp:output_form form="share_this" />
-<hr />
-</div>
-</div>
+<txp:adi_gps name="type" quiet="1" />
 
 
 <div class="row">
-<div class="twelve columns">
-<div class="row">
+<h1 class="responsive-headline"><txp:variable name="name" /></h1>
+<p>The following were produced by <txp:variable name="name" />:</p>
+
+<a href="#" data-dropdown="subject" class="small secondary radius button dropdown">Subject</a>
+
+<ul id="subject" class="f-dropdown">
+<!-- smd_query to get smd_tags for root level tags which are our 'subjects' -->
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'root'">
+<li><a href="<txp:site_url />subject/{name}">{title}</a></li>
+</txp:smd_query>             
+</ul>
 
 
-<!-- <txp:article_custom Creator='<txp:variable name="name" />' form="fa_video_card" /> -->
+<!-- Creator:  -->
 
-<txp:article_custom limit="100" Creator='<txp:variable name="name" />' form="fa_video_card" />
+<a href="#" data-dropdown="creator" class="small secondary radius button dropdown"><txp:adi_gps name="name" /></a>
+
+<ul id="creator" class="f-dropdown">
+<!-- smd_query to get smd_tags for root level tags which are our 'subjects' -->
+<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Creator" />'>
+<li><a href="?name=<txp:rah_repeat_value />"><txp:rah_repeat_value /></a></li>
+</txp:rah_repeat>
+</ul>
 
 
-        <txp:etc_query
- data='<txp:article_custom limit="999" Creator=''<txp:variable name="name" />''>
-   <a href=''<txp:permlink />''><txp:title /></a>
- </txp:article_custom>'
- query='a[@href=''<txp:permlink />'']/following-sibling::a[position()=1]'
- specials="" 
-/>
+
+<!-- Type:  -->
+
+<a href="#" data-dropdown="type" class="small secondary radius button dropdown"><txp:adi_gps name="type" /></a>
+
+<ul id="type" class="f-dropdown">
+<!-- smd_query to get smd_tags for root level tags which are our 'subjects' -->
+<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Content_Type" />'>
+
+
+<txp:if_variable name="type" value="">
+
+<txp:rah_replace from='<txp:adi_gps name="type" />' to='<txp:rah_repeat_value />'>
+<li><a href="<txp:page_url />&type=<txp:rah_repeat_value />"><txp:rah_repeat_value /></a></li>
+</txp:rah_replace>
+
+<txp:else />
+
+<li><a href="<txp:page_url />&type=<txp:rah_repeat_value />"><txp:rah_repeat_value /></a></li>
+
+
+
+
+</txp:if_variable>
+
+</txp:rah_repeat>
+</ul>
+
 
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+<div class="container row">
+<txp:article_custom limit="100" Creator='<txp:variable name="name" />' form="fa_video_card_v30" />
 </div>

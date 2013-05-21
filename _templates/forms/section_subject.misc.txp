@@ -1,137 +1,131 @@
+
+
+<!-- VIDEO TILES  -->
+<!-- If in smd_tag (list) context (Subject) show "Related" to smd_tag: -->
+<txp:smd_if_tag_list>
 <div class="row">
-  <div class="twelve columns">
+
+<txp:smd_tag_list wraptag="" break="">
+
+<txp:variable name="current_tag" value='<txp:smd_tag_info item="title" />' />
 
 
-<txp:if_category>
-<h1><txp:category title="1" /> </h1>
-<!-- <txp:output_form form="share_this" /> -->
-<hr />
-<txp:else />
-<h1>Browse Free Athena by Subject</h1>
 
-<hr />
+<!-- Current Subject (smd_tag) Title-->
+<h1 class="responsive-headline"><txp:smd_tag_info item="title" /></h1>
 
-<!-- Get IDs from custom_3 of videos that have been queued so that we can then get the categories they belong to -->
-<div class="subjects">
-<h4>Subjects of Interest</h4>
+<a href="#" data-dropdown="drop1" class="small secondary radius button dropdown"><txp:smd_tag_info item="title" /></a>
 
-<ul class="clearfix">
-
-<p>Based on the contents of your card collection.</p>
-
-
-<!-- make variable: a list of ids that queued cards reference -->
-<txp:variable name="queued_cards">
-<txp:article_custom section="queue" author='<txp:variable name="logged_user" />' limit="999">
-<txp:custom_field name="Queued_ID" />,
-</txp:article_custom>
-</txp:variable>
-
-<div class="subjects_list">
-<txp:article_custom id='<txp:variable name="queued_cards" />'>
-<txp:if_different>
-<txp:rss_uc_filedunder linktosection="subject" delim="/" break="li" />
-</txp:if_different>
-</txp:article_custom>
-</div>
-
-
+<ul id="drop1" class="f-dropdown">
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = '?current_tag'">
+<li><a href="<txp:site_url />subject/{name}">{title}</a></li>
+</txp:smd_query>             
 </ul>
 
+	
+
+<div class="row">
+    <txp:smd_related_tags section="video" wraptag="" break="" limit="999" form="fa_video_card_v30" />
 </div>
 
+  </txp:smd_tag_list>
+  
+  
 
-</txp:if_category>
+<!-- Not smd _tag context: Show menus and whatnot-->  
+<txp:else />
+<!-- … -->
 
-
-
-
-
-
-
-    <div class="row">
-      
-      <div class="four columns">
-
-<h4><txp:category /></h4>
-
-
-<!-- <txp:rss_unlimited_categories_list parent="<txp:category />" linktosection="subject" /> -->
-
-<txp:azp_menugen start="<txp:category />" showcount="yes" exclude="apple" />
+</div>
+</txp:smd_if_tag_list>
 
 
 
-<txp:category_list wraptag="ul" break="" parent="<txp:category />">
-<li<txp:if_category name='<txp:category />'> class="active"</txp:if_category>>
-<txp:category title="1" link="1" />
-</li>
-</txp:category_list>
-<hr />
-<hr />
 
 
-<hr />
-<hr />
+<txp:smd_if_tag>
+<txp:smd_tag_list wraptag="" break="">
 
-		<!-- This variable will make it so articles are listed nested below their category -->
-	<!--
-	<txp:variable name="cat_menu_articles" value="0" /> 
-		<txp:output_form form="cat_menu" />
+<div class="row">
+
+<div class="large-8 columns">
+</div>
+
+<div class="large-4 columns">
+</div>
+
+<!-- <hr /> -->
+
+<!-- <p><txp:smd_tag_info item="description" /></p> -->
+
+<!--
+<ul class="breadcrumbs">
+  <li><a href="#"><txp:smd_tag_info item="parent" /></a></li>
+  <li class="current"><a href="#"><txp:smd_tag_info item="title" /></a></li>
+</ul>
 -->
-      </div>
+
+
       
-      <div class="eight columns">
-      	<div class="row">
-      	<txp:if_category>
 
-<!-- make current category and it's descendant categories into a variable with a comma deliminated value -->
-<txp:variable name="descendant_categories">	
-<txp:pax_grep from="'\t|\r|\n'" to="">
-<txp:category_list parent='<txp:category />' break=",">
-<txp:category />
-</txp:category_list>
-</txp:pax_grep>
-</txp:variable>
-
-<!-- <strong>All children of <txp:category />:</strong> <txp:variable name="descendant_categories" /> -->
-
-
-	<txp:chh_if_data>
-
-        <txp:rss_uc_article_list section="video" category='<txp:category />,<txp:variable name="descendant_categories" />' form="fa_video_card" limit="60" />
-        
-        
-
-
-
-        <txp:else />
-        Nothing to see here… <a href="<txp:site_url />textpattern/index.php?event=article&Section=video">Yet</a>!
-        
-        <hr />
-        
-
-	</txp:chh_if_data>
-
-        <txp:else />
-		
-		<!-- else, because not cat / No category selected so show this list-->
-		<h5>Subjects Sitewide Alphabetically w/ Count</h5>
-        <div class="subjects">
-        <txp:rss_uc_list section="video" linktosection="subject" />
-        </div>
-        
-      	</txp:if_category>
-        
-        </div>
-      </div>
-
-    </div>
-
-  </div>
+</div>
 </div>
 
+</txp:smd_tag_list>
+
+<txp:else />
+
+<div class="row">
+<div class="large-12 columns">
+<h1>Browse Free Athena by Subject</h1>
+
+
+<txp:smd_tag_list showall="1" sort="name asc"
+     break="" wraptag="div" flavour="cloud">
+   <txp:if_different>
+         <hr />
+      <h3 class="alphachar uppercase"><txp:smd_tag_info item="lettername" /></h3>
+      
+   </txp:if_different>
+   <span class="subjects">
+      <txp:smd_tag_name link="1" wraptag="span" class="" />
+<!--       <txp:smd_tag_count /> -->
+   </span>
+</txp:smd_tag_list>
+
+</div>
+</div>
+
+</txp:smd_if_tag>
 
 
 
 
+
+
+
+
+<!-- SUBJECT NAVIGATION -->
+<div class="row">  
+<div class="large-12 columns">
+<!--
+	<ul class="breadcrumbs">
+          <li><a href="#">Home</a></li>
+          <li><a href="<txp:site_url />subject">Subject</a></li>
+          <li class="unavailable"><a href="#"><txp:category title="1" /></a></li>
+	</ul>
+-->
+
+<!-- <a href="<txp:site_url />subject" class="small secondary radius button"><txp:chh_if_data><txp:category title="1" /></txp:chh_if_data></a> -->
+<!-- <a href="#" data-dropdown="drop2" class="small secondary radius button dropdown"><txp:category title="1" /></a> -->
+
+<!--
+<ul id="drop2" data-dropdown-content class="f-dropdown">
+<txp:rah_replace from="<ul>,</ul>, cagegory" to=',,subject'>
+<txp:azp_menugen />
+</txp:rah_replace>
+</ul>
+-->
+
+</div>
+</div>

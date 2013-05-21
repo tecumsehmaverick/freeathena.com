@@ -1,0 +1,93 @@
+<txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
+
+
+
+<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
+<txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
+
+<div class="small-6 large-3 columns box collected">
+
+<txp:else />
+
+<div class="small-6 large-3 columns box">
+
+</txp:smd_query>
+
+
+
+
+
+<txp:chh_if_data>
+<a href="<txp:site_url />library?Creator=<txp:custom_field name="Creator" />"><txp:custom_field name="Creator" /></a>
+<txp:else />
+<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
+</txp:chh_if_data>
+
+
+
+<txp:posted />
+
+
+
+<!--  | <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">edit</a> -->
+
+
+<txp:chh_if_data>
+<div class="duration"><small><txp:custom_field name="Duration" /></small></div>
+<txp:else />
+<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
+</txp:chh_if_data>
+    
+<!-- Video Thumb -->
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<div class="video-image image-wrap">
+
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
+
+</div>
+</a>
+	
+
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<h4 class="responsive-headline"><txp:rvm_substr length="55"><txp:title /></txp:rvm_substr></h4>
+</a>
+
+
+<txp:pax_grep from="|<p>|,|</p>|" to=",">
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<p class="card-exceprt">
+<!-- if exceprt exists show - if doesn't show first 80 from body-->
+
+<txp:chh_if_data>
+<txp:excerpt />
+<txp:else />
+<txp:rss_auto_excerpt  length="110" linktext="…" ending="" wrapreadmore="1" excerptwraptag="span" />
+</txp:chh_if_data>
+
+</p>
+</a>
+</txp:pax_grep>
+
+
+<hr />
+
+<h6><a href="<txp:site_url />library?Content_Type=<txp:custom_field name="Content_Type" />" class="content-type"><txp:custom_field name="Content_Type" /><span class="right"><i class="icon-chevron-right"></i></span></a></h6>
+
+<hr />
+<h6>Filed Under</h6>
+<txp:smd_tag_list wraptag="" break=""
+     shuffle="1" indent="">
+  <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+<!--   <txp:smd_tag_count wrapcount="/" /> -->
+</txp:smd_tag_list>
+
+<hr />
+
+
+
+
+
+
+
+
+</div><!-- /.article -->

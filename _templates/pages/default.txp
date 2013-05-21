@@ -25,31 +25,60 @@
 <body id="<txp:if_section name=""><txp:if_search>search<txp:else />front</txp:if_search><txp:else /><txp:section /></txp:if_section>-page">
 
 
-<div class="row">
 
-<div class="twelve columns">
 
-<div class="row">
+<!-- Header and Nav -->
+  <nav class="top-bar">
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="<txp:site_url />">Free Athena</a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-<div class="two columns">
-<a href="<txp:site_url />">
-<img src="<txp:site_url />img/fa-logo-home-test.png" />
-</a>
-</div>
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
 
-<div class="four columns">
-<input id="small search-textbox" type="text" name="q"<txp:if_search> value="<txp:search_term />"</txp:if_search> placeholder="Search" ></div>
-<span class="smaller">
-<div class="three columns float-right">Queue <txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">({count})</txp:smd_query> </div>
+<!-- Left Nav Section -->
+    <ul class="left">
 
-<div class="three columns float-right user-bar-right"><a href="#"><txp:cbe_frontauth_whois type="email" /></a></div>
-</span>
+    </ul>
 
-</div>
 
-</div>
-</div>
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="divider"></li>      
+        <li><a href="#"><txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">({count})</txp:smd_query></a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#"><a href="#"><txp:cbe_frontauth_whois type="name" /></a></a>
+          <ul class="dropdown">
+            <li><a href="#">User Option</a></li>
+            <li><a href="#">User Option</a></li>
+            <li><a href="#">User Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
 
+
+  <!-- End Header and Nav -->
+  
+
+	<txp:if_section name="orphans">
+  	<txp:output_form form="section_orphans" />
+	</txp:if_section>      
+
+
+	<txp:if_section name="content">
+  	<txp:output_form form="section_content" />
+	</txp:if_section>      
 
 	<txp:if_section name="user-subjects">
   	<txp:output_form form="section_user_subjects" />

@@ -1,5 +1,0 @@
-<txp:category_list wraptag="ul" break="" children="0">
-	<li<txp:if_category name='<txp:category />'> class="active_cat"</txp:if_category>><a href="<txp:site_url />subject/<txp:category title="0" link="0" />"><txp:category title="1" link="0" /></a>
-	<txp:output_form form="cat_submenu1"><txp:category /></txp:output_form>
-	</li>
-</txp:category_list>

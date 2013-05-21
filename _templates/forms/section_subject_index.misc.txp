@@ -23,7 +23,7 @@
 
 <txp:if_category>
 
-<h1 class="responsive-headline subheader"><txp:category title="1" /></h1>
+<!-- <h1 class="responsive-headline subheader"><txp:category title="1" /></h1> -->
 
 
 <div class="row">

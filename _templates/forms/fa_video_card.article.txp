@@ -72,7 +72,7 @@ How the Queue Check works:
     
 <!-- Video Thumb -->
 <div class="video-image">
-<a href="<txp:permlink />" title="View now: <txp:title />">
+<!-- <a href="<txp:permlink />" title="View now: <txp:title />"> -->
 <span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
 </a>
 </div>

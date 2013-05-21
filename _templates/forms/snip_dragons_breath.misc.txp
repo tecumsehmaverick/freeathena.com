@@ -1,21 +1,32 @@
 <!-- Included JS Files (Compressed) -->
 <script src="<txp:site_url />vendor/foundation/javascripts/jquery.js"></script>
-<script src="<txp:site_url />vendor/foundation/javascripts/foundation.min.js"></script>
+
+
+
+<script src="<txp:site_url />vendor/foundation4/js/foundation.min.js"></script>
+<script src="<txp:site_url />vendor/foundation4/js/foundation/foundation.forms.js"></script>
+<script src="<txp:site_url />vendor/foundation4/js/foundation/foundation.dropdown.js"></script>
+
   
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <script src="<txp:site_url />vendor/tagsinput/jquery.tagsinput.js"></script>
 <script>$('#table_keywords').tagsInput();</script>
 <script>$('#Keywords').tagsInput();</script>
 
-<!-- Initialize JS Plugins -->
-<script src="<txp:site_url />vendor/foundation/javascripts/app.js"></script><!-- Initialize JS Plugins -->
-
-<!-- After above core JS  do embedly stuff -->
-<script type="text/javascript" src="<txp:site_url />vendor/ej/demo/js/jquery.embedly.js"></script>
+    <script>
+      $(document)
+      
+        .foundation();
+ 
+    </script>
+    
+<!-- After above "core" JS do embedly stuff like we mean it -->
+<script src="<txp:site_url />vendor/ej/demo/js/jquery.embedly.js"></script>
   <script>
       $('document').ready(function(){
         $('div.video').embedly({
           wmode: 'transparent',
+		  autoplay:true,
 		  nostyle: 'true',
           method: 'after',
           key:':c02aeab18cc34e93b9da735253417fdf'
@@ -30,7 +41,6 @@
       
       $('.video-image span').embedly({
         query: {
-          maxwidth:300,
           autoplay:true
         },
         display: function(data){
@@ -47,107 +57,55 @@
 <!-- Masonry & Fluid -->
 <!-- Thanks to: http://www.maurizioconventi.com/2012/06/05/a-fluid-layout-with-jquery-masonry/ -->
 <!-- More fiddling to do to integrate with Foundation well… -->
-<!--
-<script src="<txp:site_url />vendor/masonry/jquery.masonry.min.js"></script>
-<script src="<txp:site_url />vendor/masonry/fluid/js/base.js"></script>
--->
+
+<!-- <script src="<txp:site_url />masonry.min.js"></script> -->
+
+<!-- <script src="<txp:site_url />vendor/masonry/fluid/js/base.js"></script> -->
 
 <!-- Initialize Masonry. This will trigger Masonry after all the media on the page has loaded
 	http://masonry.desandro.com/docs/help.html -->
 <!--
 <script>
-$(window).load(function(){
-  $('.container').masonry({
-    // options...
+var $container = $('.container');
+
+$container.imagesLoaded( function(){
+  $container.masonry({
+    itemSelector : '.box'
   });
 });
 </script>
 -->
 
 
-<!-- http://farhadi.ir/projects/html5sortable/ -->
-<!--
-<script src="<txp:site_url />vendor/sortable/jquery.sortable.js"></script>
-
+<script src="<txp:site_url />js/jquery.isotope.js"></script>
 
 <script>
-    $('.sortable').sortable();
+var $container = $('#container')
+// initialize Isotope
+$container.isotope({
+  // options...
+  itemSelector : '.box',
+  layoutMode : 'fitRows',
+  resizable: false, // disable normal resizing
+  // set columnWidth to a percentage of container width
+  masonry: { columnWidth: $container.width() / 5 }
+});
+
+// update columnWidth on window resize
+$(window).smartresize(function(){
+  $container.isotope({
+    // update columnWidth to a percentage of container width
+    masonry: { columnWidth: $container.width() / 5 }
+  });
+});
 </script>
--->
 
 
-
-
-<script type="text/javascript" src="<txp:site_url />vendor/queue/jquery.livequery.js"></script>
-		
-        <script type="text/javascript"> 
-           $(document).ready(function() { 
-		   
-                	$('.buttons > a').livequery("click",function(e){
-						
-						var parent  = $(this).parent();
-						var getID   =  parent.attr('id').replace('button_','');
-
-						$.post("http://joshuavaage.com/projects/freeathena.com/vendor/queue/follow.php?id="+getID, {
-			
-						}, function(response){
-							
-							$('#button_'+getID).html($(response).fadeIn('slow'));
-						});
-				});	
-            });
-        </script>
-        
         
 
 
 <!-- https://github.com/davatron5000/FitText.js -->
 <script src="<txp:site_url />vendor/foundation/fittext/jquery.fittext.js"></script>
-
-<!-- http://www.jqueryrain.com/?_kYfO9mA -->
-<script src="<txp:site_url />vendor/quickflip/jquery.quickflip.source.js"></script>
-
-<script>
-$(function() {
-    $('.quickflip-wrapper').quickFlip();
-});
-</script>
-
-<!-- https://github.com/paulirish/infinite-scroll -->
-<!--
-<script src="<txp:site_url />vendor/infinatescroll/jquery.infinatescroll.js"></script>
-
-<script>
-	
-	
-	$('.container').infinitescroll({
-		navSelector  	: ".older:last",
-		nextSelector 	: "a.older:last",
-		itemSelector 	: ".box",
-		debug		 	: true,
-		dataType	 	: 'html',
-        maxPage         : 3,
-//		prefill			: true,
-//		path: ["http://nuvique/infinite-scroll/test/index", ".html"]
-		path: function(index) {
-			return "index" + index + ".html";
-		}
-		// behavior		: 'twitter',
-		// appendCallback	: false, // USE FOR PREPENDING
-		// pathParse     	: function( pathStr, nextPage ){ return pathStr.replace('2', nextPage ); }
-    }, function(newElements, data, url){
-    	//USE FOR PREPENDING
-    	// $(newElements).css('background-color','#ffef00');
-    	// $(this).prepend(newElements);
-    	//
-    	//END OF PREPENDING
-
-//    	window.console && console.log('context: ',this);
-//    	window.console && console.log('returned: ', newElements);
-    	
-    });
-	</script>
--->
 
 
 <script>jQuery(".responsive-headline").fitText(1.2, { minFontSize: '20px', maxFontSize: '40px' })</script>
@@ -267,7 +225,3 @@ $('div.subjects_list a').prepend($('<i class="icon-book"></i>'));
 <script>
 $('iframe').attr('src', $('iframe').attr('src'));
 </script>
-
-
-
-

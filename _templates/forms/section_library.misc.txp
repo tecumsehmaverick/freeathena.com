@@ -1,104 +1,175 @@
-<txp:if_search>
-<div class="row">
-<div class="twelve columns">
-		<h1><txp:text item="search_results" /></h1>
-	    <txp:output_form form="search_results"/>
-</div>
-</div>
+<!-- URL Variables used for filtering articles -->
+<txp:adi_gps name="Subject" quiet="1" />
+<txp:adi_gps name="Sort_By" quiet="1" />
 
-<txp:else />
+<!-- make usable for page variables-->
+<txp:variable name="sort_by_var" value='<txp:adi_gps name="Sort_By" />' />
 
-<!-- Misc vars for sorting critera. Some for custom fields data some for other data-->
-<txp:adi_gps name="subject" quiet="1" />
-<txp:adi_gps name="tag" quiet="1" />
-<txp:adi_gps name="Creator" quiet="1" />
+<!-- make usable for page variables -->
+<txp:variable name="subject_context" value='<txp:adi_gps name="Subject" />' />
+
+<!-- Other custom field filters -->
 <txp:adi_gps name="Content_Type" quiet="1" />
+<txp:adi_gps name="Creator" quiet="1" />
+
+<!-- Query for subject smd_tag ID -->
+<txp:smd_query query="SELECT id FROM smd_tags WHERE name = '?subject_context'">
+<txp:variable name="subject_context_id">{id}</txp:variable>
+</txp:smd_query>
+
+<!-- list of ids for the current 'subject' as a variable to be used in later article_custom calls -->
+<txp:variable name="subject_ids">
+<txp:smd_query query="SELECT item_id FROM smd_tags_used WHERE tag_id = '?subject_context_id'">
+{item_id},
+</txp:smd_query>
+</txp:variable>
+
+<!-- End Variable Creation Station -->
 
 
 
 
-<!-- Pagination Sorcery -->
-<txp:adi_gps name="page" quiet="1" />
-<txp:variable name="article-count" value="0" />
-<txp:variable name="article-limit" value="10" /> <!--Set this to whatever you want-->
-<txp:if_variable name="page" value=""><txp:variable name="page" value="1" /></txp:if_variable>
-<txp:adi_calc name="offset" value='<txp:variable name="page" />' subtract="1" />
-<txp:adi_calc name="offset" multiply='<txp:variable name="article-limit" />' />
+<!-- Begin Views -->
 
+
+<div class="row library-filters-panel">
+<div class="large-12">
+
+
+<!--
+<a href="#" data-dropdown="drop1" class="button dropdown">Subject Index</a><br>
+
+<ul id="drop1" class="large f-dropdown">
+<txp:smd_tag_list showall="1" parent="subject" wraptag="">
+   <txp:smd_tag_info item="indent" />
+   <txp:smd_if_tag children=">0">
+      <txp:hide> A parent tag: do not link </txp:hide>
+      <txp:smd_tag_name title="1" />
+   <txp:else />
+      <txp:hide> A child tag: link it to the default trigger section </txp:hide>
+      <txp:smd_tag_name link="1" title="1" />
+   </txp:smd_if_tag>
+</txp:smd_tag_list>
+</ul>
+-->
+
+
+
+
+
+<form action='<txp:page_url />' method="get" class="custom">
+
+<!-- 
+	Filtering Menu:  Built from URL variables gathered above as well as a page variable generated from smd_queries against 
+	smd_tags to find articles tagged by ?subject
+-->
+
+<!-- Subject (smd_tag) Menu Filter -->
+<div class="large-2 small-2 columns capitalize">
+<label for="Subject_Dropdown">Subject</label>
+<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small">
+<option value="">All</option>
+<option value='<txp:adi_gps name="Subject" />' selected><txp:rah_replace from="-" to=" "><txp:adi_gps name="Subject" /></txp:rah_replace></option>
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'subject'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+
+<!-- Type (smd_tag) Menu Filter -->
+<div class="large-2 small-2 columns">
+<label for="Type_Dropdown">Type</label>
+<select id="Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
+<option value="">All</option>
+<option value='<txp:adi_gps name="Content_Type" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Content_Type" /></txp:rah_replace></option>
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'content-type'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+
+<!-- Type (custom field)  Menu Filter -->
+<!--
+<div class="large-2 columns">
+<label for="Content_Type_Dropdown">Type</label>
+<select id="Content_Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
+<option value="">All</option>
+<option value='<txp:adi_gps name="Content_Type" />' selected><txp:adi_gps name="Content_Type" /></option>
+<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Content_Type" />'>
+<option value="<txp:rah_repeat_value />"><txp:rah_repeat_value /></option>
+</txp:rah_repeat>
+</select>
+</div>
+-->
+
+
+
+<!-- Creator (smd_tag) Menu Filter -->
+<div class="large-2 small-2 columns">
+<label for="Creator_Dropdown">Creator</label>
+<select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small">
+<option value="">All</option>
+<option value='<txp:adi_gps name="Creator" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Creator" /></txp:rah_replace></option>
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'creator'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+<div class="large-2 small-2 columns">
+<label for="Sort_By_Dropdown">Sort</label>
+<select id="Sort_By_Dropdown" name="Sort_By" onChange="this.form.submit();" class="small">
+
+<option value='<txp:adi_gps name="Sort_By" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Sort_By" /></txp:rah_replace></option>
+
+
+<option value="Posted desc">Newest</option>
+<option value="Posted asc">Oldest</option>
+</select>
+</div>
+
+
+<!-- Creator (custom field) Menu Filter -->
+<!--
+<div class="large-2 columns pull-6">
+<label for="Creator_Dropdown">Creator</label>
+<select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small"> 
+<option value="">All</option>
+<option value='<txp:adi_gps name="Creator" />' selected><txp:adi_gps name="Creator" /></option>
+<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Creator" />'>
+<option value="<txp:rah_repeat_value />"><txp:rah_repeat_value /></option>
+</txp:rah_repeat>
+</select>
+</div>
+-->
+
+
+</form>
+</div>
+</div><!-- /.row -->
+
+
+
+
+
+
+<!-- 
+	Here is the article display:
+-->
+<txp:article />
 
 <div class="row">
 
-<div class="twelve columns">
-<txp:rah_replace from="-" to=" ">
-<h3 class="responsive-heading subheader capitalize"><txp:variable name="Creator" /></h3>
+	<txp:if_variable name="Subject" value=""> 
+		
+		<txp:article_custom section="video" Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" />
 
-<h3 class="responsive-heading subheader capitalize"><txp:variable name="subject" /></h3>
-</txp:rah_replace>
-
-<h6 class="subheader"><span class="radius label"><txp:mdn_count section="video" category='<txp:variable name="subject" />' status="1,2,3,4,5" time="now,past,future" /></span> and counting in the <a href="<txp:site_url />library">Free Athena Library</a></h6>
-
-</div>
-</div>
-
-<div class="row clearfix">
-
-
-<div class="container twelve columns ">
-
-
-<txp:php>
-	// Initial setup
-	global $variable;
-	$variable["article-limit"] = 10; // Set to whatever you want
-	$variable["article-count"] = 0;
-	if(isset($_GET["page"])) { $variable["page"] = $_GET["page"]; }
-	else { $variable["page"] = 1; }
-	$variable["offset"] = ($variable["page"]-1)*$variable["article-limit"];
-</txp:php>
-<txp:article_custom section="video" limit="9999">
-	<txp:php>
-		// Count the articles
-		global $variable;
-		$variable["article-count"]++;
-	</txp:php>
-</txp:article_custom>
-<txp:php>
-	// Determine the page count
-	global $variable;
-	$variable["page-count"] = ceil($variable["article-count"] / $variable["article-limit"]);
-</txp:php>
-
-
-<txp:article_custom section="video" category='<txp:variable name="subject" />' Creator='<txp:variable name="Creator" />' keywords="<txp:variable name="tag" />" form="fa_video_card" pgonly="0" status="4" limit='<txp:variable name="article-limit" />' offset='<txp:variable name="offset" />' />
+		<txp:else />
+		
+		<txp:article_custom section="video" id='<txp:variable name="subject_ids" />' Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" />
+		
+	</txp:if_variable>
 
 </div>
-</div>
-
-<hr />
-
-<!-- pagination nav-->
-<div class="twelve columns">
-
-<div class="row">
-<div class="twelve columns">
-
-<txp:php>
-	// Output pagination
-	global $variable;
-	if(($variable["page"]+1) <= $variable["page-count"]) {
-		echo "<div class=\"older\"><a href=\"?page=". ($variable["page"]+1) ."\">Older &raquo;</a></div>";
-	}
-	if($variable["page"]-1) {
-		echo "<div class=\"newer\"><a href=\"?page=". ($variable["page"]-1) ."\">&laquo; Newer</a></div>";
-	}
-</txp:php>
-
-</div>
-</div>
-
-</div>
-
-
-
-
-</txp:if_search>

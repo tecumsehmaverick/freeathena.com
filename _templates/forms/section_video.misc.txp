@@ -1,15 +1,9 @@
-<div class="row">
-<div class="twelve columns">
-
-<txp:if_individual_article>
-
 <txp:article>
 
-
-<!-- Beautiful Flex Video Block -->
-
 <div class="row">
-<div class="twelve columns">
+<div class="large-8 columns">
+
+
 
 <!-- .flex-video div was up top for full screen flex test ala hulu, Now here... -->
 <div class="flex-video">
@@ -22,84 +16,48 @@
 
 </div>    
 
+</div>
 
-</div>    
-</div>    
-    
-    
- 
+<div class="large-4 columns">
+<h1 class="responsive-headline"><txp:title /></h1>
 
+<txp:output_form form="fa_video_card_v30_individual" />
 
-
-
+<hr />
 
 
 
+<h6>Collections</h6>
 
-<div class="row">
+<!-- Get a little variable going here -->
+<txp:article>
+<txp:variable name="is_id_collected" value='<txp:article_id />' />
+</txp:article>
 
-<div class="six columns">
+<!-- no spaces in the custom_4 field in the database please / otherwise this little number won't fly -->
 
-<h3 class="subheader"><small>This has been: </small><txp:permlink><txp:title /></txp:permlink></h3>
-
-
-<h4>
-<i class="icon-book"></i>
-<txp:rss_uc_filedunder linktosection="subject" class="responsive-heading" />
-</h4>
-
-
-<txp:if_custom_field name="Collections Belonging To">
-<txp:article_custom id='<txp:custom_field name="Collections Belonging To" />'> 
-<h4 class="subheader"><small>And part of the Collection:</small> <txp:permlink><txp:title /></txp:permlink></h4>
-</txp:article_custom>
-</txp:if_custom_field>
+<!-- Do stuff / I'm tired -->
+<txp:smd_query query="SELECT custom_4, id FROM textpattern 
+WHERE (custom_4 LIKE '%,?is_id_collected%,'
+     OR custom_4 LIKE '%?is_id_collected%,'
+     OR custom_4 LIKE '%,?is_id_collected%')">
+	
+	<txp:article_custom id="{id}">
+	<txp:permlink><txp:title /></txp:permlink>
+	</txp:article_custom>
+</txp:smd_query>
 
 
+
+
+<!-- Postponing use of tru-tags while focusing on dialing in the Subject navigation which is now based on smd_tags -->
+<!--
 <txp:tru_tags_if_has_tags>
 <p><i class="icon-tags"></i> <txp:tru_tags_from_article /></p>
 </txp:tru_tags_if_has_tags>
-
-
-
+-->
 
 </div>
-
-<div class="six columns">
-
-<txp:article>
-<h3 class="subheader"><small>More in </small> <txp:category1 title="1" /></h3>
-</txp:article>
-
-<dl class="tabs">
-  <dd class="active"><a href="#latest">Latest</a></dd>
-  <dd><a href="#popular">Most Viewed</a></dd>
-</dl>
-<ul class="tabs-content">
-	<li class="active" id="latest">
-	<txp:related_articles label="" limit="10" break="hr" />
-	</li>
-  <li id="popular">
-<p>Hard to test right now...</p>
-  </li>
-</ul>
 </div>
-
-</div>
-
-
 
 </txp:article>
-
-<txp:else />
-	
-<txp:output_form form="section_default" />
-	
-</txp:if_individual_article>
-	
-	
-
-
-
-</div>
-</div>

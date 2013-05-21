@@ -1,26 +1,47 @@
 <!-- Default: freeathena.com/  -->
 
+<div class="row">
+
+<div class="large-4 columns">
+<span class="logo hide-for-small">
+<img src="<txp:site_url />img/logo-mark-500-500.png" />
+</span>
+</div>
+             
 
 
-
-<div class="row vertical-breathing-room">
-
-<div class="six columns">
+<div class="large-6 columns">
 <h3 class="">Learn any Subject For Free.</h3>
 <h4 class="subheader">Watch Videos of University Courses, Documentary Films, Ted Talks, and More, Curated and Organized by Subject</h4>
-</div><!-- .six columns-->
+
+<div class="row collapse">
+
+<form role="search" method="get" action="<txp:site_url />search">
+	
+	<div class="small-10 columns">
+    	<input id="search-textbox" type="text" name="q" placeholder="Type to Search">
+    </div>
+    
+    <div class="small-2 columns">
+		<input class="button success prefix" type="submit" value="Search">
+	</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
 
 
-<div class="six columns">
-<span class="logo hide-for-small">
-</span>
-</div><!-- .six columns-->
+
 
 </div><!-- .row -->
 
 
 
-
+<txp:hide>
 <!-- Subject Navigation -->
 <div class="featured-navigation">
 
@@ -39,7 +60,7 @@
 
 </div><!-- .subnav -->
 <!-- -->
-
+</txp:hide>
 
 
 
@@ -51,15 +72,19 @@
 <li class="stripe">
 
 <div class="row">
+<hr />
 <div class="twelve columns">
-<h4 class="responsive-heading collection-title"><txp:title /></h4>
+
+<a href="<txp:permlink />">
+<h3 class="responsive-headine collection-title"><txp:title /><span class="drill-right"><i class="icon-chevron-right"></i></span></h3>
+</a>
 </div>
 </div>
 	
 	<!-- nesting -->
 	<div class="row">
 	<!-- column sizes declared in article form fa_video_card -->
-	<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card" limit="4" />
+	<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_v30" limit="4" />
 	<!-- -->
 	</div>
 	

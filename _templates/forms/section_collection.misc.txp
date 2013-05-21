@@ -1,11 +1,11 @@
-<div class="row">
-<div class="twelve columns">
+<div id="container" class="row">
+
 
 <!-- Individual Collection Title-->
 <txp:if_individual_article>
 <txp:article>
-<h3>Collection</h3>
-<h4 class="subheader"><txp:title /></h4>
+<h1>Collection</h1>
+<h2 class="subheader"><txp:title /></h2>
 <hr />
 <txp:excerpt />
 </txp:article>
@@ -14,9 +14,8 @@
 
 
 <div class="row">
-<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card" />
+<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_v30" limit="999" />
 </div>
 
 
-</div>
 </div>
