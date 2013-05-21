@@ -27,48 +27,7 @@
 
 
 
-<!-- Header and Nav -->
-  <nav class="top-bar">
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class="name">
-        <h1>
-          <a href="<txp:site_url />">Free Athena</a>
-        </h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
 
-    <section class="top-bar-section">
-      <!-- Left Nav Section -->
-
-<!-- Left Nav Section -->
-    <ul class="left">
-
-    </ul>
-
-
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li class="divider"></li>      
-        <li><a href="#"><txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">({count})</txp:smd_query></a></li>
-        <li class="divider"></li>
-        <li class="has-dropdown">
-          <a href="#"><a href="#"><txp:cbe_frontauth_whois type="name" /></a></a>
-          <ul class="dropdown">
-            <li><a href="#">User Option</a></li>
-            <li><a href="#">User Option</a></li>
-            <li><a href="#">User Option</a></li>
-            <li class="divider"></li>
-            <li><a href="#">See all &rarr;</a></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-  </nav>
-
-
-  <!-- End Header and Nav -->
   
 
 	<txp:if_section name="orphans">

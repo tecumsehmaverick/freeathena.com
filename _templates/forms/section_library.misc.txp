@@ -30,11 +30,34 @@
 
 
 <!-- Begin Views -->
+<div class="fixed-top fixed">
+
+<div class="free-athena-thin-bar">
+<div class="row">
+
+<div class="large-9 columns">
+
+<a href="#" data-dropdown="drop1" class="button dropdown"><txp:section /> <span data-dropdown="drop1"></span></a><br>
+
+<ul id="drop1" class="f-dropdown" data-dropdown-content>
+  <li><a href="#">This is a link</a></li>
+  <li><a href="#">This is another</a></li>
+  <li><a href="#">Yet another</a></li>
+</ul>
 
 
-<div class="row library-filters-panel">
-<div class="large-12">
+</div>
+<div class="large-3 columns"><a href="<txp:site_url />"><img src="<txp:site_url />img/logo-mark-horizontal-small.png" /></a></div>
 
+
+
+</div>
+</div>
+
+
+<div class="filters row">
+
+  <!-- End Header and Nav -->
 
 <!--
 <a href="#" data-dropdown="drop1" class="button dropdown">Subject Index</a><br>
@@ -54,9 +77,6 @@
 -->
 
 
-
-
-
 <form action='<txp:page_url />' method="get" class="custom">
 
 <!-- 
@@ -65,7 +85,7 @@
 -->
 
 <!-- Subject (smd_tag) Menu Filter -->
-<div class="large-2 small-2 columns capitalize">
+<div class="large-3 small-2 columns capitalize">
 <label for="Subject_Dropdown">Subject</label>
 <select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small">
 <option value="">All</option>
@@ -78,7 +98,7 @@
 
 
 <!-- Type (smd_tag) Menu Filter -->
-<div class="large-2 small-2 columns">
+<div class="large-3 small-2 columns">
 <label for="Type_Dropdown">Type</label>
 <select id="Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
 <option value="">All</option>
@@ -90,24 +110,8 @@
 </div>
 
 
-<!-- Type (custom field)  Menu Filter -->
-<!--
-<div class="large-2 columns">
-<label for="Content_Type_Dropdown">Type</label>
-<select id="Content_Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
-<option value="">All</option>
-<option value='<txp:adi_gps name="Content_Type" />' selected><txp:adi_gps name="Content_Type" /></option>
-<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Content_Type" />'>
-<option value="<txp:rah_repeat_value />"><txp:rah_repeat_value /></option>
-</txp:rah_repeat>
-</select>
-</div>
--->
-
-
-
 <!-- Creator (smd_tag) Menu Filter -->
-<div class="large-2 small-2 columns">
+<div class="large-3 small-2 columns">
 <label for="Creator_Dropdown">Creator</label>
 <select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small">
 <option value="">All</option>
@@ -118,7 +122,7 @@
 </select>
 </div>
 
-<div class="large-2 small-2 columns">
+<div class="large-3 small-2 columns">
 <label for="Sort_By_Dropdown">Sort</label>
 <select id="Sort_By_Dropdown" name="Sort_By" onChange="this.form.submit();" class="small">
 
@@ -131,22 +135,8 @@
 </div>
 
 
-<!-- Creator (custom field) Menu Filter -->
-<!--
-<div class="large-2 columns pull-6">
-<label for="Creator_Dropdown">Creator</label>
-<select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small"> 
-<option value="">All</option>
-<option value='<txp:adi_gps name="Creator" />' selected><txp:adi_gps name="Creator" /></option>
-<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Creator" />'>
-<option value="<txp:rah_repeat_value />"><txp:rah_repeat_value /></option>
-</txp:rah_repeat>
-</select>
-</div>
--->
-
-
 </form>
+
 </div>
 </div><!-- /.row -->
 

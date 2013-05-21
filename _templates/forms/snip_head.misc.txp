@@ -28,3 +28,9 @@
     <script src="<txp:site_url />js/html5shiv.js"></script>
     <script src="<txp:site_url />js/css3-mediaqueries.js"></script>
   <![endif]-->
+  
+  <txp:if_section name="library">
+  <style>
+  body {margin-top: 175px;}
+  </style>
+  </txp:if_section>
