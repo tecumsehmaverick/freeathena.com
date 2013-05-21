@@ -1,0 +1,12 @@
+
+
+
+<h4>Excerpt</h4>
+<txp:smd_query query="SELECT id FROM textpattern WHERE excerpt ='' ">
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
+</txp:smd_query>
+
+<h4>Content_Type</h4>
+<txp:smd_query query="SELECT id FROM textpattern WHERE custom_9 ='' ">
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
+</txp:smd_query>
