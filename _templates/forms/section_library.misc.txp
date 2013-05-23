@@ -32,22 +32,21 @@
 <!-- Begin Views -->
 <div class="fixed-top fixed">
 
-<div class="free-athena-thin-bar">
+<div class="free-athena-thin-bar hide-for-small">
 <div class="row">
 
 <div class="large-9 columns">
 
-<a href="#" data-dropdown="drop1" class="button dropdown"><txp:section /> <span data-dropdown="drop1"></span></a><br>
+<a href="#" data-dropdown="drop1" class="subject dropdown">BROWSE <i class="icon-chevron-down"></i></a><br>
 
 <ul id="drop1" class="f-dropdown" data-dropdown-content>
-  <li><a href="#">This is a link</a></li>
-  <li><a href="#">This is another</a></li>
-  <li><a href="#">Yet another</a></li>
+  <li><a href="#">Library</a></li>
+  <li><a href="#">Collections</a></li>
 </ul>
 
 
 </div>
-<div class="large-3 columns"><a href="<txp:site_url />"><img src="<txp:site_url />img/logo-mark-horizontal-small.png" /></a></div>
+<div class="large-3 columns"><a href="<txp:site_url />"><img src="<txp:site_url />img/athena-tiny.png" /> FREE ATHENA</a></div>
 
 
 
@@ -85,7 +84,7 @@
 -->
 
 <!-- Subject (smd_tag) Menu Filter -->
-<div class="large-3 small-2 columns capitalize">
+<div class="large-3 small-6 columns capitalize">
 <label for="Subject_Dropdown">Subject</label>
 <select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small">
 <option value="">All</option>
@@ -98,7 +97,7 @@
 
 
 <!-- Type (smd_tag) Menu Filter -->
-<div class="large-3 small-2 columns">
+<div class="large-3 small-6 columns">
 <label for="Type_Dropdown">Type</label>
 <select id="Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
 <option value="">All</option>
@@ -111,7 +110,7 @@
 
 
 <!-- Creator (smd_tag) Menu Filter -->
-<div class="large-3 small-2 columns">
+<div class="large-3 small-6 columns">
 <label for="Creator_Dropdown">Creator</label>
 <select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small">
 <option value="">All</option>
@@ -122,7 +121,7 @@
 </select>
 </div>
 
-<div class="large-3 small-2 columns">
+<div class="large-3 small-6 columns">
 <label for="Sort_By_Dropdown">Sort</label>
 <select id="Sort_By_Dropdown" name="Sort_By" onChange="this.form.submit();" class="small">
 

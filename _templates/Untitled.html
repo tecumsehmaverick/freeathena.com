@@ -1,0 +1,164 @@
+<div class="row">
+
+<txp:if_variable name="Content_Type" value="">
+	
+	<txp:if_variable name="Type" value=""> 
+        <!--if no url queries-->
+        <txp:article_custom form="fa_video_card_v30" />
+	<txp:else />
+        <!--if Creator but no Type in url query-->
+        <txp:article_custom Creator='<txp:variable name="Creator" />' form="fa_video_card_v30" />
+	</txp:if_variable>
+
+<txp:else />
+
+<txp:if_variable name="Creator" value="">
+        <!--if Type but no Creator in url query-->
+        <txp:article_custom  Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" />
+<txp:else />
+        <!--if both Type and Creator in url query-->
+        <txp:article_custom  Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" />
+</txp:if_variable>
+</txp:if_variable>
+
+</div><!-- /.row -->
+
+
+<div class="row">
+<ul class="pagination">
+  <li class="arrow unavailable"><a href="">&laquo;</a></li>
+  <li class="current"><a href="">1</a></li>
+  <li><a href="">2</a></li>
+  <li><a href="">3</a></li>
+  <li><a href="">4</a></li>
+  <li class="unavailable"><a href="">&hellip;</a></li>
+  <li><a href="">12</a></li>
+  <li><a href="">13</a></li>
+  <li class="arrow"><a href="">&raquo;</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<!-- 
+
+dsflkjds;lkfj;lsdkjf;lksdjf;lkjsd;lkfjs;dlkjf
+
+-->
+
+
+
+
+
+
+
+
+
+<txp:if_search>
+<div class="row">
+<div class="twelve columns">
+		<h1><txp:text item="search_results" /></h1>
+	    <txp:output_form form="search_results"/>
+</div>
+</div>
+
+<txp:else />
+
+<!-- Misc vars for sorting critera. Some for custom fields data some for other data-->
+<txp:adi_gps name="subject" quiet="1" />
+<txp:adi_gps name="tag" quiet="1" />
+<txp:adi_gps name="Creator" quiet="1" />
+<txp:adi_gps name="Content_Type" quiet="1" />
+
+
+
+
+<!-- Pagination Sorcery -->
+<txp:adi_gps name="page" quiet="1" />
+<txp:variable name="article-count" value="0" />
+<txp:variable name="article-limit" value="10" /> <!--Set this to whatever you want-->
+<txp:if_variable name="page" value=""><txp:variable name="page" value="1" /></txp:if_variable>
+<txp:adi_calc name="offset" value='<txp:variable name="page" />' subtract="1" />
+<txp:adi_calc name="offset" multiply='<txp:variable name="article-limit" />' />
+
+
+<div class="row">
+
+<div class="twelve columns">
+<txp:rah_replace from="-" to=" ">
+<h3 class="responsive-heading subheader capitalize"><txp:variable name="Creator" /></h3>
+
+<h3 class="responsive-heading subheader capitalize"><txp:variable name="subject" /></h3>
+</txp:rah_replace>
+
+<h6 class="subheader"><span class="radius label"><txp:mdn_count section="video" category='<txp:variable name="subject" />' status="1,2,3,4,5" time="now,past,future" /></span> and counting in the <a href="<txp:site_url />library">Free Athena Library</a></h6>
+
+</div>
+</div>
+
+<div class="row clearfix">
+
+
+<div class="container twelve columns ">
+
+
+<txp:php>
+	// Initial setup
+	global $variable;
+	$variable["article-limit"] = 10; // Set to whatever you want
+	$variable["article-count"] = 0;
+	if(isset($_GET["page"])) { $variable["page"] = $_GET["page"]; }
+	else { $variable["page"] = 1; }
+	$variable["offset"] = ($variable["page"]-1)*$variable["article-limit"];
+</txp:php>
+<txp:article_custom section="video" limit="9999">
+	<txp:php>
+		// Count the articles
+		global $variable;
+		$variable["article-count"]++;
+	</txp:php>
+</txp:article_custom>
+<txp:php>
+	// Determine the page count
+	global $variable;
+	$variable["page-count"] = ceil($variable["article-count"] / $variable["article-limit"]);
+</txp:php>
+
+
+<txp:article_custom section="video" category='<txp:variable name="subject" />' Creator='<txp:variable name="Creator" />' keywords="<txp:variable name="tag" />" form="fa_video_card" pgonly="0" status="4" limit='<txp:variable name="article-limit" />' offset='<txp:variable name="offset" />' />
+
+</div>
+</div>
+
+<hr />
+
+<!-- pagination nav-->
+<div class="twelve columns">
+
+<div class="row">
+<div class="twelve columns">
+
+<txp:php>
+	// Output pagination
+	global $variable;
+	if(($variable["page"]+1) <= $variable["page-count"]) {
+		echo "<div class=\"older\"><a href=\"?page=". ($variable["page"]+1) ."\">Older &raquo;</a></div>";
+	}
+	if($variable["page"]-1) {
+		echo "<div class=\"newer\"><a href=\"?page=". ($variable["page"]-1) ."\">&laquo; Newer</a></div>";
+	}
+</txp:php>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+</txp:if_search>

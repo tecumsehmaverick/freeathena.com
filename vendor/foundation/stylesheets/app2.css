@@ -14,7 +14,10 @@ box-shadow: 0px 2px 20px #ddd;
 box-shadow: inset 0px 0px 5px #fff;
 }
 
-.filters {padding: 15px 0px 0px 0px;}
+.filters {
+padding: 15px 0px 0px 0px;
+/* overflow-x: scroll; */
+}
 
 .library-filters-panel .row {
 border: 1px solid #eee;
@@ -32,18 +35,16 @@ box-shadow: 0px 2px 20px #ddd;
 
 .image-wrap, .flex-video {
 border: 1px solid #eee;
-/*
 height: 130px;
 background-color: #fff;
 background-image: url(../../../img/athena-small.png);
 background-repeat: no-repeat;
 background-position: center;
-*/
 }
 
 .image-wrap span {
 /* background-image: url(../../../img/athena-small.png); */
-/* display: none; */
+display: none;
 color: #b6ce71;
 }
 

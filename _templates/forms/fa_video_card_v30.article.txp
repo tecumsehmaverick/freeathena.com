@@ -14,6 +14,12 @@
 </txp:smd_query>
 
 
+<txp:smd_tag_list wraptag="" break="" parent="Creator"
+     shuffle="1" indent="">
+  <a href="<txp:site_url />library?creator=<txp:smd_tag_name link="0" title="0" section="subject" />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+<!--   <txp:smd_tag_count wrapcount="/" /> -->
+</txp:smd_tag_list>
+
 
 
 
@@ -61,7 +67,7 @@
 <txp:chh_if_data>
 <txp:excerpt />
 <txp:else />
-<txp:rss_auto_excerpt  length="110" linktext="…" ending="" wrapreadmore="1" excerptwraptag="span" />
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-warning-sign"></i> This is example text as a result of there being no excerpt written for this item.</a>
 </txp:chh_if_data>
 
 </p>
@@ -74,7 +80,7 @@
 <h6><a href="<txp:site_url />library?Content_Type=<txp:custom_field name="Content_Type" />" class="content-type"><txp:custom_field name="Content_Type" /><span class="right"><i class="icon-chevron-right"></i></span></a></h6>
 
 <hr />
-<h6>Filed Under</h6>
+<h6>Subject</h6>
 <txp:smd_tag_list wraptag="" break=""
      shuffle="1" indent="">
   <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
@@ -83,6 +89,8 @@
 
 <hr />
 
+
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i> edit</a>
 
 
 
