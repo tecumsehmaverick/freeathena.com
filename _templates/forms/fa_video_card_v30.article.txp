@@ -67,7 +67,7 @@
 <txp:chh_if_data>
 <txp:excerpt />
 <txp:else />
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-warning-sign"></i> This is example text as a result of there being no excerpt written for this item.</a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-warning-sign"></i> This is example text as a result of there being no excerpt written for this item. </a>
 </txp:chh_if_data>
 
 </p>
