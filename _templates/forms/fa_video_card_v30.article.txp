@@ -14,24 +14,25 @@
 </txp:smd_query>
 
 
+<txp:chh_if_data>
+<!-- -->
 <txp:smd_tag_list wraptag="" break="" parent="Creator"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?creator=<txp:smd_tag_name link="0" title="0" section="subject" />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
-<!--   <txp:smd_tag_count wrapcount="/" /> -->
+  <a href="<txp:site_url />library?Creator=<txp:smd_tag_name link="0" title="0" section="subject" />" class=""><txp:smd_tag_name link="0" title="1" section="subject" /></a>
 </txp:smd_tag_list>
 
-
-
-
-<txp:chh_if_data>
-<a href="<txp:site_url />library?Creator=<txp:custom_field name="Creator" />"><txp:custom_field name="Creator" /></a>
 <txp:else />
-<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
+
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"></a>
 </txp:chh_if_data>
 
 
 
-<txp:posted />
+
+
+
+
+<!-- <txp:posted /> -->
 
 
 
@@ -41,7 +42,9 @@
 <txp:chh_if_data>
 <div class="duration"><small><txp:custom_field name="Duration" /></small></div>
 <txp:else />
-<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
+<div class="duration"><small>
+<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">00:00:00</a>
+</small></div>
 </txp:chh_if_data>
     
 <!-- Video Thumb -->
@@ -67,7 +70,7 @@
 <txp:chh_if_data>
 <txp:excerpt />
 <txp:else />
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-warning-sign"></i> This is example text as a result of there being no excerpt written for this item. </a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">This is example text as a result of there being no excerpt written for this item. </a>
 </txp:chh_if_data>
 
 </p>
@@ -77,11 +80,21 @@
 
 <hr />
 
-<h6><a href="<txp:site_url />library?Content_Type=<txp:custom_field name="Content_Type" />" class="content-type"><txp:custom_field name="Content_Type" /><span class="right"><i class="icon-chevron-right"></i></span></a></h6>
+<txp:chh_if_data>
+<txp:smd_tag_list wraptag="" break="" parent="content-type"
+     shuffle="1" indent="">
+  <a href="<txp:site_url />library?creator=<txp:smd_tag_name link="0" title="0" section="subject" />" class=""><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+<!--   <txp:smd_tag_count wrapcount="/" /> -->
+</txp:smd_tag_list>
+<txp:else />
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
+</txp:chh_if_data>
+
+
 
 <hr />
-<h6>Subject</h6>
-<txp:smd_tag_list wraptag="" break=""
+<h6>Filed Under</h6>
+<txp:smd_tag_list parent="subject" wraptag="" break=""
      shuffle="1" indent="">
   <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
 <!--   <txp:smd_tag_count wrapcount="/" /> -->

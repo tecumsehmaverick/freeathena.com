@@ -23,7 +23,7 @@
     </div>
     
     <div class="small-2 columns">
-		<input class="button success prefix" type="submit" value="Search">
+		<input class="button success postfix radius" type="submit" value="Search">
 	</div>
 
 </form>

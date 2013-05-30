@@ -47,6 +47,11 @@ WHERE (custom_4 LIKE '%,?is_id_collected%,'
 	</txp:article_custom>
 </txp:smd_query>
 
+<hr />
+
+
+
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i> edit</a>
 
 
 

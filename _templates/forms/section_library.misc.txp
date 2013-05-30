@@ -2,26 +2,80 @@
 <txp:adi_gps name="Subject" quiet="1" />
 <txp:adi_gps name="Sort_By" quiet="1" />
 
+
+<!-- Other primary filters -->
+<txp:adi_gps name="Content_Type" quiet="1" />
+<txp:adi_gps name="Creator" quiet="1" />
+
+
 <!-- make usable for page variables-->
 <txp:variable name="sort_by_var" value='<txp:adi_gps name="Sort_By" />' />
 
 <!-- make usable for page variables -->
 <txp:variable name="subject_context" value='<txp:adi_gps name="Subject" />' />
+<txp:variable name="content_type_context" value='<txp:adi_gps name="Content_Type" />' />
+<txp:variable name="creator_context" value='<txp:adi_gps name="Creator" />' />
 
-<!-- Other custom field filters -->
-<txp:adi_gps name="Content_Type" quiet="1" />
-<txp:adi_gps name="Creator" quiet="1" />
 
-<!-- Query for subject smd_tag ID -->
+
+<!-- Query for smd_tag Subject IDs from filters -->
 <txp:smd_query query="SELECT id FROM smd_tags WHERE name = '?subject_context'">
-<txp:variable name="subject_context_id">{id}</txp:variable>
+<txp:variable name="filtered_subject_context_id">{id}</txp:variable>
 </txp:smd_query>
 
-<!-- list of ids for the current 'subject' as a variable to be used in later article_custom calls -->
-<txp:variable name="subject_ids">
-<txp:smd_query query="SELECT item_id FROM smd_tags_used WHERE tag_id = '?subject_context_id'">
+<!-- Query for smd_tag Content_Type IDs from filters -->
+<txp:smd_query query="SELECT id FROM smd_tags WHERE name = '?content_type_context'">
+<txp:variable name="filtered_content_type_context_id">{id}</txp:variable>
+</txp:smd_query>
+
+<!-- Query for smd_tag Creator IDs from filters -->
+<txp:smd_query query="SELECT id FROM smd_tags WHERE name = '?creator_context'">
+<txp:variable name="filtered_creator_context_id">{id}</txp:variable>
+</txp:smd_query>
+
+
+
+<!-- If subject_context -->
+<txp:if_variable name="subject_context" value="">
+
+<!-- There is no subject context so try the the other contexts (content_type & creator )-->
+
+	<!-- If content_type_context -->
+	<txp:if_variable name="content_type_context" value="">
+	<!-- There is no content_type_context so try the the other context (creator )-->
+
+	<txp:else />
+	
+		<!-- if content_type_context -->
+		<txp:if_variable name="creator_context" value="">
+		
+		</txp:if_variable>
+	
+	
+	
+	</txp:if_variable>
+
+
+
+	<txp:else />
+
+
+
+</txp:if_variable>
+
+
+
+
+
+
+<!-- list of ids for the current 'filter' as a variable to be used in article_custom calls below:  -->
+<txp:variable name="filtered_ids">
+
+<txp:smd_query query="SELECT item_id FROM smd_tags_used WHERE tag_id = '?filtered_subject_context_id'">
 {item_id},
 </txp:smd_query>
+
+
 </txp:variable>
 
 <!-- End Variable Creation Station -->
@@ -36,19 +90,15 @@
 <div class="row">
 
 <div class="large-9 columns">
+<a href="<txp:site_url />">FREE ATHENA</a>
+</div>
 
-<a href="#" data-dropdown="drop1" class="subject dropdown">BROWSE <i class="icon-chevron-down"></i></a><br>
+<div class="large-3 columns">
 
-<ul id="drop1" class="f-dropdown" data-dropdown-content>
-  <li><a href="#">Library</a></li>
-  <li><a href="#">Collections</a></li>
-</ul>
-
+<a href="<txp:site_url />library">Library</a>
+<a href="<txp:site_url />collection">Collections</a>
 
 </div>
-<div class="large-3 columns"><a href="<txp:site_url />"><img src="<txp:site_url />img/athena-tiny.png" /> FREE ATHENA</a></div>
-
-
 
 </div>
 </div>
@@ -86,17 +136,24 @@
 <!-- Subject (smd_tag) Menu Filter -->
 <div class="large-3 small-6 columns capitalize">
 <label for="Subject_Dropdown">Subject</label>
-<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small">
+<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small" placeholder="sdkfjh">
+
 <option value="">All</option>
-<option value='<txp:adi_gps name="Subject" />' selected><txp:rah_replace from="-" to=" "><txp:adi_gps name="Subject" /></txp:rah_replace></option>
+	
+<option value='<txp:rah_replace from=" " to="-"><txp:adi_gps name="Subject" /></txp:rah_replace>' selected><txp:adi_gps name="Subject" /></option>
+
 <txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'subject'">
+	
 <option value="{name}">{title}</option>
+
 </txp:smd_query>             
+
 </select>
 </div>
 
 
-<!-- Type (smd_tag) Menu Filter -->
+
+<!-- Content_Type (smd_tag) Menu Filter -->
 <div class="large-3 small-6 columns">
 <label for="Type_Dropdown">Type</label>
 <select id="Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
@@ -147,18 +204,24 @@
 <!-- 
 	Here is the article display:
 -->
-<txp:article />
+
 
 <div class="row">
 
-	<txp:if_variable name="Subject" value=""> 
+filtered_subject_context_id: <txp:variable name="filtered_subject_context_id" /><br />
+filtered_content_type_context_id: <txp:variable name="filtered_content_type_context_id" /><br />
+filtered_creator_content_id: <txp:variable name="filtered_creator_context_id" /><br />
+aggregated / filtered_ids: <txp:variable name="filtered_ids" />
+<hr />
 		
-		<txp:article_custom section="video" Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" />
+<txp:article_custom section="video" id='<txp:variable name="filtered_ids" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" form="fa_video_card_v30" limit="10" />
 
-		<txp:else />
-		
-		<txp:article_custom section="video" id='<txp:variable name="subject_ids" />' Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" />
-		
-	</txp:if_variable>
+	
+	
+	
+	<hr />
+	
+	
+	
 
 </div>

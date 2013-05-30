@@ -1,6 +1,42 @@
+<!--  -->
+<txp:adi_gps name="wha_parent" quiet="1" />
+<txp:adi_gps name="wha_section" quiet="1" />
+
+<txp:variable name="wha_parent" value='<txp:adi_gps name="wha_parent" />' />
+<txp:variable name="wha_section" value='<txp:adi_gps name="wha_section" />' />
 
 
 
+<div class="row">
+
+
+<txp:article_custom section='<txp:variable name="wha_section" />' limit="9999">
+<txp:article_id /><br />
+<txp:smd_tag_list />
+<hr />
+
+</txp:article_custom>
+
+<hr />
+
+
+
+<txp:smd_query query="SELECT id FROM smd_tags WHERE parent = '?subject'">
+{id},
+</txp:smd_query>
+
+<hr />
+
+<txp:smd_query query="SELECT item_id FROM smd_tags_used WHERE tag_id = 5">
+{item_id},
+</txp:smd_query>
+
+
+<hr />
+
+
+
+<!--
 <h4>Excerpt</h4>
 <txp:smd_query query="SELECT id FROM textpattern WHERE excerpt ='' ">
 <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
@@ -10,3 +46,31 @@
 <txp:smd_query query="SELECT id FROM textpattern WHERE custom_9 ='' ">
 <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
 </txp:smd_query>
+
+
+<h4>Creator</h4>
+<txp:smd_query query="SELECT id FROM textpattern WHERE custom_8 ='' ">
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
+</txp:smd_query>
+
+
+<h4>Video_URL</h4>
+<txp:smd_query query="SELECT id FROM textpattern WHERE custom_1 ='' ">
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
+</txp:smd_query>
+
+
+<h4>Duration</h4>
+<txp:smd_query query="SELECT id FROM textpattern WHERE custom_6 ='' ">
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
+</txp:smd_query>
+
+
+<h4>Speaker</h4>
+<txp:smd_query query="SELECT id FROM textpattern WHERE custom_7 ='' ">
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID={id}">{id}</a>
+</txp:smd_query>
+-->
+
+
+</div>

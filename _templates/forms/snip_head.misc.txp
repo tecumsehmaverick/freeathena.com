@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="<txp:site_url />vendor/font-awesome/css/font-awesome.min.css">
 
 <!-- Custom styles and overrides -->
-<link rel="stylesheet" href="<txp:site_url />vendor/foundation/stylesheets/app2.css">
+<link rel="stylesheet" href="<txp:site_url />css/freeathena.css">
 
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <link rel="stylesheet" href="<txp:site_url />vendor/tagsinput/jquery.tagsinput.css">
@@ -28,6 +28,7 @@
     <script src="<txp:site_url />js/html5shiv.js"></script>
     <script src="<txp:site_url />js/css3-mediaqueries.js"></script>
   <![endif]-->
+ 
   
   <txp:if_section name="library">
   <style>

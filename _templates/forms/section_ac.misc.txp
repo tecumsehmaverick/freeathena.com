@@ -3,7 +3,6 @@
 
 
 
-
 <txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
 <txp:smd_bio_info show_empty="1">
 
@@ -27,6 +26,16 @@
 </txp:smd_bio_info>
 
 
+<!-- Default switch -->
+<div class="switch">
+  <input id="x" name="switch-x" type="radio" checked>
+  <label for="x" onclick="">Off</label>
+
+  <input id="x1" name="switch-x" type="radio">
+  <label for="x1" onclick="">On</label>
+
+  <span></span>
+</div>
 
 
 <dl class="tabs">

@@ -1,3 +1,63 @@
+/*    Brand Typefaces
+	  Listed alphabetically. Not necessarily by weight or other importance   */
+
+
+/*    Knockout - Junior Variety :     */
+
+/*    Junior Bantam */
+@font-face {
+	font-family: Knockout-JuniorBantam;
+	src: url('font/knockout/Knockout-HTF27-JuniorBantam.ttf');
+}
+
+/*    Junior Feathe */
+@font-face {
+	font-family: Knockout-JuniorFeathe;
+	src: url('font/knockout/Knockout-HTF28-JuniorFeathe.ttf');
+}
+
+/*    Junior Litewe */
+@font-face {
+	font-family: Knockout-Juniorlitewe;
+	src: url('font/knockout/Knockout-HTF29-JuniorLitewe.ttf');
+}
+
+
+
+/*    Knockout - Weighted Variety :     */
+
+/* Liteweight */
+@font-face {
+	font-family: Knockout-Liteweight;
+	src: url('font/knockout/Knockout-HTF49-Liteweight.ttf');
+}
+
+/* Welterweight */
+@font-face {
+	font-family: Knockout-Welterweight;
+	src: url('font/knockout/Knockout-HTF50-Welterweight.ttf');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
 background-image: url(../../../img/plaster-wall.png);
 }
@@ -80,14 +140,14 @@ text-transform: uppercase;
 /* Headings and copy */
 
 h1, h2, h3, h4, h5, h6 {
-font-family: "Knockout-Juniorlitewe";
+font-family: "Sabon";
 }
 
 p {
 font-family: "Sabon";
 }
 
-nav {font-family: "helvetica";}
+nav {font-family: "Knockout-Juniorlitewe";}
 
 a {
 color: #8ca641;
