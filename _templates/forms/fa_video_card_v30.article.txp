@@ -83,11 +83,11 @@
 <txp:chh_if_data>
 <txp:smd_tag_list wraptag="" break="" parent="content-type"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?creator=<txp:smd_tag_name link="0" title="0" section="subject" />" class=""><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+  <a href="<txp:site_url />library?Content_Type=<txp:smd_tag_name link="0" title="0" section="subject" />" class="forb"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
 <!--   <txp:smd_tag_count wrapcount="/" /> -->
 </txp:smd_tag_list>
 <txp:else />
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:chh_if_data>
 
 

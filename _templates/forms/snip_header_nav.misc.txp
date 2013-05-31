@@ -1,5 +1,5 @@
 <!-- Header and Nav -->
-<div class="fixed">
+
   <nav class="top-bar">
     <ul>
       <!-- Title Area -->
@@ -70,6 +70,6 @@
       </ul>
     </section>
   </nav>
-</div>
+
 
   <!-- End Header and Nav -->

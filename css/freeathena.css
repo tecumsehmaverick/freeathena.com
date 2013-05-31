@@ -1,3 +1,8 @@
+.forb {
+display: block;
+color: #ccc;
+}
+
 /*    Brand Typefaces
 	  Listed alphabetically. Not necessarily by weight or other importance   */
 
@@ -59,11 +64,11 @@
 
 
 body {
-background-image: url(../../../img/plaster-wall.png);
+background-image: url(../img/plaster-wall.png);
 }
 .capitalize {text-transform: capitalize;}
 
-.collection {background-image: url(../../../img/athena-small.png);}
+.collection {background-image: url(../img/athena-small.png);}
 
 .fixed-top {
 background-color: #fff;
@@ -95,9 +100,15 @@ padding: 0;
 box-shadow: 0px 2px 20px #ddd;
 }
 
+
+.panel {background-color: #fff;box-shadow: 0px 2px 20px #ddd; border-radius: 2px;
+}
+
+
 /* .box {background-image: url(../../../img/fa-card-bg.png);} */
-.box {background-color: #fff; border: 1px solid #eee; opacity: 0.9; padding-top: 20px; padding-bottom: 20px;}
-.box:hover {border: 1px solid #eee;  opacity: 1; box-shadow: inset 1px 1px 30px #eee;}
+.box {padding: 24px; border: 1px solid #eee;  opacity: 1; box-shadow: inset 1px 1px 30px #eee;}
+.box:hover {background-color: #fff; border: 1px solid #eee; opacity: 0.9; }
+
 
 .box img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
@@ -105,7 +116,7 @@ box-shadow: 0px 2px 20px #ddd;
 border: 1px solid #eee;
 height: 130px;
 background-color: #fff;
-background-image: url(../../../img/athena-small.png);
+background-image: url(../img/athena-small.png);
 background-repeat: no-repeat;
 background-position: center;
 }
@@ -137,17 +148,6 @@ text-transform: uppercase;
 .drill-right {float: right;}
 
 
-/* Headings and copy */
-
-h1, h2, h3, h4, h5, h6 {
-font-family: "Sabon";
-}
-
-p {
-font-family: "Sabon";
-}
-
-nav {font-family: "Knockout-Juniorlitewe";}
 
 a {
 color: #8ca641;
@@ -305,3 +305,22 @@ form.custom .custom.dropdown {
     box-shadow: none;
     font-size: 0.875em;
     vertical-align: top; }
+    
+    
+    
+    
+    
+    
+    /* Headings and copy */
+
+h1, h2, h3, h4, h5, h6 {
+font-family: "Sabon";
+}
+
+p {
+font-family: "Sabon";
+}
+
+nav {font-family: "Knockout-Juniorlitewe"; font-size: 2.7em;}
+
+nav a {font-size: 2.7em;}

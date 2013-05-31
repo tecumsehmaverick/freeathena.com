@@ -1,11 +1,3 @@
-<txp:cbe_frontauth_if_connected>
-
-<txp:cbe_frontauth_redirect
-    for="login"
-    value="ac" />
-<!doctype html>
-<html lang="<txp:lang />">
-
 <head>
 <txp:output_form form="snip_head" />
 
@@ -157,9 +149,3 @@
 
 </body>
 </html>
-
-<txp:else />
-
-<txp:output_form form="beta_landing" />
-
-</txp:cbe_frontauth_if_connected>

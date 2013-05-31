@@ -35,48 +35,48 @@
 
 
 
-<!-- If subject_context -->
-<txp:if_variable name="subject_context" value="">
-
-<!-- There is no subject context so try the the other contexts (content_type & creator )-->
-
-	<!-- If content_type_context -->
-	<txp:if_variable name="content_type_context" value="">
-	<!-- There is no content_type_context so try the the other context (creator )-->
-
-	<txp:else />
-	
-		<!-- if content_type_context -->
-		<txp:if_variable name="creator_context" value="">
-		
-		</txp:if_variable>
-	
-	
-	
-	</txp:if_variable>
-
-
-
-	<txp:else />
-
-
-
-</txp:if_variable>
-
-
-
-
-
-
-<!-- list of ids for the current 'filter' as a variable to be used in article_custom calls below:  -->
+<!-- list of ids for the current set of 'filter' as a variable to be used in article_custom calls below:  -->
 <txp:variable name="filtered_ids">
 
-<txp:smd_query query="SELECT item_id FROM smd_tags_used WHERE tag_id = '?filtered_subject_context_id'">
+<txp:smd_query query="SELECT * FROM smd_tags_used WHERE (tag_id = '?filtered_subject_context_id' OR tag_id ='?filtered_content_type_context_id' OR tag_id = '?filtered_creator_context_id')">
 {item_id},
 </txp:smd_query>
 
-
 </txp:variable>
+
+
+
+
+<!-- Default /library view: No Parameters (?Subject, ?Type, ?Creator)
+
+Let's look for 'no parameters from url vars'. We are using URL Variable to match smd_tags belonging to article we want to filter and display. We need to know if there is no filtering criterea in the article library so that we can show a default listing or other when one navigates to /library -->
+
+<txp:if_variable name="subject_context" value=''>
+	<!-- no ?Subject-->
+	<txp:if_variable name="content_type_context" value=''>
+		<!-- no ?Type-->
+		<txp:if_variable name="creator_context" value=''>
+			<!-- no ?Creator and also no ?Type nor ?Subject-->
+			
+			<!-- No Parameters -->
+			<div class="row">
+			
+				<txp:article_custom 
+					section="video" 
+					id='' 
+					form="fa_video_card_v30" 
+					sort="<txp:variable name="Sort_By" />" 
+					form="fa_video_card_v30" 
+					limit="20" />
+			</div>
+			
+			<txp:else />
+		</txp:if_variable>
+	<txp:else />
+	</txp:if_variable>
+<txp:else />
+</txp:if_variable>
+
 
 <!-- End Variable Creation Station -->
 
@@ -86,19 +86,11 @@
 <!-- Begin Views -->
 <div class="fixed-top fixed">
 
-<div class="free-athena-thin-bar hide-for-small">
+
+<div class="free-athena-thin-bar">
 <div class="row">
 
-<div class="large-9 columns">
-<a href="<txp:site_url />">FREE ATHENA</a>
-</div>
-
-<div class="large-3 columns">
-
-<a href="<txp:site_url />library">Library</a>
-<a href="<txp:site_url />collection">Collections</a>
-
-</div>
+<!-- <a href="<txp:site_url />">Free Athena</a> | <a href="<txp:site_url />library">Library</a> -->
 
 </div>
 </div>
@@ -108,57 +100,46 @@
 
   <!-- End Header and Nav -->
 
-<!--
-<a href="#" data-dropdown="drop1" class="button dropdown">Subject Index</a><br>
 
-<ul id="drop1" class="large f-dropdown">
-<txp:smd_tag_list showall="1" parent="subject" wraptag="">
-   <txp:smd_tag_info item="indent" />
-   <txp:smd_if_tag children=">0">
-      <txp:hide> A parent tag: do not link </txp:hide>
-      <txp:smd_tag_name title="1" />
-   <txp:else />
-      <txp:hide> A child tag: link it to the default trigger section </txp:hide>
-      <txp:smd_tag_name link="1" title="1" />
-   </txp:smd_if_tag>
-</txp:smd_tag_list>
-</ul>
--->
-
-
-<form action='<txp:page_url />' method="get" class="custom">
 
 <!-- 
 	Filtering Menu:  Built from URL variables gathered above as well as a page variable generated from smd_queries against 
 	smd_tags to find articles tagged by ?subject
 -->
 
+<form id="library_filters" action='<txp:page_url />' method="get" class="custom">
+
 <!-- Subject (smd_tag) Menu Filter -->
 <div class="large-3 small-6 columns capitalize">
 <label for="Subject_Dropdown">Subject</label>
-<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small" placeholder="sdkfjh">
+<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small" placeholder="test">
 
+<txp:chh_if_data>
 <option value="">All</option>
-	
-<option value='<txp:rah_replace from=" " to="-"><txp:adi_gps name="Subject" /></txp:rah_replace>' selected><txp:adi_gps name="Subject" /></option>
+<option value='<txp:adi_gps name="Subject" />' selected><txp:adi_gps name="Subject" /></option>
+<txp:else />
+<option value="">All</option>
+</txp:chh_if_data>	
 
 <txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'subject'">
-	
 <option value="{name}">{title}</option>
-
 </txp:smd_query>             
-
 </select>
 </div>
 
 
-
 <!-- Content_Type (smd_tag) Menu Filter -->
-<div class="large-3 small-6 columns">
+<div class="large-3 small-6 columns capitalize">
 <label for="Type_Dropdown">Type</label>
 <select id="Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
+
+<txp:chh_if_data>
 <option value="">All</option>
-<option value='<txp:adi_gps name="Content_Type" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Content_Type" /></txp:rah_replace></option>
+<option value='<txp:adi_gps name="Content_Type" />' selected><txp:adi_gps name="Content_Type" /></option>
+<txp:else />
+<option value="">All</option>
+</txp:chh_if_data>	
+
 <txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'content-type'">
 <option value="{name}">{title}</option>
 </txp:smd_query>             
@@ -167,11 +148,17 @@
 
 
 <!-- Creator (smd_tag) Menu Filter -->
-<div class="large-3 small-6 columns">
+<div class="large-3 small-6 columns capitalize">
 <label for="Creator_Dropdown">Creator</label>
 <select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small">
+
+<txp:chh_if_data>
 <option value="">All</option>
-<option value='<txp:adi_gps name="Creator" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Creator" /></txp:rah_replace></option>
+<option value='<txp:adi_gps name="Creator" />' selected><txp:adi_gps name="Creator" /></option>
+<txp:else />
+<option value="">All</option>
+</txp:chh_if_data>	
+
 <txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'creator'">
 <option value="{name}">{title}</option>
 </txp:smd_query>             
@@ -208,20 +195,101 @@
 
 <div class="row">
 
+
+<txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
+
+<txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
+
+<ul class="breadcrumbs">
+  <li><a href="#">Free Athena</a></li>
+  <li><a href="<txp:site_url /><txp:section />"><txp:section title="1" /></a></li>
+  <txp:if_variable name="no_show_root" value="root">
+
+<txp:else />
+<li><a href="<txp:site_url />library?Subject=<txp:smd_tag_info item="parent" />"><txp:smd_tag_info item="parent" /></a></li>
+
+</txp:if_variable>
+<li><a class="unavailable" href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="1" section="library" />"><txp:smd_tag_name link="0" title="1" section="library" /></a></li>
+
+</ul>
+
+</txp:smd_tag_list> 
+
+<!--
 filtered_subject_context_id: <txp:variable name="filtered_subject_context_id" /><br />
 filtered_content_type_context_id: <txp:variable name="filtered_content_type_context_id" /><br />
 filtered_creator_content_id: <txp:variable name="filtered_creator_context_id" /><br />
 aggregated / filtered_ids: <txp:variable name="filtered_ids" />
+-->
+
+<div class="large-3  small-6 columns panel">
+
+
+<txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
+
+<txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
+
+<txp:if_variable name="no_show_root" value="root">
+
+<txp:else />
+<a href="<txp:site_url />library?Subject=<txp:smd_tag_info item="parent" />" class="forb"><txp:smd_tag_info item="parent" /><span class="right"><i class="icon-chevron-left"></i></span></a>
 <hr />
-		
-<txp:article_custom section="video" id='<txp:variable name="filtered_ids" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" form="fa_video_card_v30" limit="10" />
+</txp:if_variable>
+
+
+
+
+<h3><txp:smd_tag_name link="0" title="1" section="subject" /></h3>
+
+<txp:variable name="content_type_context" />
+<txp:variable name="creator_context" />
+
+
+<txp:chh_if_data>
+<txp:rvm_substr length="58">
+<p><txp:smd_tag_info item="description" /></p>
+</txp:rvm_substr>
+<txp:else />
+<p>This is a placeholder description for <txp:smd_tag_info item="name" />. The description can be added under <a href="">tag management</a>.</p>
+</txp:chh_if_data>
+
+</txp:smd_tag_list> 
+<hr />
+
+
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = '?subject_context'">
+
+<a href="<txp:site_url />library?Subject={name}" class="forb">{title}<span class="right"><i class="icon-chevron-right"></i></span></a>
+<hr />
+</txp:smd_query>             
+</div>
+
+
+
+
+<!-- Filtered View: Articles having, by ID, a smd_tag matching one or more of the three URL variable we are filtering by (?Subject, ?Type, ?Creator)-->
+<txp:article_custom section="video" id='<txp:variable name="filtered_ids" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" form="fa_video_card_v30" limit="20" />
 
 	
-	
-	
-	<hr />
-	
-	
+<hr />
 	
 
+</div>
+
+<!-- UI Placeholder: Make pagination work based on txp:article_custom with id being the parameter to paginate -->
+
+<div class="panel">
+<div class="row">
+<ul class="pagination">
+          <li class="arrow unavailable"><a href="">«</a></li>
+          <li class="current"><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li class="unavailable"><a href="">…</a></li>
+          <li><a href="">12</a></li>
+          <li><a href="">13</a></li>
+          <li class="arrow"><a href="">»</a></li>
+        </ul>	
+</div>
 </div>
