@@ -266,6 +266,14 @@ aggregated / filtered_ids: <txp:variable name="filtered_ids" />
 
 
 
+<txp:smd_each type="urlvar"
+     include="Subject"
+     subset="2" var_prefix="me_">
+{Subject}
+
+</txp:smd_each>
+
+
 
 <!-- Filtered View: Articles having, by ID, a smd_tag matching one or more of the three URL variable we are filtering by (?Subject, ?Type, ?Creator)-->
 <txp:article_custom section="video" id='<txp:variable name="filtered_ids" />' form="fa_video_card_v30" sort="<txp:variable name="Sort_By" />" form="fa_video_card_v30" limit="20" />
