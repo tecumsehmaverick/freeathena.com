@@ -1,25 +1,58 @@
-<div class="deeper-masthead">
-<div class="row">
-<h1><small>A Free Athena</small> Collection:</h1>
-</div>
-</div>
+<txp:output_form form="snip_header_nav" />
+
+
 
 <div class="row">
 
 
 <!-- Individual Collection Title-->
 <txp:if_individual_article>
+
 <txp:article>
-
-
 <h2 class="subheader"><txp:title /></h2>
 <hr />
 <txp:excerpt />
 </txp:article>
 
-<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_v30" limit="999" />
-
+<ul id="masonry" class="small-block-grid-2 large-block-grid-4">
+<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_collection_tile" limit="999" />
+</ul>
 <txp:else />
+
+
+
+
+
+<ul class="athenian-stripes">
+<txp:article_custom section="collection" limit="10">
+
+<li class="stripe">
+
+<div class="row">
+
+<div class="twelve columns">
+
+<a href="<txp:permlink />">
+<h3 class="responsive-headine collection-title"><txp:title /><span class="drill-right"><i class="icon-chevron-right"></i></span></h3>
+</a>
+</div>
+</div>
+	
+	<!-- nesting -->
+	<div class="row">
+	<!-- column sizes declared in article form fa_video_card -->
+	<ul id="masonry" class="small-block-grid-4 large-block-grid-8">
+	<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_collection_tile" />
+	</ul>
+	<!-- -->
+	</div>
+	
+	<hr />
+	
+</li>
+
+</txp:article_custom>
+</ul>
 
 
 

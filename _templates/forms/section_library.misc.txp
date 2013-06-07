@@ -147,16 +147,9 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 <div class="fixed-top fixed">
 
 
-<div class="free-athena-thin-bar">
-<div class="row">
+<txp:output_form form="snip_header_nav" />
 
-<a href="<txp:site_url />">Free Athena</a> | <a href="<txp:site_url />library">Library</a>
-
-</div>
-</div>
-
-
-<div class="filters row">
+<div class="filters row hide-for-small">
 
   <!-- End Header and Nav -->
 
@@ -317,15 +310,6 @@ all ids: <txp:variable name="filtered_ids" />
 
 <txp:else />
 
-
-<txp:if_variable name="subject_context" value="subject">
-
-<div class="large-9 columns panel">
-this is landing
-</div>
-
-
-</txp:if_variable>	
 
 
 <txp:article_custom section="video" id='<txp:variable name="matched_ids" />' sort='<txp:variable name="Sort_By" />' limit="9999">

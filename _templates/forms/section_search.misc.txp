@@ -1,3 +1,6 @@
+<txp:output_form form="snip_header_nav" />
+
+
 <txp:if_search>
 
 	<txp:article limit="10" form="fa_video_card_v30" pgonly="1" />

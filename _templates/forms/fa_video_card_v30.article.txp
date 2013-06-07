@@ -21,12 +21,12 @@
 <!-- -->
 <txp:smd_tag_list wraptag="" break="" parent="Creator"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:smd_tag_name link="0" title="0" section="subject" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class=""><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:smd_tag_name link="0" title="0" section="subject" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />"  class="forb far-in-medium"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:smd_tag_list>
 
 <txp:else />
 
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">Creator</a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb far-in-medium">Creator<span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:chh_if_data>
 
 
@@ -53,7 +53,7 @@
 -->
     
 <!-- Video Thumb -->
-<a href="<txp:permlink />" title="View now: <txp:title />">
+<a href="<txp:permlink />" title="Watch: <txp:title />">
 
 <div class="video-image image-wrap">
 
@@ -64,7 +64,7 @@
 </a>
 	
 
-<a href="<txp:permlink />" title="View now: <txp:title />">
+<a href="<txp:permlink />" title="Watch: <txp:title />">
 <h4 class="responsive-headline"><txp:rvm_substr length="55"><txp:title /></txp:rvm_substr></h4>
 </a>
 
@@ -86,23 +86,23 @@
 -->
 
 
-<hr />
+
 
 <txp:chh_if_data>
 <txp:smd_tag_list wraptag="" break="" parent="content-type"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:smd_tag_name link="0" title="0" section="subject" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
+  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:smd_tag_name link="0" title="0" section="subject" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb far-in-medium"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
 <!--   <txp:smd_tag_count wrapcount="/" /> -->
 </txp:smd_tag_list>
 <txp:else />
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb far-in-medium">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:chh_if_data>
 
 
 
-<hr />
-<h6>Filed Under</h6>
-<txp:smd_tag_list parent="subject" wraptag="" break=""
+
+
+<txp:smd_tag_list parent="subject" wraptag="p" break=""
      shuffle="1" indent="">
   <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
 <!--   <txp:smd_tag_count wrapcount="/" /> -->
@@ -110,8 +110,26 @@
 
 <hr />
 
+<!-- Get a little variable going here -->
+<txp:article>
+<txp:variable name="is_id_collected" value='<txp:article_id />' />
+</txp:article>
 
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i> edit</a>
+<!-- no spaces in the custom_4 field in the database please / otherwise this little number won't fly -->
+
+<!-- Do stuff / I'm tired -->
+<txp:smd_query query="SELECT custom_4, id FROM textpattern 
+WHERE (custom_4 LIKE '%,?is_id_collected%,'
+     OR custom_4 LIKE '%?is_id_collected%,'
+     OR custom_4 LIKE '%,?is_id_collected%')">
+	
+	<txp:article_custom id="{id}">
+	<txp:permlink><txp:title /></txp:permlink>
+	</txp:article_custom>
+</txp:smd_query>
+
+
+<!-- <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i> edit</a> -->
 
 
 

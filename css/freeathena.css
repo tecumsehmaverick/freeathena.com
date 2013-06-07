@@ -4,6 +4,13 @@ color: #999;
 font-weight: 400;
 }
 
+.forb i {
+
+color: #999;
+font-size: small;
+padding-top: 5px;
+}
+
 /*    Brand Typefaces
 	  Listed alphabetically. Not necessarily by weight or other importance   */
 
@@ -75,7 +82,7 @@ box-shadow: inset 0px 0px 5px #fff;
 }
 
 .filters {
-padding: 15px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
 /* overflow-x: scroll; */
 }
 
@@ -87,15 +94,31 @@ padding: 0;
 box-shadow: 0px 2px 20px #ddd;
 }
 
+.far-in-small {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+.far-in-medium {
+	border-top: 1px solid #ddd; 
+	border-bottom: 1px solid #ddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	vertical-align: middle;
+	}
+	
+.far-in-large {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
 
-.panel {background-color: #fff;box-shadow: 0px 2px 20px #ddd; border-radius: 2px;
-}
+.far-out-small {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+.far-out-medium {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+.far-out-large {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+
+
+
+.panel {background-color: #fff;box-shadow: 0px 2px 20px #ddd; border-radius: 2px;}
 
 
 .box {background-image: url(../../../img/fa-card-bg.png);}
-.box {padding: 24px;  opacity: 1; box-shadow: inset 1px 1px 30px #eee;}
+.box {background-color: #fff;}
 .box:hover {background-color: #fff; opacity: 0.9; }
-.inner-box {padding: 24px;}
+.inner-box {padding: 24px; box-shadow: inset 1px 1px 3px #eee;}
 
 .box img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
@@ -128,7 +151,7 @@ width: 100%;
   width: 77px;
   height: 77px;
   background-image: url(../img/play-button.png);
-  position: absolute;
+  position: relative;
 }
 
 
@@ -163,6 +186,7 @@ color: #8ca641;
 }
 
 ul.athenian-stripes li {
+list-style: none;
 padding-bottom: 24px;
 /*
 border-top: 1px solid #ddd;
@@ -322,7 +346,7 @@ p {
 font-family: "Sabon";
 }
 
-nav {font-family: "Knockout-Juniorlitewe"; font-size: 2.7em;}
+/* nav {font-family: "Knockout-Juniorlitewe"; font-size: 2.7em;} */
 
 nav a {font-size: 2.7em;}
 

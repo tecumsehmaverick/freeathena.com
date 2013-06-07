@@ -10,6 +10,11 @@
 <h4 class="subheader">University Courses, Documentary Films, Ted Talks, and More.</h4>
 
 
+<txp:smd_tag_list parent="subject" wraptag="p" break=""
+     shuffle="1" indent="">
+  <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+<!--   <txp:smd_tag_count wrapcount="/" /> -->
+</txp:smd_tag_list>
 
 
 
@@ -45,7 +50,7 @@
 <h6>Subject</h6>
 
 <txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'subject'">
-<a href="<txp:site_url />library?Subject={name}">{title}</a>, 
+<a href="<txp:site_url />library?Subject={name}" class="filed-under">{title}</a> 
 </txp:smd_query>
 <hr />
 </div>

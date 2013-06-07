@@ -1,0 +1,34 @@
+<txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
+
+
+
+<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
+<txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
+
+<li class="masonry-brick">
+
+<txp:else />
+
+<li class="masonry-brick">
+
+</txp:smd_query>
+
+
+<div class="inner-box">
+
+    
+<!-- Video Thumb -->
+<a href="<txp:permlink />" title="Watch: <txp:title />">
+
+<div class="video-image image-wrap">
+
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
+
+</div>
+
+</a>
+
+
+
+</div>
+</li><!-- /.article -->
