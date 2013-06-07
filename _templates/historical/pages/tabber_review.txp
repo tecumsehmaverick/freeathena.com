@@ -1,0 +1,15 @@
+
+
+<h1>Review</h1>
+
+<txp:article_custom status="pending" limit="999">
+<li><txp:title /></li>
+</txp:article_custom
+
+
+
+
+<txp:smd_query query="SELECT *
+     FROM textpattern WHERE status = 'pending'">
+   <txp:permlink>{Title}</txp:permlink>
+</txp:smd_query>

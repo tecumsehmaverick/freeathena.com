@@ -1,0 +1,131 @@
+<!-- Header and Nav -->
+
+  <nav class="top-bar">
+    <ul>
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="<txp:site_url />">
+            <txp:site_name />
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar"><a href="#"></a></li>
+    </ul>
+
+    <section>
+      <!-- Left Nav Section 
+      <ul class="left">
+      <li class="divider"></li>
+        <li><a href="#">Main Item 2</a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Main Item 3</a>
+          <ul class="dropdown">
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+      </ul>
+      -->
+
+      <!-- Right Nav Section -->
+      <ul class="right">
+      
+         <li class="has-dropdown gravatar">
+          <a href="#"><txp:glx_gravatar email='<txp:cbe_frontauth_whois type="email" />' size="35" /></a>
+          <ul class="dropdown">
+			<li><label><txp:cbe_frontauth_whois type="RealName" /></label></li>
+            <li><a href="<txp:site_url />queue"><i class="icon-list"></i> Queue</a></li>
+            <li><a href="<txp:site_url />archive"><i class="icon-film"></i> Archive</a></li>
+            <li><a href="<txp:site_url />profile"><i class="icon-user"></i> Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+
+
+        <li class="divider"></li>
+        <li class="has-dropdown">
+        
+          <a href="#"><i class="icon-th"></i> Browse Library</a>
+          <ul class="dropdown">
+            <li><label>By Subject</label></li>
+            
+            
+            <!-- Humanities -->
+            <li class="has-dropdown">
+              <a href="#" class="">Humanities</a>
+              <ul class="dropdown">
+                <li><a href="#">Literature</a></li>
+                <li><a href="#">Law</a></li>
+                <li><a href="#">Government</a></li>
+                <li class="has-dropdown">
+                  <a href="#">Religion</a>
+                  <ul class="dropdown test">
+                    <li><a href="#">Buddhism</a></li>
+                    <li><a href="#">Christianity</a></li>
+                    <li><a href="#">Islam</a></li>
+                    <li><a href="#">Judaism</a></li>
+                    <li><a href="#">Occult</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Philosophy</a></li>
+                <li><a href="#">Languages</a></li>
+                <li><a href="#">Education</a></li>
+              </ul>
+            </li>
+            <!-- Social Sciences -->			
+			<li class="has-dropdown">
+			<a href="#" class="">Social Sciences</a>
+				<ul class="dropdown">
+                <li><a href="#">Anthropology</a></li>
+                <li><a href="#">Comparative Media</a></li>
+                <li><a href="#">Cultural Studies</a></li>
+                <li><a href="#">Economics</a></li>
+                <li><a href="#">Geography</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">International Relations</a></li>
+                <li><a href="#">Political Science</a></li>
+                <li><a href="#">Psychology</a></li>
+                <li><a href="#">Public Health</a></li>
+                <li><a href="#">Sociology</a></li>
+                <li><a href="#">Terrorism</a></li>
+                <li><a href="#">Women's Studies</a></li>
+                </ul>
+            </li>
+                        
+			<li><a href="#">Business</a></li>
+			<li><a href="#">Math</a></li>
+			<li><a href="#">Science</a></li>
+			<li><a href="#">Engineering</a></li>
+			<li><a href="#">Technology</a></li>
+			<li><a href="#">Art &amp; Design</a></li>
+			<li><a href="#">Progressive</a></li>
+			<li><a href="#">Odd Balls</a></li>
+            <li class="divider"></li>
+            <li><label>Other Options</label></li>
+            <li><a href="#">Recommended</a></li>
+            <li><a href="#">Your Taste</a></li>
+            <li><a href="#">Newly Added</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+        <li class="divider"></li>        
+        <li><a href="#" class="" data-reveal-id="myModal"><i class="icon-plus"></i> Submit</a></li>
+        <li class="divider"></li>
+
+
+        <li>
+        </li>
+      </ul>
+    </section>
+  </nav>
+
+
+  <!-- End Header and Nav -->

@@ -1,0 +1,9 @@
+<hr />
+
+<h4><txp:mem_username />,</h4>
+
+<p class="lead">You have successfully created an account on Free Athena!</p>
+
+<p>We sent a temporary password to <strong><txp:mem_email /></strong>.  Please collect this password from your email and <a href="<txp:site_url />sign-in">Sign-In</a>.</p>
+
+<p><em>You can personalize your password once your in.</em></p>

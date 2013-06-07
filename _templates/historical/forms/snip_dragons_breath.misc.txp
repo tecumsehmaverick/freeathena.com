@@ -30,14 +30,14 @@
 		  autoplay:true,
 		  nostyle: 'true',
           method: 'after',
-          key:':c89f9dda17564d53adde6c4693a0c884'
+          key:':16f8ec5381174127917e216166b3e4a3'
         });
       });
     </script>
     
      <script>
       $.embedly.defaults = {
-        key:'c89f9dda17564d53adde6c4693a0c884',
+        key:'16f8ec5381174127917e216166b3e4a3',
       }
       
       $('.video-image span').embedly({
@@ -45,22 +45,42 @@
           autoplay:true
         },
         display: function(data){
-          $(this).html('<a class="th"><img src="'+data.thumbnail_url+'"/></a>')
+          $(this).html('<img src="'+data.thumbnail_url+'"/><span></span>')
+            .width(data.thumbnail_width)
+            .height(data.thumbnail_height)
+            .find('span').css('top', data.thumbnail_height/2-36)
+            .css('left', data.thumbnail_width/2 - 36);
         }
       });
     </script>
  
   
-<!-- Doin a float fixin block grid mason's magic thing: -->
-<script src="<txp:site_url />vendor/masonry/masonry.min.js"></script>
 
+<!-- <script src="<txp:site_url />js/jquery.isotope.js"></script> -->
+
+<!--
 <script>
-window.onload = function() {
-  var wall = new Masonry( document.getElementById('masonry'), {
-  // options
+var $container = $('#container')
+// initialize Isotope
+$container.isotope({
+  // options...
+  itemSelector : '.box',
+  layoutMode : 'fitRows',
+  resizable: false, // disable normal resizing
+  // set columnWidth to a percentage of container width
+  masonry: { columnWidth: $container.width() / 5 }
+});
+
+// update columnWidth on window resize
+$(window).smartresize(function(){
+  $container.isotope({
+    // update columnWidth to a percentage of container width
+    masonry: { columnWidth: $container.width() / 5 }
   });
-};
+});
 </script>
+-->
+
 
         
 <!-- https://github.com/davatron5000/FitText.js -->

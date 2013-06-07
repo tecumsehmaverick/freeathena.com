@@ -1,0 +1,7 @@
+Hello <txp:mem_username />,
+
+Your registration at Free Athena was successful. 
+
+Your password is: <txp:mem_password />
+
+Login at http://freeathena.com/sign-in

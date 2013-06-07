@@ -1,0 +1,95 @@
+<!-- Default: freeathena.com/  -->
+
+<div class="row">
+
+<div class="large-4 columns">
+<span class="logo hide-for-small">
+<img src="<txp:site_url />img/logo-mark-500-500.png" />
+</span>
+</div>
+             
+
+
+<div class="large-6 columns">
+<h3 class="">Learn any Subject For Free.</h3>
+<h4 class="subheader">Watch Videos of University Courses, Documentary Films, Ted Talks, and More, Curated and Organized by Subject</h4>
+
+<div class="row collapse">
+
+<form role="search" method="get" action="<txp:site_url />search">
+	
+	<div class="small-10 columns">
+    	<input id="search-textbox" type="text" name="q" placeholder="Type to Search">
+    </div>
+    
+    <div class="small-2 columns">
+		<input class="button success postfix radius" type="submit" value="Search">
+	</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+</div><!-- .row -->
+
+
+
+<txp:hide>
+<!-- Subject Navigation -->
+<div class="featured-navigation">
+
+<div class="row">
+<div class="twelve columns">
+<div id="carousel">
+<ul>
+<txp:linklist category="home-page-curated-subjects">
+<li><a href="<txp:site_url />subject/<txp:link_url />"><txp:link_name /></a></li>
+</txp:linklist>
+</ul>
+<span></span>
+</div><!-- #carousel -->
+</div><!-- .twelve columns -->
+</div><!-- .row -->
+
+</div><!-- .subnav -->
+<!-- -->
+</txp:hide>
+
+
+
+
+
+<ul class="athenian-stripes">
+<txp:article_custom section="collection" limit="10">
+
+<li class="stripe">
+
+<div class="row">
+<hr />
+<div class="twelve columns">
+
+<a href="<txp:permlink />">
+<h3 class="responsive-headine collection-title"><txp:title /><span class="drill-right"><i class="icon-chevron-right"></i></span></h3>
+</a>
+</div>
+</div>
+	
+	<!-- nesting -->
+	<div class="row">
+	<!-- column sizes declared in article form fa_video_card -->
+	<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_v30" limit="4" />
+	<!-- -->
+	</div>
+	
+	
+</li>
+
+</txp:article_custom>
+</ul>

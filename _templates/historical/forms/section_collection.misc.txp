@@ -1,0 +1,34 @@
+<div class="deeper-masthead">
+<div class="row">
+<h1><small>A Free Athena</small> Collection:</h1>
+</div>
+</div>
+
+<div class="row">
+
+
+<!-- Individual Collection Title-->
+<txp:if_individual_article>
+<txp:article>
+
+
+<h2 class="subheader"><txp:title /></h2>
+<hr />
+<txp:excerpt />
+</txp:article>
+
+<txp:article_custom id='<txp:custom_field name="Collection_IDs" />' form="fa_video_card_v30" limit="999" />
+
+<txp:else />
+
+
+
+</txp:if_individual_article>
+
+
+<div class="row">
+
+</div>
+
+
+</div>

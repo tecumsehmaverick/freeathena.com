@@ -1,0 +1,91 @@
+<txp:cbe_frontauth_if_connected>
+<!doctype html>
+<html lang="<txp:lang />">
+
+<head>
+<txp:output_form form="snip_head" />
+</head>
+
+
+
+<body id="<txp:if_section name=""><txp:if_search>search<txp:else />front</txp:if_search><txp:else /><txp:section /></txp:if_section>-page">
+
+
+<!-- Masthead: Global  -->
+<txp:output_form form="snip_header_nav" />
+
+
+
+	<txp:cbe_frontauth level="1,2,3,4,5,6,7" show_logout="0">
+
+
+<div class="row">
+
+<div class="twelve columns">
+<h1>Submissions</h1>
+
+<p>We appreciate you taking the time to share any resources you have found out there on the web. We're always looking for new blood to join our team of curators so that we can continue to build the most comprehensive library of educational content online.</p>
+
+<hr />
+...
+<hr />
+
+
+<txp:mem_public_article success_form="successful_submission">
+
+<!-- Video URL -->
+<txp:mem_form_text name="custom_1" label="Video URL" break="" />
+
+
+<txp:mem_form_text name="Title" label="Title of Video" break="" />
+
+<txp:mem_form_select name="Category1" label="Category" items='<txp:category_list break=","><txp:category  /></txp:category_list>' values='<txp:category_list break=","><txp:category  /></txp:category_list>' />
+
+
+
+<!-- http://xoxco.com/projects/code/tagsinput/ -->
+<txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
+
+
+
+
+<txp:mem_form_textarea name="Body" label="Description" break="" />
+
+
+<!-- Pending Status -->
+<txp:mem_form_secret name="Status" label="Status" value="3" />
+
+<txp:mem_form_secret name="publish_now" label="Posted" value="23 Jan 2013 12:00:00" />
+
+
+<txp:mem_form_secret name="Author" label="Author" value="<txp:cbe_frontauth_whois type="name" />" />
+<txp:mem_form_secret name="textile_body" value="1" label="textile body" />
+<txp:mem_form_secret name="textile_excerpt" value="1" label="textile excerpt" />
+<txp:mem_form_secret name="Section" value="video" label="Section" />
+<txp:mem_form_submit label="Add" class="button" />
+
+</txp:mem_public_article>
+
+</div>
+</div>
+
+</txp:cbe_frontauth>
+
+
+<!-- Footer -->
+<txp:output_form form="snip_footer" />
+
+
+
+<!-- Dragon's Breath -->
+<txp:output_form form="snip_dragons_breath" />
+
+
+</body>
+</html>
+
+</txp:cbe_frontauth_if_connected>
+
+
+
+

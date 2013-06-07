@@ -1,0 +1,151 @@
+<head>
+<txp:output_form form="snip_head" />
+
+<!-- logged_user variable -->
+<txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
+<txp:variable name="logged_user" value='<txp:cbe_frontauth_whois type="name" />' />
+</txp:smd_bio_author>
+
+<!-- current_subject variable -->
+<txp:variable name="current_subject">
+<txp:category />
+</txp:variable>
+
+</head>
+
+
+<body id="<txp:if_section name=""><txp:if_search>search<txp:else />front</txp:if_search><txp:else /><txp:section /></txp:if_section>-page">
+
+
+
+
+
+  
+
+	<txp:if_section name="orphans">
+  	<txp:output_form form="section_orphans" />
+	</txp:if_section>      
+
+
+	<txp:if_section name="content">
+  	<txp:output_form form="section_content" />
+	</txp:if_section>      
+
+	<txp:if_section name="user-subjects">
+  	<txp:output_form form="section_user_subjects" />
+	</txp:if_section>      
+
+
+	<txp:if_section name="user-tags">
+  	<txp:output_form form="section_user_tags" />
+	</txp:if_section>      
+
+	<txp:if_section name="creator">
+  	<txp:output_form form="section_creator" />
+	</txp:if_section>
+
+	<txp:if_section name="subject">
+  	<txp:output_form form="section_subject" />
+	</txp:if_section>
+
+
+	<txp:if_section name="tag">
+  	<txp:output_form form="section_tag" />
+	</txp:if_section>
+
+
+	<txp:if_section name="search">
+  	<txp:output_form form="section_search" />
+	</txp:if_section>
+
+
+	<!-- Main Content -->
+	<txp:if_section name="default">
+	<txp:if_individual_article>
+
+	<txp:article>
+	<article>
+    <a href='<txp:custom_field name="Video Url" />'></a>
+	<h3><txp:title /></h3>
+    <p><txp:excerpt /></p>
+    </article>
+	</txp:article>
+
+	<txp:else />
+	
+	<txp:output_form form="section_default" />
+	
+	</txp:if_individual_article>
+	</txp:if_section>
+
+	<txp:if_section name="edit">
+	<txp:output_form form="section_edit_article" />
+	</txp:if_section>
+
+	<txp:if_section name="welcome">
+	<txp:output_form form="section_welcome" />
+	</txp:if_section>
+
+	<txp:if_section name="about">
+	<txp:output_form form="section_about" />
+	</txp:if_section>
+
+	<txp:if_section name="ac">
+	<txp:output_form form="section_ac" />
+	</txp:if_section>
+
+	<txp:if_section name="video">
+	<txp:output_form form="section_video" />
+	</txp:if_section>
+
+	<txp:if_section name="collection">
+	<txp:output_form form="section_collection" />
+	</txp:if_section>
+
+	<txp:if_section name="subject-index">
+	<txp:output_form form="section_subject_index" />
+	</txp:if_section>
+
+	<txp:if_section name="documentation">
+	<txp:output_form form="section_documentation" />
+	</txp:if_section>
+
+	<txp:if_section name="queue">
+	<txp:output_form form="section_queue" />	
+	</txp:if_section>	
+
+	<txp:if_section name="library">
+	<txp:output_form form="section_library" />
+	</txp:if_section>	
+	
+	<txp:if_section name="contact">
+	<txp:output_form form="section_contact" />
+	</txp:if_section>	
+	
+	<txp:if_section name="profile">
+	<txp:output_form form="section_profile" />
+	</txp:if_section>	
+	
+	<txp:if_section name="athenians">
+	<txp:output_form form="section_athenians" />
+	</txp:if_section>	
+
+	<txp:if_section name="sign-in">
+	<txp:output_form form="section_sign_in" />
+	</txp:if_section>	
+
+	<txp:if_section name="register">
+	<txp:output_form form="section_register" />
+	</txp:if_section>	
+
+
+<!-- Footer -->
+<txp:output_form form="snip_footer" />
+
+
+<!-- Dragon's Breath -->
+<txp:output_form form="snip_dragons_breath" />
+
+
+</body>
+</html>

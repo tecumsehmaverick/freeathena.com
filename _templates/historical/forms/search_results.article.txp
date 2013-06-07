@@ -1,0 +1,28 @@
+<txp:if_search>
+
+<!-- count how many results return -->
+  <txp:article limit="10" pgonly="1" />
+
+  
+
+<!-- display resulting articles (10 per page) -->
+<txp:article limit="10">
+
+<div class="row">
+    <div class="result large-12 columns">
+
+	<a href="<txp:permlink />" title="View now: <txp:title />">
+	<txp:title />
+	</a>
+	
+	<hr />
+
+	</div>	
+</div>
+
+</txp:article>
+
+
+
+
+</txp:if_search>

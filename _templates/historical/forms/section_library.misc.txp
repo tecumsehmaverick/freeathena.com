@@ -117,9 +117,7 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 			
 			<!-- No Parameters -->
 			<div class="row">
-			<ul id="masonry" class="masonry small-block-grid-2 large-block-grid-4">
-			
-			<txp:output_form form="snip_subject_menu" />
+			<ul class="small-block-grid-2 large-block-grid-4">
 
 				<txp:article_custom 
 					section="video" 
@@ -256,11 +254,6 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 -->
 
 
-
-
-
-
-
 <div class="row">
 
 <!--
@@ -299,6 +292,100 @@ all ids: <txp:variable name="filtered_ids" />
 
 
 
+<div class="large-3  small-6 columns panel hide-for-small">
+
+
+<txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
+
+<txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
+
+<txp:if_variable name="no_show_root" value="root">
+
+<txp:else />
+<a href="<txp:site_url />library?Subject=<txp:smd_tag_info item="parent" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb"><txp:smd_tag_info item="parent" /><span class="right"><i class="icon-chevron-left"></i></span></a>
+<hr />
+</txp:if_variable>
+
+<txp:if_variable name="subject_context" value="">
+no subject
+<txp:else />
+<h3><txp:smd_tag_name link="0" title="1" section="subject" /></h3>
+</txp:if_variable>
+
+
+<!--
+<h3><txp:variable name="content_type_context" /></h3>
+<h3><txp:variable name="creator_context" /></h3>
+-->
+
+
+<txp:if_variable name="content_type_context" value="">
+<txp:else />
+
+
+<div data-alert="" class="alert-box success">
+<a href="#" data-dropdown="Content_Type"><txp:adi_gps name="Content_Type" /></a>
+<a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class=""><span class="right"><i class="icon-remove"></i></span></a>
+
+<ul id="Content_Type" class="f-dropdown medium" data-dropdown-content>
+
+<hr />
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'content-type'">
+<li><a href="?Subject=<txp:adi_gps name="Subject" />&Content_Type={name}&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />">{title}</a></li>
+<hr />
+</txp:smd_query>             
+</ul>
+
+</div>
+
+</txp:if_variable>
+
+
+
+<txp:if_variable name="creator_context" value="">
+<txp:else />
+
+<div data-alert="" class="alert-box success">
+<a href="#" data-dropdown="Creator"><txp:adi_gps name="Creator" /></a>
+<a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class=""><span class="right"><i class="icon-remove"></i></span></a>
+
+<ul id="Creator" class="f-dropdown medium" data-dropdown-content>
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'creator'">
+<li><a href="#">{title}</a></li>
+<hr />
+</txp:smd_query>             
+</ul>
+
+</div>
+
+</txp:if_variable>
+
+
+
+
+
+<!-- Subject Description -->
+<txp:chh_if_data>
+<txp:rvm_substr length="58">
+<p><txp:smd_tag_info item="description" /></p>
+</txp:rvm_substr>
+<txp:else />
+<p>This is a placeholder description for <txp:smd_tag_info item="name" />. The description can be added under <a href="">tag management</a>.</p>
+</txp:chh_if_data>
+
+</txp:smd_tag_list> 
+<hr />
+
+
+
+<!-- Child Subject Menu-->
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = '?subject_context'">
+
+<a href="<txp:site_url />library?Subject={name}&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb">{title}<span class="right"><i class="icon-chevron-right"></i></span></a>
+<hr />
+</txp:smd_query>             
+
+</div>
 
 
 
@@ -335,19 +422,9 @@ this is landing
 <txp:adi_calc name="page-count" value='<txp:variable name="article-count" />' div='<txp:variable name="article-limit" />' ceiling="1" />
 
 
-			<ul id="masonry" class="small-block-grid-2 large-block-grid-4">
-
-			<txp:output_form form="snip_subject_menu" />
-			
-			<txp:article_custom 
-				section="video" 
-				id='<txp:variable name="matched_ids" />' 
-				form="fa_video_card_v30" 
-				sort='<txp:variable name="Sort_By" />' 
-				limit='<txp:variable name="article-limit" />' 
-				offset='<txp:variable name="offset" />' />
-			
-			</ul>
+<ul class="small-block-grid-2 large-block-grid-4">
+<txp:article_custom section="video" id='<txp:variable name="matched_ids" />' form="fa_video_card_v30" sort='<txp:variable name="Sort_By" />' limit='<txp:variable name="article-limit" />' offset='<txp:variable name="offset" />' />
+</ul>
 
 </txp:if_variable>
 </div>
@@ -357,6 +434,8 @@ this is landing
 </div>
 
 <!-- Pagination -->
+
+<div class="panel">
 <div class="row">
 
 <ul class="pagination">
@@ -371,4 +450,5 @@ this is landing
 </txp:rah_repeat>
 </ul>
 
+</div>
 </div>

@@ -50,20 +50,6 @@ font-weight: 400;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body {
 background-image: url(../img/plaster-wall.png);
 }
@@ -106,31 +92,45 @@ box-shadow: 0px 2px 20px #ddd;
 }
 
 
-/* .box {background-image: url(../../../img/fa-card-bg.png);} */
-.box {padding: 24px; border: 1px solid #eee;  opacity: 1; box-shadow: inset 1px 1px 30px #eee;}
-.box:hover {background-color: #fff; border: 1px solid #eee; opacity: 0.9; }
-
+.box {background-image: url(../../../img/fa-card-bg.png);}
+.box {padding: 24px;  opacity: 1; box-shadow: inset 1px 1px 30px #eee;}
+.box:hover {background-color: #fff; opacity: 0.9; }
+.inner-box {padding: 24px;}
 
 .box img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
-.image-wrap, .flex-video {
-border: 1px solid #eee;
-height: 130px;
+.image-wrap {
+
+/*
 background-color: #fff;
 background-image: url(../img/athena-small.png);
 background-repeat: no-repeat;
 background-position: center;
+*/
 }
 
-.image-wrap span {
+.image-wrap  a {
 /* background-image: url(../../../img/athena-small.png); */
-display: none;
+/* display: none; */
 color: #b6ce71;
 }
 
 .image-wrap img {
 width: 100%;
 }
+
+.play {
+  position: relative;
+  display: block;
+}
+.play span {
+  display: block;
+  width: 77px;
+  height: 77px;
+  background-image: url(../img/play-button.png);
+  position: absolute;
+}
+
 
 .card-exceprt a {color: #333;}
 
@@ -325,3 +325,10 @@ font-family: "Sabon";
 nav {font-family: "Knockout-Juniorlitewe"; font-size: 2.7em;}
 
 nav a {font-size: 2.7em;}
+
+
+
+
+
+
+

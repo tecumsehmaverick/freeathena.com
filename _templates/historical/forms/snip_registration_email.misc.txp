@@ -1,0 +1,7 @@
+Hello <txp:mem_name />,
+
+Thank you for registering for <txp:mem_sitename />.
+
+Username: <txp:mem_username />
+Password: <txp:mem_password />
+Site URL: <txp:mem_siteurl />

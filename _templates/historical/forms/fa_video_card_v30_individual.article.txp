@@ -1,0 +1,21 @@
+<hr />
+<h6>Creator</h6>
+<h6>
+<a href="<txp:site_url />library?Creator=<txp:custom_field name="Creator" />"><txp:custom_field name="Creator" /></a><span class="right"><i class="icon-chevron-right"></i></span></h6>
+<hr />
+    
+
+<txp:body />
+
+<hr />
+<h6>Type</h6>
+<h5><a href="<txp:site_url />library?Content_Type=<txp:custom_field name="Content_Type" />"><txp:custom_field name="Content_Type" /></a><span class="right"><i class="icon-chevron-right"></i></span></h5>
+
+<hr />
+<h6>Filed Under</h6>
+<txp:smd_tag_list wraptag="" break=""
+     shuffle="1" indent="">
+  <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
+<!--   <txp:smd_tag_count wrapcount="/" /> -->
+</txp:smd_tag_list>
+
