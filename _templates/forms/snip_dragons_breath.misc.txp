@@ -49,6 +49,14 @@
         }
       });
     </script>
+    
+<!-- http://css-tricks.com/snippets/jquery/better-broken-image-handling/ -->    
+    <script>
+    // Replace source
+$('img').error(function(){
+        $(this).attr('src', '<txp:site_url />img/athena-small.png');
+});
+    </script>
  
   
 <!-- Doin a float fixin block grid mason's magic thing: -->

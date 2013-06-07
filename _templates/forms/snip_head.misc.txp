@@ -30,8 +30,4 @@
   <![endif]-->
  
   
-  <txp:if_section name="library">
-  <style>
-  body {margin-top: 175px;}
-  </style>
-  </txp:if_section>
+  

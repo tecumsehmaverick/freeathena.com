@@ -30,11 +30,13 @@
 
 <div class="row">
 
-<div class="twelve columns">
+<div class="large-12 columns">
 
 <a href="<txp:permlink />">
 <h3 class="responsive-headine collection-title"><txp:title /><span class="drill-right"><i class="icon-chevron-right"></i></span></h3>
 </a>
+<txp:excerpt />
+
 </div>
 </div>
 	
@@ -47,9 +49,13 @@
 	<!-- -->
 	</div>
 	
-	<hr />
+
 	
+	<txp:author />
+	<hr />
 </li>
+
+
 
 </txp:article_custom>
 </ul>

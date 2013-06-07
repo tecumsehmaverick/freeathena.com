@@ -18,7 +18,7 @@
 
 </div>
 
-<div class="large-4 columns">
+<div class="large-4 columns panel">
 <h1 class="responsive-headline"><txp:title /></h1>
 
 <txp:output_form form="fa_video_card_v30_individual" />

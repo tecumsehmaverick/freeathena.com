@@ -1,0 +1,88 @@
+<div class="filters row hide-for-small">
+
+  <!-- End Header and Nav -->
+
+
+
+<!-- 
+	Filtering Menu:  Built from URL variables gathered above as well as a page variable generated from smd_queries against 
+	smd_tags to find articles tagged by ?subject
+-->
+
+<form id="library_filters" action='<txp:page_url />' method="get" class="custom">
+
+<!-- Subject (smd_tag) Menu Filter -->
+<div class="large-3 small-6 columns capitalize">
+<label for="Subject_Dropdown">Subject</label>
+<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small" placeholder="test">
+
+<txp:chh_if_data>
+<option value="">All</option>
+<option value='<txp:adi_gps name="Subject" />' selected><txp:adi_gps name="Subject" /></option>
+<txp:else />
+<option value="">All</option>
+</txp:chh_if_data>	
+
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'subject'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+
+<!-- Content_Type (smd_tag) Menu Filter -->
+<div class="large-3 small-6 columns capitalize">
+<label for="Type_Dropdown">Type</label>
+<select id="Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
+
+<txp:chh_if_data>
+<option value="">All</option>
+<option value='<txp:adi_gps name="Content_Type" />' selected><txp:adi_gps name="Content_Type" /></option>
+<txp:else />
+<option value="">All</option>
+</txp:chh_if_data>	
+
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'content-type'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+
+
+<!-- Creator (smd_tag) Menu Filter -->
+<div class="large-3 small-6 columns capitalize">
+<label for="Creator_Dropdown">Creator</label>
+<select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small">
+
+<txp:chh_if_data>
+<option value="">All</option>
+<option value='<txp:adi_gps name="Creator" />' selected><txp:adi_gps name="Creator" /></option>
+<txp:else />
+<option value="">All</option>
+</txp:chh_if_data>	
+
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'creator'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+
+<!-- Sort_By (posted="asc/desc") Menu Filter -->
+<div class="large-3 small-6 columns">
+<label for="Sort_By_Dropdown">Sort</label>
+<select id="Sort_By_Dropdown" name="Sort_By" onChange="this.form.submit();" class="small">
+
+<option value='<txp:adi_gps name="Sort_By" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Sort_By" /></txp:rah_replace></option>
+
+
+<option value="Posted desc">Newest</option>
+<option value="Posted asc">Oldest</option>
+</select>
+</div>
+
+
+</form>
+
+</div>
