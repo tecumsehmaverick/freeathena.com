@@ -96,7 +96,7 @@ box-shadow: 0px 2px 20px #ddd;
 
 .far-in-small {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
 .far-in-medium {
-	border-top: 1px solid #ddd; 
+	border-top: 1px solid #eee; 
 	border-bottom: 1px solid #ddd;
 	padding-top: 5px;
 	padding-bottom: 5px;
