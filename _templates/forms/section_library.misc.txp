@@ -166,7 +166,6 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 
 <div class="row">
 
-<!--
 <txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
 
 <txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
@@ -185,7 +184,6 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 </ul>
 
 </txp:smd_tag_list> 
--->
 
 <!--
 filtered_subject_context_id: <txp:variable name="filtered_subject_context_id" /><br />
