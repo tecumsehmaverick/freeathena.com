@@ -1,0 +1,23 @@
+<ul class="sortable unstyled">
+<txp:article_custom section="queue" author='<txp:cbe_frontauth_whois type="name" />' limit="999" sort="posted desc">
+
+<li>
+
+
+
+<txp:variable name="queued_id" value='<txp:custom_field name="Queued_ID" />' />
+
+
+<!--
+<txp:smd_query query="SELECT title
+     FROM textpattern WHERE custom_3 = '?queued_id'">
+{title}
+</txp:smd_query>
+-->
+
+
+<a href='<txp:site_url /><txp:custom_field name="Queued_ID" />'><txp:custom_field name="Queue_Title" /></a><txp:category /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class="label radius">
+<i class="icon-pencil"></i></a>
+<hr />
+</txp:article_custom>
+</ul>

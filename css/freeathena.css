@@ -96,6 +96,10 @@ padding: 0;
 box-shadow: 0px 2px 20px #ddd;
 }
 
+
+
+/* Drilling */
+
 .far-in-small {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
 .far-in-medium {
 	border-top: 1px solid #eee; 
@@ -118,11 +122,14 @@ box-shadow: 0px 2px 20px #ddd;
 
 
 .box {background-image: url(../../../img/fa-card-bg.png);}
-.box {background-color: #fff;}
+.box {background-color: transparent;}
 .box:hover {background-color: #fff; opacity: 0.9; }
-.inner-box {padding: 24px; box-shadow: inset 1px 1px 3px #eee;}
-
+.inner-box {padding: 24px; background-color: #fff; box-shadow: inset 1px 1px 3px #eee, inset -1px -1px 3px #eee;}
 .box img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+.inner-menu {color: #fff!important; padding: 24px; background-color: #000;}
+.inner-menu a {color: #fff;}
+
 
 .image-wrap {
 
@@ -351,10 +358,3 @@ font-family: "Sabon";
 /* nav {font-family: "Knockout-Juniorlitewe"; font-size: 2.7em;} */
 
 nav a {font-size: 2.7em;}
-
-
-
-
-
-
-

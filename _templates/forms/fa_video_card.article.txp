@@ -1,0 +1,178 @@
+<!-- QUEUE CHECK: MOVE TO FORMS LATER-->
+
+
+<!-- Queue Check Variable: 
+for smd_query to use later when it wants to see if the title of the video to be queued has been taken 
+
+This uses the txp_users name and the current article's ID to create a value per each variable. The variable name's use the current article ID prefixed by 'queue_check_for_'.
+-->
+
+<txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
+
+<!-- 
+How the Queue Check works: 
+
+1. We have an artcile in the video section, say, with the ID of 24
+2. We have a user whose name from txp_users is joshuavaage
+3. When he adds that video to his queue a new article is created in the queue section for this. The title for that article is generated from the name-id combination joshuavaage-24. 
+4. Now we can check any video by it's ID against any user in the database to see if a title of a queue section article matches.
+
+-->
+
+<!-- End Queue Check Variabe-->	
+
+
+
+<!-- ToDo: Open Graph for Facebook sharing -->
+
+
+
+
+<!-- # of Columns? -->
+<txp:if_section name="default,tag, user-tags, creator, collection">
+<div class='three columns'>
+<txp:else />
+<div class='four columns'>
+</txp:if_section>
+
+
+
+
+<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
+<txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
+
+
+
+<div class="lid-controls">
+<a href="#" class="queue-button">remove</a>
+</div>
+
+<div class="article fa_card">
+
+<txp:else />
+
+
+
+<div class="lid-controls">
+<a href="#" class="queue-button">add</a></div>
+
+<div class="article fa_card">
+
+</txp:smd_query>
+
+
+
+
+
+
+
+<!-- <small><a href='<txp:site_url />creator?name=<txp:custom_field name="Creator" />' class="subheader"><txp:custom_field name="Creator" /></small></a> -->
+<!--  | <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">edit</a> -->
+
+    
+<!-- Video Thumb -->
+<div class="video-image">
+<!-- <a href="<txp:permlink />" title="View now: <txp:title />"> -->
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
+</a>
+</div>
+	
+
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<h5 class="responsive-heading card-heading"><txp:rvm_substr length="34"><txp:title /></txp:rvm_substr></h5>
+</a>
+
+
+<txp:pax_grep from="|<p>|,|</p>|" to=",">
+<p class="card-exceprt">
+<!-- if exceprt exists show - if doesn't show first 80 from body-->
+
+<txp:chh_if_data>
+
+<txp:rvm_substr length="110">
+<txp:excerpt />
+</txp:rvm_substr>
+
+<txp:else />
+
+<txp:rss_auto_excerpt  length="110" linktext="…" ending="" wrapreadmore="1" excerptwraptag="span" />
+  
+  
+<!-- <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">Write body copy. Will be excerpted and trimmed down to a specified character length here. Click this text to do that.</a> -->
+
+</txp:chh_if_data>
+
+</p>
+</txp:pax_grep>
+
+
+<!-- Subjects -->
+<!--
+<p class="responsive-heading">
+<i class="icon-book"></i> <txp:rss_uc_filedunder linktosection="subject" /></p>
+-->
+	
+<!-- <hr /> -->
+	
+
+<!-- Tags -->
+<!-- <p><i class="icon-tags"></i> <txp:tru_tags_from_article class="tag" /></p> -->
+
+<!-- <hr /> -->
+
+<!-- FA Card footer content -->
+
+<div class="row card-footer">
+<div class="twelve columns">
+
+<div class="row">
+
+<div class="seven columns do-footer">
+<txp:rvm_substr length="15">
+<span title="<txp:custom_field name="Creator" />">
+<txp:custom_field name="Creator" />
+</span>
+</txp:rvm_substr>
+</div><!-- /.four columns -->
+
+<div class="five columns do-footer footer-time">
+
+<!--
+<txp:variable name="video_duration">
+<txp:custom_field name="Duration" />
+</txp:variable>
+-->
+
+<!-- wha_stime: 
+http://forum.textpattern.com/viewtopic.php?pid=272318#p272318 -->
+
+<i class="icon-time"></i> <txp:variable name="wha_stime"><txp:custom_field name="Duration" /></txp:variable>
+
+<!-- http://forum.textpattern.com/viewtopic.php?pid=272337#p272337 
+	-->
+<!--
+<txp:php>
+    $date = parse('<txp:custom_field name="Duration" />');
+</txp:php>
+-->
+<!-- 
+	-->
+
+
+<!-- /wha_stime -->
+
+</div><!-- /.four columns -->
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div><!-- /.article -->
+</div><!-- column class -->

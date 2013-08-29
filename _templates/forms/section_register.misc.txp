@@ -1,0 +1,17 @@
+<div class="row">
+
+<div class="four columns">
+
+<txp:cbe_frontauth_if_connected>
+You are logged in. To register a new account please sign out first.
+
+<txp:else />
+
+<h2>Register</h2>
+<txp:mem_self_register_form form="snip_registration_form" email_form="snip_registration_email" />
+
+</txp:cbe_frontauth_if_connected>
+
+</div>
+
+</div>

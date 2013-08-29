@@ -1,0 +1,5 @@
+<txp:variable name="active_article_class" value="" />
+<txp:if_article_id>
+	<txp:variable name="active_article_class" value=" active_article" />
+</txp:if_article_id>
+<txp:permlink class='article_class<txp:variable name="active_article_class"/>'><txp:title/></txp:permlink>

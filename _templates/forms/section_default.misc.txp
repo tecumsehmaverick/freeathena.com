@@ -1,13 +1,8 @@
+<txp:output_form form="snip_header_nav" />
+
 <!-- Default: freeathena.com/  -->
 
 <div class="row">
-
-<div class="large-6 columns">
-<span class="logo hide-for-small">
-<img src="<txp:site_url />img/athena-small.png" />
-</span>
-
-<h4 class="subheader">University Courses, Documentary Films, Ted Talks, and More.</h4>
 
 
 <txp:smd_tag_list parent="subject" wraptag="p" break=""
@@ -15,8 +10,6 @@
   <a href="<txp:site_url />library?Subject=<txp:smd_tag_name link="0" title="0" section="subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="filed-under"><txp:smd_tag_name link="0" title="1" section="subject" /></a>
 <!--   <txp:smd_tag_count wrapcount="/" /> -->
 </txp:smd_tag_list>
-
-
 
 </div>
              
@@ -29,20 +22,6 @@
 
 
 </div><!-- .row -->
-
-<div class="row collapse">
-<h5>Search</h5>
-
-<form role="search" method="get" action="<txp:site_url />search">
-	<div class="small-10 columns">
-    	<input id="search-textbox" type="text" name="q" placeholder="Type to Search">
-    </div>
-    <div class="small-2 columns">
-		<input class="button success postfix radius" type="submit" value="Search">
-	</div>
-</form>
-<hr />
-</div>
 
 
 

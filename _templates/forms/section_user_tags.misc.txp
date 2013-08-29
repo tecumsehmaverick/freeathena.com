@@ -1,0 +1,40 @@
+<div class="row">
+<div class="twelve columns">
+
+
+<h4 class="capitalize"><txp:adi_gps name="tag_name"  /></h4>
+
+<p>Here are all your cards tagged with <strong><txp:adi_gps name="tag_name"  /></strong>.</p>
+
+<hr />
+</div>
+</div>
+
+<div class="row">
+<div class="twelve columns">
+<div class="row">
+
+
+<txp:variable name="tagged_in_list">
+<txp:article_custom section="queue" keywords='<txp:adi_gps name="tag_name"  />'><txp:custom_field name="Queued_ID" />,</txp:article_custom>
+</txp:variable>
+
+
+<txp:article_custom id='<txp:variable name="tagged_in_list" />' form="fa_video_card" />
+
+</div>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="twelve columns">
+
+<hr class="vertical-breathing-room" />
+
+<hr />
+
+</div>
+
+</div>

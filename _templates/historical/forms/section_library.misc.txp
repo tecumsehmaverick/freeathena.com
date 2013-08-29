@@ -87,7 +87,7 @@
 </txp:variable>
 
 
-<!-- Thanks Oleg (txp:etc)-->
+<!-- Thanks Oleg (etc in forum.textpattern.com)-->
 <!-- The folowing will supply <txp:variable name="matched_ids" /> -->
 <txp:php>
 variable(
@@ -96,12 +96,7 @@ implode(',', array_intersect(do_list(variable(array('name' => 'subject'))), do_l
 );
 </txp:php>
 
-
-
-
-
-
-
+<!-- End Variable Creation Station -->
 
 
 <!-- Default /library view: No Parameters (?Subject, ?Type, ?Creator)
@@ -136,7 +131,6 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 </txp:if_variable>
 
 
-<!-- End Variable Creation Station -->
 
 
 
@@ -232,12 +226,10 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 
 <option value='<txp:adi_gps name="Sort_By" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Sort_By" /></txp:rah_replace></option>
 
-
 <option value="Posted desc">Newest</option>
 <option value="Posted asc">Oldest</option>
 </select>
 </div>
-
 
 </form>
 
@@ -306,7 +298,7 @@ all ids: <txp:variable name="filtered_ids" />
 <hr />
 </txp:if_variable>
 
-<txp:if_variable name="subject_context" value="">
+<txp:if_variable name="subject" value="">
 no subject
 <txp:else />
 <h3><txp:smd_tag_name link="0" title="1" section="subject" /></h3>

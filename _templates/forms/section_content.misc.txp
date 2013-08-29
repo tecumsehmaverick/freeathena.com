@@ -1,0 +1,106 @@
+<!-- URL Variables used for filtering articles -->
+<txp:adi_gps name="Subject" quiet="1" />
+<!-- make usable for smd_query-->
+<txp:variable name="subject_context" value='<txp:adi_gps name="Subject" />' />
+
+<!-- Other custom field filters -->
+<txp:adi_gps name="Content_Type" quiet="1" />
+<txp:adi_gps name="Creator" quiet="1" />
+
+<!-- Query for subject smd_tag ID -->
+<txp:smd_query query="SELECT id FROM smd_tags WHERE name = '?subject_context'">
+<txp:variable name="subject_context_id">{id}</txp:variable>
+</txp:smd_query>
+
+<!-- list of ids for the current 'subject' as a variable to be used in later article_custom calls -->
+<txp:variable name="subject_ids">
+<txp:smd_query query="SELECT item_id FROM smd_tags_used WHERE tag_id = '?subject_context_id'">
+{item_id},
+</txp:smd_query>
+</txp:variable>
+
+<!-- End Variable Creation Station -->
+
+
+
+
+
+<!-- Begin Views -->
+
+
+<div class="row panel">
+<div class="large-12">
+<form action='<txp:page_url />' method="get" class="custom">
+
+<!-- 
+	Filtering Menu:  Built from URL variables gathered above as well as a page variable generated from smd_queries against 
+	smd_tags to find articles tagged by ?subject
+-->
+
+<!-- Subject Menu Filter -->
+<div class="large-2 columns capitalize">
+<label for="Subject_Dropdown">Subject</label>
+<select id="Subject_Dropdown" name="Subject" onChange="this.form.submit();" class="small">
+<option value="">All</option>
+<option value='<txp:adi_gps name="Subject" />' selected><txp:rah_replace from="-" to=""><txp:adi_gps name="Subject" /></txp:rah_replace></option>
+<txp:smd_query query="SELECT name, title FROM smd_tags WHERE parent = 'root'">
+<option value="{name}">{title}</option>
+</txp:smd_query>             
+</select>
+</div>
+
+
+<!-- Type Menu Filter -->
+<div class="large-2 columns">
+<label for="Content_Type_Dropdown">Type</label>
+<select id="Content_Type_Dropdown" name="Content_Type" onChange="this.form.submit();" class="small">
+<option value="">All</option>
+<option value='<txp:adi_gps name="Content_Type" />' selected><txp:adi_gps name="Content_Type" /></option>
+<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Content_Type" />'>
+<option value="<txp:rah_repeat_value />"><txp:rah_repeat_value /></option>
+</txp:rah_repeat>
+</select>
+</div>
+
+
+<!-- Creator Menu Filter -->
+<div class="large-2 columns pull-6">
+<label for="Creator_Dropdown">Creator</label>
+<select id="Creator_Dropdown" name="Creator" onChange="this.form.submit();" class="small"> 
+<option value="">All</option>
+<option value='<txp:adi_gps name="Creator" />' selected><txp:adi_gps name="Creator" /></option>
+<txp:rah_repeat value='<txp:esq_glzcfvallist fieldname="Creator" />'>
+<option value="<txp:rah_repeat_value />"><txp:rah_repeat_value /></option>
+</txp:rah_repeat>
+</select>
+</div>
+
+
+</form>
+</div>
+</div><!-- /.row -->
+
+
+
+
+
+
+<!-- 
+	Here is the article display:
+-->
+
+
+
+<div class="row">
+
+	<txp:if_variable name="Subject" value=""> 
+		
+		<txp:article_custom Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" />
+
+		<txp:else />
+		
+		<txp:article_custom id='<txp:variable name="subject_ids" />' Creator='<txp:variable name="Creator" />' Content_Type='<txp:variable name="Content_Type" />' form="fa_video_card_v30" />
+		
+	</txp:if_variable>
+
+</div>

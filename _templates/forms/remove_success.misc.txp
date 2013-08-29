@@ -1,0 +1,28 @@
+<head>
+<link rel="stylesheet" href="<txp:site_url />vendor/foundation/stylesheets/iframe.css">
+</head>
+
+<!-- cbe_frontauth required as wrapper for this page template as it allows for the cbe_frontauth_whois tag to work which is what retirieves the current logged in user's name tfor use in the new article title -->
+<txp:cbe_frontauth show_logout="0">
+<div class="collect">
+<!-- Remote Use Page form -->
+
+<!-- Gettin ?remote_id variable from URL which is the article ID requested externally -->
+
+<txp:article_custom id='<txp:adi_gps name="remote_id" />'>
+
+<txp:mem_simple_form table="textpattern" id_field="ID" id_insert="0" success_form="successful_submission">
+<txp:mem_form_secret name="table_title" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
+<txp:mem_form_secret name="table_section" value="queue" />
+<txp:mem_form_secret name="table_authorid" value='<txp:cbe_frontauth_whois type="name" />' />
+<txp:mem_form_secret name="table_custom_3" value='<txp:article_id />' />
+<txp:mem_form_secret name="table_custom_2" value='<txp:title />' />
+
+<input type="submit" class="memSubmit" name="mem_form_submit" value="Add">
+
+</txp:mem_simple_form>
+<i class="icon-plus-sign-alt"></i>
+</txp:article_custom>
+
+</div>
+</txp:cbe_frontauth>

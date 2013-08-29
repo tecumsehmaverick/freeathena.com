@@ -1,0 +1,74 @@
+<div class="row">
+<div class="twelve columns">
+
+
+
+
+<txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
+<txp:smd_bio_info show_empty="1">
+
+<txp:variable name="user_has_display_name" value="{smd_bio_RealName}" />
+
+<txp:if_variable name="user_has_display_name" value="no_display_name">
+<!-- no display name-->
+<h3 class=""><txp:cbe_frontauth_whois type="name" /></h3>
+<txp:else />
+<!-- yes has display name: change to RealName later -->
+<h3 class=""><txp:cbe_frontauth_whois type="name" /></h3>
+</txp:if_variable>
+
+
+<txp:if_variable name="user_has_display_name" value="">
+<!-- no display name-->
+<h3 class=""><txp:cbe_frontauth_whois type="name" /></h3>
+</txp:if_variable>
+
+</txp:smd_bio_author>
+</txp:smd_bio_info>
+
+
+
+
+<dl class="tabs">
+  <dd class="active"><a href="#simple1"><i class="icon-user"></i></a></dd>
+  <dd><a href="#simple5"><i class="icon-cogs"></i></a></dd>
+  <dd><txp:cbe_frontauth_logout /></dd>
+
+</dl>
+<ul class="tabs-content">
+  <li class="active" id="simple1Tab"><txp:output_form form="ac_user" /></li>
+  <li id="simple5Tab"><txp:output_form form="ac_settings" /></li>
+</ul>
+
+
+
+</div>  
+
+
+<div class="six columns">
+<txp:variable name="articles-queued-by-id">
+<txp:article_custom section='queue' author='<txp:cbe_frontauth_whois type="name" />' limit="999"><txp:custom_field name='Queued ID' />,</txp:article_custom>
+</txp:variable>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

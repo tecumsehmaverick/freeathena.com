@@ -43,7 +43,6 @@
 </txp:smd_query>
 
 
-
 <!-- list of ids for the current set of 'filtered' ids as a variable to be used in article_custom calls below:  -->
 <txp:variable name="filtered_ids">
 
@@ -102,8 +101,6 @@ implode(',', array_intersect(do_list(variable(array('name' => 'subject'))), do_l
 
 
 <txp:output_form form="snip_header_nav" />
-
-
 
 
 

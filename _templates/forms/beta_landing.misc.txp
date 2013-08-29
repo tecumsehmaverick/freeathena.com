@@ -1,0 +1,60 @@
+<txp:cbe_frontauth show_login="0" login_redir="ac" logout_redir="sign-in" >
+
+<txp:else />
+
+
+
+
+<!doctype html>
+<html lang="<txp:lang />">
+
+<head>
+<txp:output_form form="snip_head" />
+</head>
+
+<body id="<txp:if_section name=""><txp:if_search>search<txp:else />front</txp:if_search><txp:else /><txp:section /></txp:if_section>-page">
+
+
+<div class="row">
+<div class="four columns centered">
+<a href="#"><h1><img src="<txp:site_url />vendor/foundation/images/brand/icon-and-wordmark-color.png" alt="Welcome to Free Athena" /></h1></a>
+</div>
+</div>
+
+<div class="row">
+
+<div class="four columns centered">
+
+<txp:if_section name="register">
+	<txp:output_form form="snip_registration_form" />
+</txp:if_section>	
+
+
+<txp:if_section name="sign-in">
+<h3>Sign In To Free Athena</h3>
+<txp:cbe_frontauth_box login_invite="" />
+<hr /><a href="<txp:site_url />register">Register</a>
+   // Benefits of registering listed here
+</txp:if_section>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+<txp:cbe_frontauth_if_connected>
+<!-- Footer -->
+<txp:output_form form="snip_footer" />
+</txp:cbe_frontauth_if_connected>
+
+
+<!-- Dragon's Breath -->
+<txp:output_form form="snip_dragons_breath" />
+
+
+</body>
+</html>
+</txp:cbe_frontauth>

@@ -1,5 +1,6 @@
-<li class="masonry-brick panel hide-for-small">
+<li class="masonry-brick masonry-menu hide-for-small">
 
+<div class="inner-menu">
 
 <txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
 
@@ -89,5 +90,7 @@ no subject
 
 <a href="<txp:site_url />library?Subject={name}&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb far-in-medium">{title}<span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:smd_query>             
+
+</div>
 
 </li>

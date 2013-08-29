@@ -1,0 +1,21 @@
+<div class="row">
+<div class="twelve columns">
+<txp:smd_query query="SELECT section, ID, title, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
+
+<txp:mem_simple_form table="textpattern" id_field="id" id_insert="0" success_form="edit_article_success">
+
+<txp:mem_form_secret name="table_title" value="{title}" />
+<txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
+
+
+<txp:mem_form_secret name="table_section" value="{section}" />
+<txp:mem_form_secret name="table_id" value="{ID}" />
+
+<txp:mem_form_submit />
+
+</txp:mem_simple_form>
+
+</txp:smd_query>
+
+</div>
+</div>

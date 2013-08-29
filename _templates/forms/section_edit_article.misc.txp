@@ -1,0 +1,66 @@
+<txp:smd_query query="SELECT custom_2, custom_3, section, ID, title, body_html, keywords, excerpt FROM textpattern WHERE  id = '?article_id'">
+<!-- Do check to insure the queue article belongs to logged user 
+...
+-->
+
+<!-- The value of this variable is the ID of the video on the card  -->
+<txp:variable name="video_in_question" value="{custom_3}" />
+
+
+
+<div class="row">
+
+
+
+<div class="two columns">
+<txp:article_custom id='<txp:variable name="video_in_question" />' form="ac_edit_video_card" />
+</div>
+
+
+
+<div class="ten columns">
+
+
+
+<txp:article_custom id='<txp:variable name="video_in_question" />'>
+
+<h3><txp:title /></h3>
+<hr />
+
+</txp:article_custom>
+
+<h5>Your Tags</h5>
+<txp:mem_simple_form table="textpattern" id_field="id" id_insert="0" success_form="edit_article_success">
+
+<txp:mem_form_secret name="table_title" value="{title}" />
+
+
+<!-- http://xoxco.com/projects/code/tagsinput/ -->
+<txp:mem_form_text name="table_keywords" label="" break="" default="{keywords}" required="0" />
+
+
+<fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+</fieldset>
+<hr />
+  
+<h5>Your Thoughts</h5>
+<txp:mem_form_textarea name="table_body_html" label="" break="" default='{body_html}' required="0" />
+
+
+<txp:mem_form_secret name="table_section" value="{section}" />
+<txp:mem_form_secret name="table_id" value="{ID}" />
+
+<txp:mem_form_submit />
+
+</txp:mem_simple_form>
+</div>
+
+
+</div><!-- .row -->
+
+</txp:smd_query>

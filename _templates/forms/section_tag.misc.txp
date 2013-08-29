@@ -1,0 +1,58 @@
+<div class="row">
+<div class="twelve columns">
+<txp:tru_tags_current_archive_tag />
+
+<!--
+<h2>Tag: {current tag name go here}</h2>
+<i class="icon-share"></i> 
+<i class="icon-facebook"></i> <i class="icon-twitter"></i>
+-->
+
+<hr />
+</div>
+</div>
+
+<div class="row">
+<div class="twelve columns">
+<div class="row">
+<txp:tru_tags_handler form="fa_video_card" section="video" />
+</div>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="twelve columns">
+
+<hr class="vertical-breathing-room" />
+
+
+
+
+
+<dl class="tabs">
+  <dd class="active"><a href="#simple1"><i class="icon-list"></i></a></dd>
+  <dd><a href="#simple2"><i class="icon-cloud"></i></a></dd>
+</dl>
+<ul class="tabs-content">
+  <li class="active" id="simple1Tab">
+	<txp:tru_tags_list section="video" showcounts="1" />
+  </li>
+  <li id="simple2Tab">
+  <txp:tru_tags_cloud />
+  </li>
+</ul>
+
+
+
+
+<hr />
+
+
+
+<hr />
+
+</div>
+
+</div>

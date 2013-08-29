@@ -1,0 +1,7 @@
+<div class="row">
+
+<div class="twelve columns">
+<txp:cbe_frontauth_box />
+</div>
+
+</div>

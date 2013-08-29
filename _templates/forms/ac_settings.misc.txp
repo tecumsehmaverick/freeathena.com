@@ -1,0 +1,97 @@
+<!-- To Edit Profile Information
+================================================== -->
+<txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
+<txp:mem_form type="smd_bio" redirect="ac" redirect_form="thanks">
+<txp:smd_bio_info show_empty="1">
+
+
+
+
+<!-- RealName / Display Name -->
+<div class="row collapse">
+
+<div class="one mobile-one columns">
+<span class="prefix"><i class="icon-user"></i></span>
+</div>
+
+<txp:variable name="user_has_display_name" value="{smd_bio_RealName}" />
+
+<txp:if_variable name="user_has_display_name" value="no_display_name">
+<div class="eleven mobile-three columns">
+<!-- no display name-->
+<input type="text" value="" name="smd_bio_RealName" class="smd_bio_RealName" id="smd_bio_RealName" placeholder="Pick a Display Name">
+</div>
+<txp:else />
+<!-- yes has display name-->
+<div class="eleven mobile-three columns">
+<input type="text" value="{smd_bio_RealName}" name="smd_bio_RealName" class="smd_bio_RealName" id="smd_bio_RealName" placeholder="Display Name">
+</div>
+</txp:if_variable>
+
+
+
+</div>
+
+
+<!-- Email -->
+<div class="row collapse">
+
+<div class="one mobile-one columns">
+<span class="prefix"><i class="icon-envelope"></i></span>
+</div>
+
+<div class="eleven mobile-three columns">
+<input type="text" value="{smd_bio_email}" name="smd_bio_email" class="smd_bio_email" id="smd_bio_email" placeholder="Email address">
+</div>
+
+</div>            
+
+<!--
+Twitter
+<div class="row collapse">
+
+<div class="one mobile-one columns">
+<span class="prefix"><i class="icon-twitter"></i></span>
+</div>
+
+<div class="eleven mobile-three columns">
+<input type="text" value="{smd_bio_twitter}" name="smd_bio_twitter" class="smd_bio_twitter" id="smd_bio_twitter" placeholder="Twitter handle">
+</div>
+
+</div>            
+-->
+<input type="text" value="{smd_bio_user_title}" name="smd_bio_user_title" class="smd_bio_user_title" id="smd_bio_user_title" placeholder="Title, position, or role">
+
+
+
+<!-- <txp:smd_bio_data field="twitter" item="widget" />
+-->
+
+<textarea name="smd_bio_bio" class="smd_bio_bio" id="smd_bio_bio">{smd_bio_bio}</textarea>
+<!-- <txp:smd_bio_data field="bio" item="widget" />
+ -->
+
+<txp:mem_submit class="button success" />	
+
+
+
+</txp:smd_bio_info>
+</txp:mem_form>
+</txp:smd_bio_author>
+
+
+
+<txp:mem_self_change_password_form />
+
+<hr />
+
+
+
+
+<!-- Rest password option: 
+
+test reset (lost )password form. better for a public page for user not logged in:
+
+<txp:mem_self_password_reset_form form_mail="reset_password_form"> <txp:mem_form_text name="name" label="Username:" /> <br /> <txp:mem_form_text name="email" label="Email Address:" /> <br /> <txp:mem_form_submit name="submit" label="Submit" />
+</txp:mem_self_password_reset_form>
+-->

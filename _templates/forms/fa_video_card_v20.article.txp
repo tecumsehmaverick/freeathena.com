@@ -1,0 +1,118 @@
+<!-- QUEUE CHECK: MOVE TO FORMS LATER-->
+
+
+<!-- Queue Check Variable: 
+for smd_query to use later when it wants to see if the title of the video to be queued has been taken 
+
+This uses the txp_users name and the current article's ID to create a value per each variable. The variable name's use the current article ID prefixed by 'queue_check_for_'.
+-->
+
+<txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
+
+<!-- 
+How the Queue Check works: 
+
+1. We have an artcile in the video section, say, with the ID of 24
+2. We have a user whose name from txp_users is joshuavaage
+3. When he adds that video to his queue a new article is created in the queue section for this. The title for that article is generated from the name-id combination joshuavaage-24. 
+4. Now we can check any video by it's ID against any user in the database to see if a title of a queue section article matches.
+
+-->
+
+<!-- End Queue Check Variabe-->	
+
+
+
+<!-- ToDo: Open Graph for Facebook sharing -->
+
+
+
+
+
+
+
+<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
+<txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
+
+<div class="small-6 large-3 columns box collected">
+
+<txp:else />
+
+<div class="small-6 large-3 columns box">
+
+</txp:smd_query>
+
+
+
+
+
+<txp:chh_if_data>
+<txp:custom_field name="Creator" />
+<txp:else />
+<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
+</txp:chh_if_data>
+
+
+
+
+
+
+
+<!--  | <a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />">edit</a> -->
+
+
+<txp:chh_if_data>
+<div class="duration"><small><txp:custom_field name="Duration" /></small></div>
+<txp:else />
+<a href="http://joshuavaage.com/projects/freeathena.com/textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i></a>
+</txp:chh_if_data>
+    
+<!-- Video Thumb -->
+<div class="video-image image-wrap">
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>
+</a>
+</div>
+
+	
+
+<a href="<txp:permlink />" title="View now: <txp:title />">
+<h4 class="responsive-headline"><txp:rvm_substr length="55"><txp:title /></txp:rvm_substr></h4>
+</a>
+
+
+<txp:pax_grep from="|<p>|,|</p>|" to=",">
+<p class="card-exceprt">
+<!-- if exceprt exists show - if doesn't show first 80 from body-->
+
+<txp:chh_if_data>
+
+<txp:rvm_substr length="110">
+<txp:excerpt />
+</txp:rvm_substr>
+
+<txp:else />
+
+<txp:rss_auto_excerpt  length="110" linktext="…" ending="" wrapreadmore="1" excerptwraptag="span" />
+  
+  
+
+
+  
+  
+
+</txp:chh_if_data>
+
+</p>
+</txp:pax_grep>
+
+
+<txp:smd_tag_list />
+
+
+
+
+
+
+
+</div><!-- /.article -->

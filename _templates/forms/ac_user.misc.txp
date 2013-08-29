@@ -1,0 +1,179 @@
+<!-- 
+================================================== -->
+
+<div class="row">
+
+<div class="eight columns">
+<txp:smd_bio_author author='<txp:cbe_frontauth_whois type="name" />'>
+
+
+<!-- Need this var for smd_queries -->
+<txp:variable name="logged_user" value='<txp:cbe_frontauth_whois type="name" />' />
+
+
+<txp:mem_form type="smd_bio" redirect="profile" redirect_form="thanks">
+<txp:smd_bio_info show_empty="1">
+
+
+<!--
+<div class="wrap-grav">
+<img src="http://www.gravatar.com/avatar/<txp:php>echo md5( strtolower( trim( "{smd_bio_email}" ) ) );</txp:php>?s=75?d=http%3A%2F%2Feduhou.se/img/person-no-image.jpg" class="thumbnail" />
+</div>
+
+<p class="">{smd_bio_bio}</p>
+-->
+
+
+</txp:smd_bio_info>
+</txp:mem_form>
+</txp:smd_bio_author>
+
+
+<h4>Cards in your Collection <small>(<txp:smd_query query="SELECT COUNT(*) AS count FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">{count}</txp:smd_query>)</small> </h4>
+
+
+
+
+<div class="">
+<ul class="sortable">
+<!-- http://stackoverflow.com/questions/7342727/jquery-ui-saving-sortable-list -->
+<txp:article_custom section="queue" author='<txp:cbe_frontauth_whois type="name" />' limit="999" sort="posted asc">
+<li class="collected-card-list">
+<txp:variable name="queued_id" value='<txp:custom_field name="Queued_ID" />' />
+
+
+<!--
+<txp:smd_query query="SELECT title
+     FROM textpattern WHERE custom_3 = '?queued_id'">
+{title}
+</txp:smd_query>
+-->
+
+<div class="row">
+
+<div class="three columns">
+<txp:article_custom id='<txp:custom_field name="Queued_ID" />'>
+<div class="video-image">
+<span class="play" href="<txp:custom_field name="Video_Url" />"><txp:title /></span>    
+</div>
+</txp:article_custom>
+
+<ul class="button-group radius even two-up">
+  <li><a href="<txp:site_url /><txp:custom_field name="Queued_ID" />" class="small button radius"><i class="icon-play"></i></a></li>
+  <li><a href="<txp:site_url />edit?article_id=<txp:article_id />" class="small button radius"><i class="icon-pencil"></i></a></li>
+</ul>
+
+</div><!-- .two columns -->
+
+
+<div class="nine columns">
+<h4 class="responsive-heading"><txp:custom_field name="Queue_Title" /> <a href="<txp:site_url />edit?article_id=<txp:article_id />" class=""></a></h4>
+<hr />
+
+<ul class="unstyled">
+
+<li>
+<txp:chh_if_data>
+<a href="<txp:site_url />edit?article_id=<txp:article_id />"><i class="icon-pencil"></i></a> : <txp:body />
+<txp:else />
+<a href="<txp:site_url />edit?article_id=<txp:article_id />" class="small button radius"><i class="icon-pencil"></i></a>
+</txp:chh_if_data>
+</li>
+
+<li>
+<txp:chh_if_data>
+<a href="<txp:site_url />edit?article_id=<txp:article_id />"><i class="icon-tags"></i></a> : 
+<txp:tru_tags_from_article linkpath="<txp:site_url />user-tags?tag_name=" /> 
+<txp:else />
+<a href="<txp:site_url />edit?article_id=<txp:article_id />"><i class="icon-tag"></i></a> tag me
+</txp:chh_if_data>
+</li>
+
+</ul>
+
+
+
+
+</div><!-- .ten columns -->
+
+
+</div><!-- .row -->
+</li>
+</txp:article_custom>
+</ul>
+</div>
+
+
+
+</div>
+
+
+<div class="four columns">
+
+<!-- Get logged user's tags-->
+
+<div class="tags">
+
+<ul class="clearfix">
+
+<h4>Your Tags</h4>
+
+<p>Browse your card collection by your tags.</p>
+
+<txp:if_different>
+<txp:smd_query query="SELECT id
+     FROM textpattern WHERE authorid = '?logged_user' AND section = 'queue'">
+
+	<txp:article_custom id="{id}">
+	
+	<txp:tru_tags_from_article break="li" linkpath="<txp:site_url />user-tags?tag_name="  />
+	
+	</txp:article_custom>
+	
+</txp:smd_query>
+</txp:if_different>
+
+</ul>
+
+</div>
+
+
+
+
+<!-- Get IDs from custom_3 of videos that have been queued so that we can then get the categories they belong to -->
+<div class="subjects">
+<h4>Subjects of Interest</h4>
+
+<ul class="clearfix">
+
+<p>Based on the contents of your card collection.</p>
+
+
+<!-- make variable: a list of ids that queued cards reference -->
+<txp:variable name="queued_cards">
+<txp:article_custom section="queue" author='<txp:variable name="logged_user" />' limit="999">
+<txp:custom_field name="Queued_ID" />,
+</txp:article_custom>
+</txp:variable>
+
+<div class="subjects_list">
+<txp:article_custom id='<txp:variable name="queued_cards" />'>
+<txp:if_different>
+<txp:rss_uc_filedunder linktosection="user-subjects" delim="?subject_name=" break="li" />
+</txp:if_different>
+</txp:article_custom>
+</div>
+
+
+</ul>
+
+</div>
+
+
+
+
+
+</div>
+</div>
+
+
