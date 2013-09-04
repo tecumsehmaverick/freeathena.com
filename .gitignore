@@ -13,7 +13,7 @@ HISTORY.txt
 README.txt
 
 # OS X
-.DS_Store
+*.DS_Store
 
 
 # Sass
