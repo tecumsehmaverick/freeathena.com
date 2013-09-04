@@ -12,6 +12,9 @@ textpattern/
 HISTORY.txt
 README.txt
 
+# OS X
+.DS_Store
+
 
 # Sass
 .sass-cache
