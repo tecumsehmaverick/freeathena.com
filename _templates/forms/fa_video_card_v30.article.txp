@@ -132,6 +132,7 @@ WHERE (custom_4 LIKE '%,?is_id_collected%,'
 <!-- <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i> edit</a> -->
 
 
+<txp:glx_gravatar email='<txp:smd_bio_info fields="email" label="" />' size="20" class="th radius" />
 
 
 
