@@ -21,12 +21,12 @@
 <!-- -->
 <txp:smd_tag_list wraptag="" break="" parent="Creator"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:smd_tag_name link="0" title="0" section="subject" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />"  class="forb far-in-medium"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
+  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:smd_tag_name link="0" title="0" section="subject" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />"  class="forb card-drill-down"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:smd_tag_list>
 
 <txp:else />
 
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb far-in-medium">Creator<span class="right"><i class="icon-chevron-right"></i></span></a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb card-drill-down">Creator<span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:chh_if_data>
 
 
@@ -91,11 +91,11 @@
 <txp:chh_if_data>
 <txp:smd_tag_list wraptag="" break="" parent="content-type"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:smd_tag_name link="0" title="0" section="subject" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb far-in-medium"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
+  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:smd_tag_name link="0" title="0" section="subject" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb card-drill-down"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
 <!--   <txp:smd_tag_count wrapcount="/" /> -->
 </txp:smd_tag_list>
 <txp:else />
-<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb far-in-medium">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
+<a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />" class="forb card-drill-down">Content Type <span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:chh_if_data>
 
 

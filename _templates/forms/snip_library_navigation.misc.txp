@@ -1,13 +1,18 @@
+<!-- The bulk of this 'sidebar' navigation menu is wrapped in smd_tag_list as smd_tags are the primary tool for organizing the main content meta (content type, subject, and creator).  -->
+
 <txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
 
-<txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
+	<txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
 
-<txp:if_variable name="no_show_root" value="root">
+	<txp:if_variable name="no_show_root" value="root">
 
-<txp:else />
-<a href="<txp:site_url />library?Subject=<txp:smd_tag_info item="parent" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb"><txp:smd_tag_info item="parent" /><span class="right"><i class="icon-chevron-left"></i></span></a>
-<hr />
-</txp:if_variable>
+	<txp:else />
+	<!-- -->
+	<a href="<txp:site_url />library?Subject=<txp:smd_tag_info item="parent" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class="forb"><txp:smd_tag_info item="parent" /><span class="right"><i class="icon-chevron-left"></i></span></a>
+	
+	<hr />
+	
+	</txp:if_variable>
 
 <txp:if_variable name="subject_context" value="">
 no subject
@@ -23,8 +28,8 @@ no subject
 
 
 <txp:if_variable name="content_type_context" value="">
-<txp:else />
 
+<txp:else />
 
 <div data-alert="" class="alert-box success">
 <a href="#" data-dropdown="Content_Type"><txp:adi_gps name="Content_Type" /></a>
@@ -45,7 +50,12 @@ no subject
 
 
 
+
+
+
+
 <txp:if_variable name="creator_context" value="">
+
 <txp:else />
 
 <div data-alert="" class="alert-box success">

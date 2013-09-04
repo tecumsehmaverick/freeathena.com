@@ -1,17 +1,5 @@
 .breadcrumbs {background-color: #fff;}
 
-.forb {
-display: block;
-color: #999;
-font-weight: 400;
-}
-
-.forb i {
-
-color: #999;
-font-size: small;
-padding-top: 5px;
-}
 
 /*    Brand Typefaces
 	  Listed alphabetically. Not necessarily by weight or other importance   */
@@ -98,15 +86,82 @@ box-shadow: 0px 2px 20px #ddd;
 
 
 
+
+.masonry-menu h3 {color: #fff;}
+
+.inner-menu h1, .inner-menu h2, .inner-menu h3, .inner-menu h4 {padding: 12px;}
+.inner-menu {color: #fff!important; padding: 0px; background-color: #000;}
+.inner-menu p {padding: 12px;}
+
+.inner-menu a {color: #fff;}
+
+.forb {
+display: block;
+color: #eee;
+font-weight: 200;
+}
+
+.forb i {
+color: #999;
+font-size: small;
+padding-top: 5px;
+}
+
+
 /* Drilling */
+
+/* Cards */
+.card-drill-down {
+	background-color: transparent;
+	color: #000;
+	border-top: 1px solid #ddd; 
+	border-bottom: 1px solid #eee;
+	padding: 12px 0 12px 0;
+	vertical-align: middle;
+}
+
+a.card-drill-down {color: #999;}
+
+.card-drill-up {}
+
+.card-drill-down-small {}
+.card-drill-down-medium {}
+.card-drill-down-large {}
+
+
+/* Menu */
+.menu-drill-down {
+	background-color: #222;
+	color: #000;
+	border-top: 1px solid #444; 
+	border-bottom: 1px solid #111;
+	padding: 12px;
+	vertical-align: middle;
+}
+
+.menu-drill-down:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+.menu-drill-down:active {
+	background-color: #222;
+}
+
+.menu-drill-up {}
+
+.menu-drill-down-small {}
+.menu-drill-down-medium {}
+.menu-drill-down-large {}
+
 
 .far-in-small {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
 .far-in-medium {
+	background-color: #222;
+	color: #ddd;
 	border-top: 1px solid #eee; 
-	border-bottom: 1px solid #ddd;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: 10px;
+	border-bottom: 1px solid #000;
+	padding: 12px;
 	vertical-align: middle;
 	}
 	
@@ -127,8 +182,6 @@ box-shadow: 0px 2px 20px #ddd;
 .inner-box {padding: 24px; background-color: #fff; box-shadow: inset 1px 1px 3px #eee, inset -1px -1px 3px #eee;}
 .box img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
-.inner-menu {color: #fff!important; padding: 24px; background-color: #000;}
-.inner-menu a {color: #fff;}
 
 
 .image-wrap {

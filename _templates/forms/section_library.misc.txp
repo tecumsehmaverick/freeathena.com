@@ -52,7 +52,6 @@
 
 </txp:variable>
 
-
 <txp:variable name="subject">
 
 <txp:chh_if_data>
@@ -143,23 +142,9 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 
 
 
-<!-- Begin Views -->
-
-
-
-
-
-
-
-<!-- 
-	Here is the article display:
+<!-- Begin Views
+This is the 'articles' display:
 -->
-
-
-
-
-
-
 
 <div class="row">
 
@@ -209,7 +194,15 @@ all ids: <txp:variable name="filtered_ids" />
 <div class="large-9 columns">
 <div data-alert class="">
 
+<ul id="masonry" class="small-block-grid-2 large-block-grid-4">
+<txp:output_form form="snip_subject_menu" />
+
+<li>
 <p><strong>Oh no!</strong> We have nothing for that right now. We're working at broadening our library. Try a broader look at things by removing or changing some filters from the menus.</p>
+</li>
+
+</ul>
+
 </div>
 </div>
 
