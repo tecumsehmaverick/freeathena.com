@@ -1,21 +1,21 @@
+<txp:cbe_frontauth_protect>
+
 <txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
 
-
-
-<!-- See if in Queue using the queue_check variable decalred above based on the logged in user's name -->
+<!-- See if in Queue using the queue_check variable declared above 
+		based on the logged user's name and the article ID -->
 <txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
-
-<li class="masonry-brick box collected">
-
-<txp:else />
-
-<li class="masonry-brick box">
-
+	<li class="masonry-brick box collected">
+		<txp:else />
+	<li class="masonry-brick box">
 </txp:smd_query>
+
+</txp:cbe_frontauth_protect>
+
+
 
 
 <div class="inner-box">
-
 
 <txp:chh_if_data>
 <!-- -->
@@ -132,7 +132,8 @@ WHERE (custom_4 LIKE '%,?is_id_collected%,'
 <!-- <a href="<txp:site_url />textpattern/index.php?event=article&step=edit&ID=<txp:article_id />"><i class="icon-pencil"></i> edit</a> -->
 
 
-<txp:glx_gravatar email='<txp:smd_bio_info fields="email" label="" />' size="20" class="th radius" />
+<!-- Author footer -->
+<txp:glx_gravatar email='<txp:smd_bio_info fields="email" label="" />' size="20" class="th radius" /> <small><txp:author /></small>
 
 
 

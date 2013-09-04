@@ -85,7 +85,7 @@ How the Queue Check works:
 
 <txp:pax_grep from="|<p>|,|</p>|" to=",">
 <p class="card-exceprt">
-<!-- if exceprt exists show - if doesn't show first 80 from body-->
+<!-- if exceprt exists show - if doesn't show first 80 chars from body-->
 
 <txp:chh_if_data>
 

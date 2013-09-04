@@ -84,7 +84,7 @@ nope
 <!-- Subject Description -->
 <txp:chh_if_data>
 <txp:rvm_substr length="58">
-<txp:smd_tag_info item="description" wraptag="p" class="label" />
+<txp:smd_tag_info item="description" wraptag="p" class="secondary label" />
 </txp:rvm_substr>
 <txp:else />
 </txp:chh_if_data>

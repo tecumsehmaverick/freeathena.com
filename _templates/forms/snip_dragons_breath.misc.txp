@@ -66,6 +66,7 @@ $('img').error(function(){
 window.onload = function() {
   var wall = new Masonry( document.getElementById('masonry'), {
   // options
+  isAnimated: true
   });
 };
 </script>

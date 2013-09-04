@@ -17,6 +17,18 @@
       <li class="divider"></li>
       <li><a href="<txp:site_url />collection">Collections</a></li>
       <li class="divider"></li>
+      <li class="has-dropdown not-click">
+                   <a href="#">Search</a>
+                       <ul class="dropdown">
+                           <li class="search">
+                                <form role="search" method="get" action="<txp:site_url />search">
+							    	<input id="search-textbox" type="search" name="q" placeholder="Type to Search">
+									<input class="button" type="submit" value="Search">
+                                </form>
+                           </li>
+                       </ul>
+                </li>
+      <li class="divider"></li>
      
     </ul>
 
@@ -36,7 +48,7 @@
       </li>
       <li class="has-dropdown not-click">
                 <a href="#">Sign-in</a>
-                <ul class="dropdown"><li class="title back js-generated"><h5><a href="#">« Back</a></h5></li>
+                <ul class="dropdown">
                   <li class="">#</li>  
                   <li class="">#</li>  
                 </ul>

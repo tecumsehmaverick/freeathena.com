@@ -12,7 +12,7 @@ This uses the txp_users name and the current article's ID to create a value per 
 <!-- 
 How the Queue Check works: 
 
-1. We have an artcile in the video section, say, with the ID of 24
+1. We have an article in the video section, say, with the ID of 24
 2. We have a user whose name from txp_users is joshuavaage
 3. When he adds that video to his queue a new article is created in the queue section for this. The title for that article is generated from the name-id combination joshuavaage-24. 
 4. Now we can check any video by it's ID against any user in the database to see if a title of a queue section article matches.
