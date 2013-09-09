@@ -39,7 +39,7 @@ nope
 <txp:else />
 
 
-<div data-alert="" class="alert-box success">
+<div data-alert="" class="alert-box secondary">
 <a href="#" data-dropdown="Content_Type"><txp:adi_gps name="Content_Type" /></a>
 <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=&Creator=<txp:adi_gps name="Creator" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class=""><span class="right"><i class="icon-remove"></i></span></a>
 
@@ -61,7 +61,7 @@ nope
 <txp:if_variable name="creator_context" value="">
 <txp:else />
 
-<div data-alert="" class="alert-box success">
+<div data-alert="" class="alert-box secondary">
 <a href="#" data-dropdown="Creator"><txp:adi_gps name="Creator" /></a>
 <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />" class=""><span class="right"><i class="icon-remove"></i></span></a>
 
@@ -82,12 +82,14 @@ nope
 
 
 <!-- Subject Description -->
+<!--
 <txp:chh_if_data>
 <txp:rvm_substr length="58">
 <txp:smd_tag_info item="description" wraptag="p" class="secondary label" />
 </txp:rvm_substr>
 <txp:else />
 </txp:chh_if_data>
+-->
 
 </txp:smd_tag_list> 
 
