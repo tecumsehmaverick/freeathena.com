@@ -92,7 +92,7 @@ box-shadow: 0px 2px 20px #ddd;
 .masonry-menu h3 {color: #fff;}
 
 .inner-menu h1, .inner-menu h2, .inner-menu h3, .inner-menu h4 {padding: 12px;}
-.inner-menu {color: #fff!important; padding: 0px; background-color: #000;}
+.inner-menu {color: #fff!important; margin:10px; padding: 0px; background-color: #000;}
 .inner-menu p {padding: 12px;}
 
 .inner-menu a {color: #fff;}
@@ -181,7 +181,7 @@ a.card-drill-down {color: #999;}
 .box {background-image: url(../../../img/fa-card-bg.png);}
 .box {background-color: transparent;}
 .box:hover {background-color: #fff; opacity: 0.9; }
-.inner-box {padding: 24px; background-color: #fff; box-shadow: inset 1px 1px 3px #eee, inset -1px -1px 3px #eee;}
+.inner-box {margin:10px; padding: 24px; background-color: #fff; box-shadow: inset 1px 1px 3px #eee, inset -1px -1px 3px #eee;}
 .box img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
 
