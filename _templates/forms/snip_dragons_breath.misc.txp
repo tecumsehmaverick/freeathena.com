@@ -20,8 +20,7 @@
 
 
     
-<!-- do embedly stuff -->
-<!-- After above "core" JS do embedly stuff like we mean it -->
+<!-- embed.ly -->
 <script src="<txp:site_url />vendor/ej/demo/js/jquery.embedly.js"></script>
   <script>
       $('document').ready(function(){
@@ -63,12 +62,13 @@ $('img').error(function(){
 <script src="<txp:site_url />vendor/masonry/masonry.min.js"></script>
 
 <script>
-window.onload = function() {
-  var wall = new Masonry( document.getElementById('masonry'), {
-  // options
-  isAnimated: true
-  });
-};
+<!-- Requires Masonry | visit http://masonry.desandro.com/ to download -->
+$(window).load(function(){
+  $('#masonryContainer').masonry({  
+    itemSelector: '.masonry-brick',
+    columnWidth: 240
+  });  
+});  
 </script>
 
         
