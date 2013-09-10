@@ -12,20 +12,31 @@
 </txp:variable>
 
 </head>
-
-
 <body id="<txp:if_section name=""><txp:if_search>search<txp:else />front</txp:if_search><txp:else /><txp:section /></txp:if_section>-page">
 
+		<!-- "Default" Content -->
+		<txp:if_section name="default">
+		<txp:if_individual_article>
 
-
-
-
-  
-
+		<txp:article>
+		<article>
+	    <a href='<txp:custom_field name="Video Url" />'></a>
+		<h3><txp:title /></h3>
+	    <p><txp:excerpt /></p>
+	    </article>
+		</txp:article>
+	
+		<txp:else />
+	
+		<txp:output_form form="section_default" />
+	
+		</txp:if_individual_article>
+		</txp:if_section>
+		
+	<!-- All else -->	
 	<txp:if_section name="orphans">
   	<txp:output_form form="section_orphans" />
 	</txp:if_section>      
-
 
 	<txp:if_section name="content">
   	<txp:output_form form="section_content" />
@@ -34,7 +45,6 @@
 	<txp:if_section name="user-subjects">
   	<txp:output_form form="section_user_subjects" />
 	</txp:if_section>      
-
 
 	<txp:if_section name="user-tags">
   	<txp:output_form form="section_user_tags" />
@@ -48,7 +58,6 @@
   	<txp:output_form form="section_subject" />
 	</txp:if_section>
 
-
 	<txp:if_section name="tag">
   	<txp:output_form form="section_tag" />
 	</txp:if_section>
@@ -56,26 +65,6 @@
 
 	<txp:if_section name="search">
   	<txp:output_form form="section_search" />
-	</txp:if_section>
-
-
-	<!-- Main Content -->
-	<txp:if_section name="default">
-	<txp:if_individual_article>
-
-	<txp:article>
-	<article>
-    <a href='<txp:custom_field name="Video Url" />'></a>
-	<h3><txp:title /></h3>
-    <p><txp:excerpt /></p>
-    </article>
-	</txp:article>
-
-	<txp:else />
-	
-	<txp:output_form form="section_default" />
-	
-	</txp:if_individual_article>
 	</txp:if_section>
 
 	<txp:if_section name="edit">
@@ -142,10 +131,8 @@
 <!-- Footer -->
 <txp:output_form form="snip_footer" />
 
-
 <!-- Dragon's Breath -->
 <txp:output_form form="snip_dragons_breath" />
-
 
 </body>
 </html>
