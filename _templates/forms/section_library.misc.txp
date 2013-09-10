@@ -86,7 +86,7 @@
 
 
 <!-- Thanks Oleg (txp:etc)-->
-<!-- The folowing will supply <txp:variable name="matched_ids" /> -->
+<!-- The following will supply <txp:variable name="matched_ids" /> -->
 <txp:php>
 variable(
 array('name' => 'matched_ids'), 
@@ -116,9 +116,10 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 			
 			<!-- No Parameters -->
 			<div class="row">
-			<ul id="masonry" class="masonry small-block-grid-2 large-block-grid-4">
+			<div class="large-12 columns">
+			<div id="masonryContainer">
 			
-			<txp:output_form form="snip_subject_menu" />
+				<txp:output_form form="snip_subject_menu" />
 
 				<txp:article_custom 
 					section="video" 
@@ -126,7 +127,8 @@ Let's look for 'no parameters from url vars'. We are using URL Variable to match
 					form="fa_video_card_v30" 
 					sort="<txp:variable name="Sort_By" />" 
 					limit="20" />
-			</ul>
+			</div>
+			</div>
 			</div>
 			
 			<txp:else />
@@ -148,6 +150,7 @@ This is the 'articles' display:
 
 <div class="row">
 
+<!--
 <txp:smd_tag_list name='<txp:variable name="subject_context" />' wraptag="strong" class="capitalize" break="" shuffle="1" indent="">
 
 <txp:variable name="no_show_root" value='<txp:smd_tag_info item="parent" />' />
@@ -166,6 +169,7 @@ This is the 'articles' display:
 </ul>
 
 </txp:smd_tag_list> 
+-->
 
 <!--
 filtered_subject_context_id: <txp:variable name="filtered_subject_context_id" /><br />

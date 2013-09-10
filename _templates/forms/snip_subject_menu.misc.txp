@@ -1,4 +1,4 @@
-<li class="masonry-brick masonry-menu hide-for-small">
+<div class="masonry-brick masonry-menu hide-for-small">
 
 <div class="inner-menu">
 
@@ -104,4 +104,4 @@ nope
 
 </div>
 
-</li>
+</div>
