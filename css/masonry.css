@@ -1,0 +1,10 @@
+.masonry-brick { width: 50%; float: left;  }
+
+@media only screen and (min-width: 768px) {
+	.masonry-brick {
+	width: 25%; float: left;
+	}
+}
+
+
+#masonryContainer { width: 0 auto; } 
