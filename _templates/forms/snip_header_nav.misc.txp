@@ -14,8 +14,10 @@
     <ul class="left">
       <li class="divider"></li>
       <li class="active"><a href="<txp:site_url />library">Library</a></li>
+<!--
       <li class="divider"></li>
       <li><a href="<txp:site_url />collection">Collections</a></li>
+-->
       <li class="divider"></li>
       <li class="has-dropdown not-click">
                    <a href="#">Search</a>
