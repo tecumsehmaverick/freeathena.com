@@ -1,3 +1,6 @@
+
+
+<!-- If logged in check 'queue' -->
 <txp:cbe_frontauth_protect>
 
 <txp:variable name="queue_check" value='_<txp:cbe_frontauth_whois type="name" />-<txp:article_id />_' />
@@ -10,6 +13,10 @@
 	<li class="masonry-brick box">
 </txp:smd_query>
 
+<!-- Not logged in / not collected -->
+<txp:else />
+
+<li class="masonry-brick box">
 </txp:cbe_frontauth_protect>
 
 
