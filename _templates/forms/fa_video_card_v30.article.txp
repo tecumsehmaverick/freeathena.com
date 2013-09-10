@@ -8,15 +8,15 @@
 <!-- See if in Queue using the queue_check variable declared above 
 		based on the logged user's name and the article ID -->
 <txp:smd_query query="SELECT title FROM textpattern WHERE title = '?queue_check'">
-	<li class="masonry-brick box collected">
+	<div class="masonry-brick box collected">
 		<txp:else />
-	<li class="masonry-brick box">
+	<div class="masonry-brick box">
 </txp:smd_query>
 
 <!-- Not logged in / not collected -->
 <txp:else />
 
-<li class="masonry-brick box">
+<div class="masonry-brick box">
 </txp:cbe_frontauth_protect>
 
 
@@ -28,7 +28,7 @@
 <!-- -->
 <txp:smd_tag_list wraptag="" break="" parent="Creator"
      shuffle="1" indent="">
-  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:smd_tag_name link="0" title="0" section="subject" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />"  class="forb card-drill-down"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
+  <a href="<txp:site_url />library?Subject=<txp:adi_gps name="Subject" />&Content_Type=<txp:adi_gps name="Content_Type" />&Creator=<txp:smd_tag_name link="0" title="0" section="subject" />&Sort_By=<txp:adi_gps name="Sort_By" />&page=<txp:rah_repeat_value />"  class="forb card-drill-down secondary"><txp:smd_tag_name link="0" title="1" section="subject" /><span class="right"><i class="icon-chevron-right"></i></span></a>
 </txp:smd_tag_list>
 
 <txp:else />
@@ -145,4 +145,4 @@ WHERE (custom_4 LIKE '%,?is_id_collected%,'
 
 
 </div>
-</li><!-- /.article -->
+</div><!-- /.article -->
