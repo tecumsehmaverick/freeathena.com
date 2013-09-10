@@ -17,6 +17,9 @@
 <!-- Custom styles and overrides -->
 <link rel="stylesheet" href="<txp:site_url />css/freeathena.css">
 
+<!-- Masonry: http://patterntap.com/code/stacking-columns-layout-masonry -->
+<link rel="stylesheet" href="<txp:site_url />css/masonry.css">
+
 
 <!-- http://xoxco.com/projects/code/tagsinput/ -->
 <link rel="stylesheet" href="<txp:site_url />vendor/tagsinput/jquery.tagsinput.css">
